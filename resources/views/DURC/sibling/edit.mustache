@@ -1,0 +1,282 @@
+
+{{#has_session_status}}
+<div class='alert alert-info' role='alert'>
+  {{session_status}}
+</div>
+{{/has_session_status}}
+
+{{#is_new}}
+<form action='/DURC/sibling/' method='POST'>
+{{/is_new}}
+
+{{^is_new}}
+<form action='/DURC/sibling/{{id}}' method='POST'>
+    <input type='hidden' name='_method' value='PUT'>
+{{/is_new}}
+
+	<h1>sibling</h1>
+<div class='card'>
+  <div class='card-header'>
+<h4> {{durc_instance_name}}</h4>
+<ul>
+<li> <a href='/DURC/sibling/'>Return to sibling list</a> </li>
+</ul>
+  </div>
+<div class='card-body'>
+
+  <fieldset>
+    <legend>Edit {{durc_instance_name}}  </legend>
+	<input type='hidden' name='_token' value='{{csrf_token}}'>
+	
+  <div class='form-group row'>
+    <label for='id' class='col-sm-2 col-form-label'>id</label>
+    <div class='col-sm-10'>
+      <input type='text' class='form-control' id='id' name='id' placeholder='' value='{{id}}'>
+    </div>
+  </div>
+
+  <div class='form-group row'>
+    <label for='siblingname' class='col-sm-2 col-form-label'>siblingname</label>
+    <div class='col-sm-10'>
+      <input type='text' class='form-control' id='siblingname' name='siblingname' placeholder='' value='{{siblingname}}'>
+    </div>
+  </div>
+
+  <div class='form-group row'>
+    <label for='step_sibling_id' class='col-sm-2 col-form-label'>step_sibling_id</label>
+    <div class='col-sm-10'>
+	Current id value: {{step_sibling_id}} (see below for lookup value)<br>
+	<select class='select2_step_sibling_id form-control' id='step_sibling_id' name='step_sibling_id' form-control'>
+	<option value='{{step_sibling_id}}' selected='selected'>{{step_sibling_id}}</option>
+	</select>
+    </div>
+  </div>
+
+<script type='text/javascript'>
+
+$('.select2_step_sibling_id').select2({
+  ajax: {
+    	url: '/DURCsearchjson/sibling/',
+    	dataType: 'json'
+  }
+});
+
+
+</script>
+
+
+  <div class='form-group row'>
+    <label for='sibling_id' class='col-sm-2 col-form-label'>sibling_id</label>
+    <div class='col-sm-10'>
+	Current id value: {{sibling_id}} (see below for lookup value)<br>
+	<select class='select2_sibling_id form-control' id='sibling_id' name='sibling_id' form-control'>
+	<option value='{{sibling_id}}' selected='selected'>{{sibling_id}}</option>
+	</select>
+    </div>
+  </div>
+
+<script type='text/javascript'>
+
+$('.select2_sibling_id').select2({
+  ajax: {
+    	url: '/DURCsearchjson/sibling/',
+    	dataType: 'json'
+  }
+});
+
+
+</script>
+
+
+  <div class='form-group row'>
+    <label for='created_at' class='col-sm-2 col-form-label'>created_at</label>
+    <div class='col-sm-10'>
+	Current Value: {{created_at}}<br>
+      <input type='text' class='form-control' id='created_at' name='created_at' placeholder='' value='{{created_at}}'>
+    </div>
+  </div>
+
+  <div class='form-group row'>
+    <label for='updated_at' class='col-sm-2 col-form-label'>updated_at</label>
+    <div class='col-sm-10'>
+	Current Value: {{updated_at}}<br>
+      <input type='text' class='form-control' id='updated_at' name='updated_at' placeholder='' value='{{updated_at}}'>
+    </div>
+  </div>
+
+  <div class='form-group row'>
+    <div class='col-sm-10'>
+      <button type='submit' class='btn btn-primary'>Save Data</button>
+    </div>
+  </div>
+
+</fieldset></form>
+</div></div>
+
+<br>
+<div class='card'>
+  <div class='card-header'>
+    Has Many Relationships
+  </div>
+<div class='card-body'>
+
+<div class='card'>
+  <div class='card-header'>
+    step_sibling ( <a href='/DURC/sibling/'>see all</a> )
+{{^step_sibling}}
+(no values)
+{{/step_sibling}}
+  </div>
+<div class='card-body'>
+
+<table id='table_step_sibling' class='table table-bordered table-hover table-responsive table-sm'>
+<thead>
+<tr>
+			<th> id </th>
+			<th> siblingname </th>
+			<th> step_sibling_id </th>
+			<th> sibling_id </th>
+			<th> created_at </th>
+			<th> updated_at </th>
+
+</tr>
+</thead>
+<tbody>
+{{#step_sibling}}
+	<tr>
+		{{#.}}
+			<td><a href='/DURC/sibling/{{id}}'>{{id}}</a></td>
+			<td>{{siblingname}}</td>
+			<td>{{step_sibling_id_DURClabel}} ({{step_sibling_id}}) </td>			<td>{{sibling_id_DURClabel}} ({{sibling_id}}) </td>			<td>{{created_at}}</td>
+			<td>{{updated_at}}</td>
+		
+		{{/.}}
+	</tr>
+{{/step_sibling}}
+</tbody>
+</table>
+</div></div> <!-- end step_sibling card-->
+<br>
+
+<div class='card'>
+  <div class='card-header'>
+    sibling ( <a href='/DURC/sibling/'>see all</a> )
+{{^sibling}}
+(no values)
+{{/sibling}}
+  </div>
+<div class='card-body'>
+
+<table id='table_sibling' class='table table-bordered table-hover table-responsive table-sm'>
+<thead>
+<tr>
+			<th> id </th>
+			<th> siblingname </th>
+			<th> step_sibling_id </th>
+			<th> sibling_id </th>
+			<th> created_at </th>
+			<th> updated_at </th>
+
+</tr>
+</thead>
+<tbody>
+{{#sibling}}
+	<tr>
+		{{#.}}
+			<td><a href='/DURC/sibling/{{id}}'>{{id}}</a></td>
+			<td>{{siblingname}}</td>
+			<td>{{step_sibling_id_DURClabel}} ({{step_sibling_id}}) </td>			<td>{{sibling_id_DURClabel}} ({{sibling_id}}) </td>			<td>{{created_at}}</td>
+			<td>{{updated_at}}</td>
+		
+		{{/.}}
+	</tr>
+{{/sibling}}
+</tbody>
+</table>
+</div></div> <!-- end sibling card-->
+<br>
+</div></div> <!--end has many card-->
+<br>
+<div class='card'>
+  <div class='card-header'>
+    Belongs To Relationships
+  </div>
+<div class='card-body'>
+
+<div class='card'>
+  <div class='card-header'>
+    step_sibling ( <a href='/DURC/sibling/'>see all</a> )
+{{^step_sibling}}
+(no values)
+{{/step_sibling}}
+  </div>
+<div class='card-body'>
+<table id='table_step_sibling' class='table table-bordered table-hover table-responsive table-sm'>
+<thead>
+<tr>
+			<th> id </th>
+			<th> siblingname </th>
+			<th> step_sibling_id </th>
+			<th> sibling_id </th>
+			<th> created_at </th>
+			<th> updated_at </th>
+
+</tr>
+</thead>
+<tbody>
+{{#step_sibling}}
+	<tr>
+		{{#.}}
+			<td><a href='/DURC/sibling/{{id}}'>{{id}}</a></td>
+			<td>{{siblingname}}</td>
+			<td>{{step_sibling_id_DURClabel}} ({{step_sibling_id}}) </td>			<td>{{sibling_id_DURClabel}} ({{sibling_id}}) </td>			<td>{{created_at}}</td>
+			<td>{{updated_at}}</td>
+		
+		{{/.}}
+	</tr>
+{{/step_sibling}}
+</tbody>
+</table>
+</div></div> <!-- end step_sibling card-->
+
+<div class='card'>
+  <div class='card-header'>
+    sibling ( <a href='/DURC/sibling/'>see all</a> )
+{{^sibling}}
+(no values)
+{{/sibling}}
+  </div>
+<div class='card-body'>
+<table id='table_sibling' class='table table-bordered table-hover table-responsive table-sm'>
+<thead>
+<tr>
+			<th> id </th>
+			<th> siblingname </th>
+			<th> step_sibling_id </th>
+			<th> sibling_id </th>
+			<th> created_at </th>
+			<th> updated_at </th>
+
+</tr>
+</thead>
+<tbody>
+{{#sibling}}
+	<tr>
+		{{#.}}
+			<td><a href='/DURC/sibling/{{id}}'>{{id}}</a></td>
+			<td>{{siblingname}}</td>
+			<td>{{step_sibling_id_DURClabel}} ({{step_sibling_id}}) </td>			<td>{{sibling_id_DURClabel}} ({{sibling_id}}) </td>			<td>{{created_at}}</td>
+			<td>{{updated_at}}</td>
+		
+		{{/.}}
+	</tr>
+{{/sibling}}
+</tbody>
+</table>
+</div></div> <!-- end sibling card-->
+</div></div> <!--end belongs to card-->
+<br>
+<h5>Form Meta Data </h5>
+<ul>
+<li> DURC Generated At: Monday 1st of January 2018 04:58:04 PM </li>
+</ul>

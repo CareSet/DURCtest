@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>DURC Dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
+
+<style>
+body {
+  padding-top: 3.5rem;
+}
+h1 {
+  padding-bottom: 9px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+.sidebar {
+  position: fixed;
+  top: 51px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  border-right: 1px solid #eee;
+}
+.sidebar .nav {
+  margin-bottom: 20px;
+}
+.sidebar .nav-item {
+  width: 100%;
+}
+.sidebar .nav-item + .nav-item {
+  margin-left: 0;
+}
+.sidebar .nav-link {
+  border-radius: 0;
+}
+.placeholders {
+  padding-bottom: 3rem;
+}
+.placeholder img {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/">Main</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/DURC/">DURC <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+          <ul class="nav nav-pills flex-column">
+
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/author/'>author</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/author_book/'>author_book</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/authortype/'>authortype</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/book/'>book</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/comment/'>comment</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/donation/'>donation</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/foreignkeytestgizmo/'>foreignkeytestgizmo</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/foreignkeytestthingy/'>foreignkeytestthingy</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/funnything/'>funnything</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/post/'>post</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/sibling/'>sibling</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/vote/'>vote</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/nonprofitcorp/'>nonprofitcorp</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/inventorytransaction/'>inventorytransaction</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/invoice/'>invoice</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/order/'>order</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/orderdetail/'>orderdetail</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/purchaseorder/'>purchaseorder</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/purchaseorderdetail/'>purchaseorderdetail</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/appstring/'>appstring</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/customer/'>customer</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/employee/'>employee</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/employeeprivilege/'>employeeprivilege</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/inventorytransactiontype/'>inventorytransactiontype</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/orderdetailstatus/'>orderdetailstatus</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/orderstatus/'>orderstatus</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/ordertaxstatus/'>ordertaxstatus</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/privilege/'>privilege</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/product/'>product</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/purchaseorderstatus/'>purchaseorderstatus</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/salesreport/'>salesreport</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/shipper/'>shipper</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/supplier/'>supplier</a>
+            </li>
+
+          </ul>
+        </nav>
+        <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+                {{{content}}}
+        </main>
+      </div>
+    </div>
+
+  </body>
+</html>

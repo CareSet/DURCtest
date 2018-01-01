@@ -4,8 +4,60 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5eba86da256ddeb8084c32d3d10e18d3",
+    "content-hash": "673bbd8f6130c1b13d5cc8c1d2eccff5",
     "packages": [
+        {
+            "name": "careset/durc",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CareSet/DURC.git",
+                "reference": "17fe8b4ac2e24397deece2312e4852a4680ca0f0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CareSet/DURC/zipball/17fe8b4ac2e24397deece2312e4852a4680ca0f0",
+                "reference": "17fe8b4ac2e24397deece2312e4852a4680ca0f0",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^5.5.0",
+                "illuminate/support": "^5.5.0",
+                "php": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "CareSet\\DURC\\DURCServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CareSet\\DURC\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fred Trotter",
+                    "email": "fred.trotter@gmail.com",
+                    "homepage": "https://www.careset.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "DURC is reverse CRUD",
+            "keywords": [
+                "crud",
+                "laravel",
+                "orm"
+            ],
+            "time": "2018-01-01T14:33:13+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
@@ -959,6 +1011,65 @@
                 "random"
             ],
             "time": "2017-09-27T21:40:39+00:00"
+        },
+        {
+            "name": "proai/laravel-handlebars",
+            "version": "1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ProAI/laravel-handlebars.git",
+                "reference": "12de02f771e8a1a72e457db3cec050eb3c198800"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ProAI/laravel-handlebars/zipball/12de02f771e8a1a72e457db3cec050eb3c198800",
+                "reference": "12de02f771e8a1a72e457db3cec050eb3c198800",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/view": "^5.5",
+                "php": ">=5.4.0",
+                "zordius/lightncandy": "1.2.*"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.2",
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ProAI\\Handlebars\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Markus J. Wetzel",
+                    "email": "markuswetzel@gmx.net"
+                },
+                {
+                    "name": "Manuel Wieser",
+                    "email": "office@manuelwieser.com"
+                }
+            ],
+            "description": "A Laravel 5 wrapper for LightnCandy for using the Handlebars (and Mustache) template engine.",
+            "homepage": "http://github.com/proai/laravel-handlebars",
+            "keywords": [
+                "handlebars",
+                "laravel",
+                "lightncandy",
+                "mustache",
+                "template engine"
+            ],
+            "time": "2017-12-12T14:39:12+00:00"
         },
         {
             "name": "psr/container",
@@ -2223,6 +2334,58 @@
                 "environment"
             ],
             "time": "2016-09-01T10:05:43+00:00"
+        },
+        {
+            "name": "zordius/lightncandy",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zordius/lightncandy.git",
+                "reference": "f96eb18212a0b4e04360b84323f3e8f23fd018c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zordius/lightncandy/zipball/f96eb18212a0b4e04360b84323f3e8f23fd018c7",
+                "reference": "f96eb18212a0b4e04360b84323f3e8f23fd018c7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.35"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LightnCandy\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Zordius Chen",
+                    "email": "zordius@gmail.com"
+                }
+            ],
+            "description": "An extremely fast PHP implementation of handlebars ( http://handlebarsjs.com/ ) and mustache ( http://mustache.github.io/ ).",
+            "homepage": "https://github.com/zordius/lightncandy",
+            "keywords": [
+                "handlebars",
+                "logicless",
+                "mustache",
+                "php",
+                "template"
+            ],
+            "time": "2017-10-13T08:42:32+00:00"
         }
     ],
     "packages-dev": [
@@ -3910,7 +4073,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "careset/durc": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
