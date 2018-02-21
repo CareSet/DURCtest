@@ -6,7 +6,7 @@
 {{/has_session_status}}
 
 {{#is_new}}
-<form action='/DURC/inventorytransaction/' method='POST'>
+<form action='/DURC/inventorytransaction' method='POST'>
 {{/is_new}}
 
 {{^is_new}}
@@ -49,7 +49,7 @@
 
 $('.select2_transactionType').select2({
   ajax: {
-    	url: '/DURCsearchjson/inventoryTransactionType/',
+    	url: '/DURC/searchjson/inventoryTransactionType/',
     	dataType: 'json'
   }
 });
@@ -61,16 +61,60 @@ $('.select2_transactionType').select2({
   <div class='form-group row'>
     <label for='transactionCreatedDate' class='col-sm-2 col-form-label'>transactionCreatedDate</label>
     <div class='col-sm-10'>
-	Current Value: {{transactionCreatedDate}}<br>
       <input type='text' class='form-control' id='transactionCreatedDate' name='transactionCreatedDate' placeholder='' value='{{transactionCreatedDate}}'>
+
+<button type='button' class='btn btn-primary' id='transactionCreatedDate_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='transactionCreatedDate_TodayNow'> Today and Now</button>
+
+<script>
+	var transactionCreatedDateConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#transactionCreatedDate_TodayNow').click( function(e) {
+      		$('#transactionCreatedDate').val(transactionCreatedDateConv.format(new Date())).change(); } );
+
+    	$('#transactionCreatedDate_FontPicker').click(
+      		function(e) {
+        		$('#transactionCreatedDate').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
   <div class='form-group row'>
     <label for='transactionModifiedDate' class='col-sm-2 col-form-label'>transactionModifiedDate</label>
     <div class='col-sm-10'>
-	Current Value: {{transactionModifiedDate}}<br>
       <input type='text' class='form-control' id='transactionModifiedDate' name='transactionModifiedDate' placeholder='' value='{{transactionModifiedDate}}'>
+
+<button type='button' class='btn btn-primary' id='transactionModifiedDate_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='transactionModifiedDate_TodayNow'> Today and Now</button>
+
+<script>
+	var transactionModifiedDateConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#transactionModifiedDate_TodayNow').click( function(e) {
+      		$('#transactionModifiedDate').val(transactionModifiedDateConv.format(new Date())).change(); } );
+
+    	$('#transactionModifiedDate_FontPicker').click(
+      		function(e) {
+        		$('#transactionModifiedDate').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
@@ -88,7 +132,7 @@ $('.select2_transactionType').select2({
 
 $('.select2_product_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/product/',
+    	url: '/DURC/searchjson/product/',
     	dataType: 'json'
   }
 });
@@ -118,7 +162,7 @@ $('.select2_product_id').select2({
 
 $('.select2_purchaseOrder_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/purchaseOrder/',
+    	url: '/DURC/searchjson/purchaseOrder/',
     	dataType: 'json'
   }
 });
@@ -141,7 +185,7 @@ $('.select2_purchaseOrder_id').select2({
 
 $('.select2_customerOrder_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/order/',
+    	url: '/DURC/searchjson/order/',
     	dataType: 'json'
   }
 });
@@ -163,8 +207,9 @@ $('.select2_customerOrder_id').select2({
     </div>
   </div>
 
-</fieldset></form>
+</fieldset>
 </div></div>
+</form>
 
 <br>
 <div class='card'>
@@ -281,7 +326,3 @@ $('.select2_customerOrder_id').select2({
 </div></div> <!-- end purchaseorder card-->
 </div></div> <!--end belongs to card-->
 <br>
-<h5>Form Meta Data </h5>
-<ul>
-<li> DURC Generated At: Monday 1st of January 2018 04:58:04 PM </li>
-</ul>

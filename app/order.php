@@ -7,10 +7,9 @@ namespace App;
 This class started life as a DURC model, but itwill no longer be overwritten by the generator
 this is safe to edit.
 
-DURC Generated At: Monday 1st of January 2018 04:58:04 PM
 
 */
-class order extends \App\DURC\Models\DURC_order
+class order extends \App\DURC\Models\order
 {
 
 	//You may need to change these for 'one to very very many' relationships.
@@ -48,9 +47,11 @@ class order extends \App\DURC\Models\DURC_order
 			//'status_id', //tinyint
 		]; //end hidden array
 
+
 //DURC HAS_MANY SECTION
+
 /**
-*	DURC is handling the invoice for this order in DURC_order
+*	DURC is handling the invoice for this order in order
 *       but you can extend or override the defaults by editing this function...
 */
 	public function invoice(){
@@ -59,16 +60,18 @@ class order extends \App\DURC\Models\DURC_order
 
 
 /**
-*	DURC is handling the orderdetail for this order in DURC_order
+*	DURC is handling the orderdetail for this order in order
 *       but you can extend or override the defaults by editing this function...
 */
 	public function orderdetail(){
 		return parent::orderdetail();
 	}
 
+
 //DURC BELONGS_TO SECTION
+
 /**
-*	DURC is handling the employee for this order in DURC_order
+*	DURC is handling the employee for this order in order
 *       but you can extend or override the defaults by editing this function...
 */
 	public function employee(){
@@ -77,7 +80,7 @@ class order extends \App\DURC\Models\DURC_order
 
 
 /**
-*	DURC is handling the customer for this order in DURC_order
+*	DURC is handling the customer for this order in order
 *       but you can extend or override the defaults by editing this function...
 */
 	public function customer(){
@@ -86,7 +89,7 @@ class order extends \App\DURC\Models\DURC_order
 
 
 /**
-*	DURC is handling the shipper for this order in DURC_order
+*	DURC is handling the shipper for this order in order
 *       but you can extend or override the defaults by editing this function...
 */
 	public function shipper(){

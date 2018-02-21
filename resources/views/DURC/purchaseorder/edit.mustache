@@ -6,7 +6,7 @@
 {{/has_session_status}}
 
 {{#is_new}}
-<form action='/DURC/purchaseorder/' method='POST'>
+<form action='/DURC/purchaseorder' method='POST'>
 {{/is_new}}
 
 {{^is_new}}
@@ -49,7 +49,7 @@
 
 $('.select2_supplier_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/supplier/',
+    	url: '/DURC/searchjson/supplier/',
     	dataType: 'json'
   }
 });
@@ -72,7 +72,7 @@ $('.select2_supplier_id').select2({
 
 $('.select2_createdBy_employee_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/employee/',
+    	url: '/DURC/searchjson/employee/',
     	dataType: 'json'
   }
 });
@@ -84,16 +84,60 @@ $('.select2_createdBy_employee_id').select2({
   <div class='form-group row'>
     <label for='submittedDate' class='col-sm-2 col-form-label'>submittedDate</label>
     <div class='col-sm-10'>
-	Current Value: {{submittedDate}}<br>
       <input type='text' class='form-control' id='submittedDate' name='submittedDate' placeholder='' value='{{submittedDate}}'>
+
+<button type='button' class='btn btn-primary' id='submittedDate_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='submittedDate_TodayNow'> Today and Now</button>
+
+<script>
+	var submittedDateConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#submittedDate_TodayNow').click( function(e) {
+      		$('#submittedDate').val(submittedDateConv.format(new Date())).change(); } );
+
+    	$('#submittedDate_FontPicker').click(
+      		function(e) {
+        		$('#submittedDate').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
   <div class='form-group row'>
     <label for='creationDate' class='col-sm-2 col-form-label'>creationDate</label>
     <div class='col-sm-10'>
-	Current Value: {{creationDate}}<br>
       <input type='text' class='form-control' id='creationDate' name='creationDate' placeholder='' value='{{creationDate}}'>
+
+<button type='button' class='btn btn-primary' id='creationDate_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='creationDate_TodayNow'> Today and Now</button>
+
+<script>
+	var creationDateConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#creationDate_TodayNow').click( function(e) {
+      		$('#creationDate').val(creationDateConv.format(new Date())).change(); } );
+
+    	$('#creationDate_FontPicker').click(
+      		function(e) {
+        		$('#creationDate').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
@@ -111,7 +155,7 @@ $('.select2_createdBy_employee_id').select2({
 
 $('.select2_status_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/purchaseOrderStatus/',
+    	url: '/DURC/searchjson/purchaseOrderStatus/',
     	dataType: 'json'
   }
 });
@@ -123,8 +167,30 @@ $('.select2_status_id').select2({
   <div class='form-group row'>
     <label for='expectedDate' class='col-sm-2 col-form-label'>expectedDate</label>
     <div class='col-sm-10'>
-	Current Value: {{expectedDate}}<br>
       <input type='text' class='form-control' id='expectedDate' name='expectedDate' placeholder='' value='{{expectedDate}}'>
+
+<button type='button' class='btn btn-primary' id='expectedDate_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='expectedDate_TodayNow'> Today and Now</button>
+
+<script>
+	var expectedDateConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#expectedDate_TodayNow').click( function(e) {
+      		$('#expectedDate').val(expectedDateConv.format(new Date())).change(); } );
+
+    	$('#expectedDate_FontPicker').click(
+      		function(e) {
+        		$('#expectedDate').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
@@ -145,8 +211,30 @@ $('.select2_status_id').select2({
   <div class='form-group row'>
     <label for='paymentDate' class='col-sm-2 col-form-label'>paymentDate</label>
     <div class='col-sm-10'>
-	Current Value: {{paymentDate}}<br>
       <input type='text' class='form-control' id='paymentDate' name='paymentDate' placeholder='' value='{{paymentDate}}'>
+
+<button type='button' class='btn btn-primary' id='paymentDate_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='paymentDate_TodayNow'> Today and Now</button>
+
+<script>
+	var paymentDateConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#paymentDate_TodayNow').click( function(e) {
+      		$('#paymentDate').val(paymentDateConv.format(new Date())).change(); } );
+
+    	$('#paymentDate_FontPicker').click(
+      		function(e) {
+        		$('#paymentDate').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
@@ -185,7 +273,7 @@ $('.select2_status_id').select2({
 
 $('.select2_approvedBy_employee_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/employee/',
+    	url: '/DURC/searchjson/employee/',
     	dataType: 'json'
   }
 });
@@ -197,8 +285,30 @@ $('.select2_approvedBy_employee_id').select2({
   <div class='form-group row'>
     <label for='approvedDate' class='col-sm-2 col-form-label'>approvedDate</label>
     <div class='col-sm-10'>
-	Current Value: {{approvedDate}}<br>
       <input type='text' class='form-control' id='approvedDate' name='approvedDate' placeholder='' value='{{approvedDate}}'>
+
+<button type='button' class='btn btn-primary' id='approvedDate_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='approvedDate_TodayNow'> Today and Now</button>
+
+<script>
+	var approvedDateConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#approvedDate_TodayNow').click( function(e) {
+      		$('#approvedDate').val(approvedDateConv.format(new Date())).change(); } );
+
+    	$('#approvedDate_FontPicker').click(
+      		function(e) {
+        		$('#approvedDate').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
@@ -216,7 +326,7 @@ $('.select2_approvedBy_employee_id').select2({
 
 $('.select2_submittedBy_employee_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/employee/',
+    	url: '/DURC/searchjson/employee/',
     	dataType: 'json'
   }
 });
@@ -231,8 +341,9 @@ $('.select2_submittedBy_employee_id').select2({
     </div>
   </div>
 
-</fieldset></form>
+</fieldset>
 </div></div>
+</form>
 
 <br>
 <div class='card'>
@@ -624,7 +735,3 @@ $('.select2_submittedBy_employee_id').select2({
 </div></div> <!-- end submitted_by_employee card-->
 </div></div> <!--end belongs to card-->
 <br>
-<h5>Form Meta Data </h5>
-<ul>
-<li> DURC Generated At: Monday 1st of January 2018 04:58:04 PM </li>
-</ul>

@@ -6,7 +6,7 @@
 {{/has_session_status}}
 
 {{#is_new}}
-<form action='/DURC/employeeprivilege/' method='POST'>
+<form action='/DURC/employeeprivilege' method='POST'>
 {{/is_new}}
 
 {{^is_new}}
@@ -42,7 +42,7 @@
 
 $('.select2_employee_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/employee/',
+    	url: '/DURC/searchjson/employee/',
     	dataType: 'json'
   }
 });
@@ -65,7 +65,7 @@ $('.select2_employee_id').select2({
 
 $('.select2_privilege_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/privilege/',
+    	url: '/DURC/searchjson/privilege/',
     	dataType: 'json'
   }
 });
@@ -80,8 +80,9 @@ $('.select2_privilege_id').select2({
     </div>
   </div>
 
-</fieldset></form>
+</fieldset>
 </div></div>
+</form>
 
 <br>
 <div class='card'>
@@ -183,7 +184,3 @@ $('.select2_privilege_id').select2({
 </div></div> <!-- end privilege card-->
 </div></div> <!--end belongs to card-->
 <br>
-<h5>Form Meta Data </h5>
-<ul>
-<li> DURC Generated At: Monday 1st of January 2018 04:58:04 PM </li>
-</ul>

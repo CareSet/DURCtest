@@ -1,3 +1,3 @@
 #!/bin/bash
-rm -rf ~/code/vendor/careset/durc/src
-ln -s ~/DURC/src ~/code/vendor/careset/durc/src
+rm -rf ~/Dev/careset/DURCtest/vendor/careset/durc/src
+ln -s ~/Dev/careset/DURC/src ~/Dev/careset/DURCtest/vendor/careset/durc/src

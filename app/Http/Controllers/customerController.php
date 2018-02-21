@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\customer;
-use App\DURC\Controllers\DURC_customerController;
+use App\DURC\Controllers\customerController as DURCParentController;
 use Illuminate\Http\Request;
 
-//DURC Generated At: Monday 1st of January 2018 04:58:04 PM
-class customerController extends DURC_customerController
+class customerController extends DURCParentController
 {
     /**
      * Display a listing of the resource.

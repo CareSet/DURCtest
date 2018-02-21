@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\inventorytransaction;
-use App\DURC\Controllers\DURC_inventorytransactionController;
+use App\DURC\Controllers\inventorytransactionController as DURCParentController;
 use Illuminate\Http\Request;
 
-//DURC Generated At: Monday 1st of January 2018 04:58:04 PM
-class inventorytransactionController extends DURC_inventorytransactionController
+class inventorytransactionController extends DURCParentController
 {
     /**
      * Display a listing of the resource.

@@ -7,10 +7,9 @@ namespace App;
 This class started life as a DURC model, but itwill no longer be overwritten by the generator
 this is safe to edit.
 
-DURC Generated At: Monday 1st of January 2018 04:58:04 PM
 
 */
-class authortype extends \App\DURC\Models\DURC_authortype
+class authortype extends \App\DURC\Models\authortype
 {
 
 	//You may need to change these for 'one to very very many' relationships.
@@ -28,16 +27,20 @@ class authortype extends \App\DURC\Models\DURC_authortype
 			//'updated_at', //datetime
 		]; //end hidden array
 
+
 //DURC HAS_MANY SECTION
+
 /**
-*	DURC is handling the author_book for this authortype in DURC_authortype
+*	DURC is handling the author_book for this authortype in authortype
 *       but you can extend or override the defaults by editing this function...
 */
 	public function author_book(){
 		return parent::author_book();
 	}
 
-//DURC BELONGS_TO SECTION			//DURC did not detect any belongs_to relationships
+
+//DURC BELONGS_TO SECTION
+			//DURC did not detect any belongs_to relationships
 	//your stuff goes here..
 	
 

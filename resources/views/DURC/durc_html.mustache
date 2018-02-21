@@ -10,10 +10,10 @@
     <title>DURC Dashboard</title>
 
     <!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-
+<link rel="stylesheet" href="/css/DURC/anytime.5.2.0.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
 <style>
 body {
@@ -62,7 +62,9 @@ h1 {
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<script src="/js/DURC/anytime.5.2.0.js"></script>
+<script src="/js/DURC/anytimez.5.2.0.js"></script>
   </head>
   <body>
     <header>
@@ -75,7 +77,7 @@ h1 {
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/DURC/">DURC <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="DURC/">DURC <span class="sr-only">(current)</span></a>
             </li>
           </ul>
         </div>
@@ -102,6 +104,10 @@ h1 {
 
             <li class='nav-item'>
               <a class='nav-link' href='/DURC/book/'>book</a>
+            </li>
+
+            <li class='nav-item'>
+              <a class='nav-link' href='/DURC/booleantest/'>booleantest</a>
             </li>
 
             <li class='nav-item'>
@@ -185,15 +191,15 @@ h1 {
             </li>
 
             <li class='nav-item'>
-              <a class='nav-link' href='/DURC/orderdetailstatus/'>orderdetailstatus</a>
+              <a class='nav-link' href='/DURC/orderdetailstat/'>orderdetailstat</a>
             </li>
 
             <li class='nav-item'>
-              <a class='nav-link' href='/DURC/orderstatus/'>orderstatus</a>
+              <a class='nav-link' href='/DURC/orderstat/'>orderstat</a>
             </li>
 
             <li class='nav-item'>
-              <a class='nav-link' href='/DURC/ordertaxstatus/'>ordertaxstatus</a>
+              <a class='nav-link' href='/DURC/ordertaxstat/'>ordertaxstat</a>
             </li>
 
             <li class='nav-item'>
@@ -205,7 +211,7 @@ h1 {
             </li>
 
             <li class='nav-item'>
-              <a class='nav-link' href='/DURC/purchaseorderstatus/'>purchaseorderstatus</a>
+              <a class='nav-link' href='/DURC/purchaseorderstat/'>purchaseorderstat</a>
             </li>
 
             <li class='nav-item'>

@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\foreignkeytestthingy;
-use App\DURC\Controllers\DURC_foreignkeytestthingyController;
+use App\DURC\Controllers\foreignkeytestthingyController as DURCParentController;
 use Illuminate\Http\Request;
 
-//DURC Generated At: Monday 1st of January 2018 04:58:04 PM
-class foreignkeytestthingyController extends DURC_foreignkeytestthingyController
+class foreignkeytestthingyController extends DURCParentController
 {
     /**
      * Display a listing of the resource.

@@ -6,7 +6,7 @@
 {{/has_session_status}}
 
 {{#is_new}}
-<form action='/DURC/author/' method='POST'>
+<form action='/DURC/author' method='POST'>
 {{/is_new}}
 
 {{^is_new}}
@@ -50,25 +50,62 @@
   </div>
 
   <div class='form-group row'>
-    <label for='select_name' class='col-sm-2 col-form-label'>select_name</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='select_name' name='select_name' placeholder='' value='{{select_name}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
     <label for='created_date' class='col-sm-2 col-form-label'>created_date</label>
     <div class='col-sm-10'>
-	Current Value: {{created_date}}<br>
       <input type='text' class='form-control' id='created_date' name='created_date' placeholder='' value='{{created_date}}'>
+
+<button type='button' class='btn btn-primary' id='created_date_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='created_date_TodayNow'> Today and Now</button>
+
+<script>
+	var created_dateConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#created_date_TodayNow').click( function(e) {
+      		$('#created_date').val(created_dateConv.format(new Date())).change(); } );
+
+    	$('#created_date_FontPicker').click(
+      		function(e) {
+        		$('#created_date').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
   <div class='form-group row'>
     <label for='updated_date' class='col-sm-2 col-form-label'>updated_date</label>
     <div class='col-sm-10'>
-	Current Value: {{updated_date}}<br>
       <input type='text' class='form-control' id='updated_date' name='updated_date' placeholder='' value='{{updated_date}}'>
+
+<button type='button' class='btn btn-primary' id='updated_date_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='updated_date_TodayNow'> Today and Now</button>
+
+<script>
+	var updated_dateConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#updated_date_TodayNow').click( function(e) {
+      		$('#updated_date').val(updated_dateConv.format(new Date())).change(); } );
+
+    	$('#updated_date_FontPicker').click(
+      		function(e) {
+        		$('#updated_date').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
@@ -78,8 +115,9 @@
     </div>
   </div>
 
-</fieldset></form>
+</fieldset>
 </div></div>
+</form>
 
 <br>
 <div class='card'>
@@ -122,7 +160,3 @@
 <br>
 </div></div> <!--end has many card-->
 <br>
-<h5>Form Meta Data </h5>
-<ul>
-<li> DURC Generated At: Monday 1st of January 2018 04:58:04 PM </li>
-</ul>

@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\salesreport;
-use App\DURC\Controllers\DURC_salesreportController;
+use App\DURC\Controllers\salesreportController as DURCParentController;
 use Illuminate\Http\Request;
 
-//DURC Generated At: Monday 1st of January 2018 04:58:04 PM
-class salesreportController extends DURC_salesreportController
+class salesreportController extends DURCParentController
 {
     /**
      * Display a listing of the resource.

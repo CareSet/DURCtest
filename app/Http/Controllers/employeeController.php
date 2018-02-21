@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\employee;
-use App\DURC\Controllers\DURC_employeeController;
+use App\DURC\Controllers\employeeController as DURCParentController;
 use Illuminate\Http\Request;
 
-//DURC Generated At: Monday 1st of January 2018 04:58:04 PM
-class employeeController extends DURC_employeeController
+class employeeController extends DURCParentController
 {
     /**
      * Display a listing of the resource.

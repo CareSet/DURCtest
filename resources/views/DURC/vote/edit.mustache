@@ -6,7 +6,7 @@
 {{/has_session_status}}
 
 {{#is_new}}
-<form action='/DURC/vote/' method='POST'>
+<form action='/DURC/vote' method='POST'>
 {{/is_new}}
 
 {{^is_new}}
@@ -49,7 +49,7 @@
 
 $('.select2_post_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/post/',
+    	url: '/DURC/searchjson/post/',
     	dataType: 'json'
   }
 });
@@ -68,16 +68,60 @@ $('.select2_post_id').select2({
   <div class='form-group row'>
     <label for='updated_at' class='col-sm-2 col-form-label'>updated_at</label>
     <div class='col-sm-10'>
-	Current Value: {{updated_at}}<br>
       <input type='text' class='form-control' id='updated_at' name='updated_at' placeholder='' value='{{updated_at}}'>
+
+<button type='button' class='btn btn-primary' id='updated_at_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='updated_at_TodayNow'> Today and Now</button>
+
+<script>
+	var updated_atConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#updated_at_TodayNow').click( function(e) {
+      		$('#updated_at').val(updated_atConv.format(new Date())).change(); } );
+
+    	$('#updated_at_FontPicker').click(
+      		function(e) {
+        		$('#updated_at').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
   <div class='form-group row'>
     <label for='created_at' class='col-sm-2 col-form-label'>created_at</label>
     <div class='col-sm-10'>
-	Current Value: {{created_at}}<br>
       <input type='text' class='form-control' id='created_at' name='created_at' placeholder='' value='{{created_at}}'>
+
+<button type='button' class='btn btn-primary' id='created_at_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='created_at_TodayNow'> Today and Now</button>
+
+<script>
+	var created_atConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#created_at_TodayNow').click( function(e) {
+      		$('#created_at').val(created_atConv.format(new Date())).change(); } );
+
+    	$('#created_at_FontPicker').click(
+      		function(e) {
+        		$('#created_at').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
@@ -87,8 +131,9 @@ $('.select2_post_id').select2({
     </div>
   </div>
 
-</fieldset></form>
+</fieldset>
 </div></div>
+</form>
 
 <br>
 <div class='card'>
@@ -134,7 +179,3 @@ $('.select2_post_id').select2({
 </div></div> <!-- end post card-->
 </div></div> <!--end belongs to card-->
 <br>
-<h5>Form Meta Data </h5>
-<ul>
-<li> DURC Generated At: Monday 1st of January 2018 04:58:04 PM </li>
-</ul>

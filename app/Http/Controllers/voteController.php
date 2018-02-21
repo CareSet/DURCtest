@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\vote;
-use App\DURC\Controllers\DURC_voteController;
+use App\DURC\Controllers\voteController as DURCParentController;
 use Illuminate\Http\Request;
 
-//DURC Generated At: Monday 1st of January 2018 04:58:04 PM
-class voteController extends DURC_voteController
+class voteController extends DURCParentController
 {
     /**
      * Display a listing of the resource.

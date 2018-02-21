@@ -177,6 +177,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        ProAI\Handlebars\HandlebarsServiceProvider::class,
+        CareSet\DURC\DURCServiceProvider::class,
+
     ],
 
     /*

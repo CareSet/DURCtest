@@ -7,10 +7,9 @@ namespace App;
 This class started life as a DURC model, but itwill no longer be overwritten by the generator
 this is safe to edit.
 
-DURC Generated At: Monday 1st of January 2018 04:58:04 PM
 
 */
-class invoice extends \App\DURC\Models\DURC_invoice
+class invoice extends \App\DURC\Models\invoice
 {
 
 	//You may need to change these for 'one to very very many' relationships.
@@ -31,9 +30,13 @@ class invoice extends \App\DURC\Models\DURC_invoice
 			//'amountDue', //decimal
 		]; //end hidden array
 
-//DURC HAS_MANY SECTION			//DURC did not detect any has_many relationships//DURC BELONGS_TO SECTION
+
+//DURC HAS_MANY SECTION
+			//DURC did not detect any has_many relationships
+//DURC BELONGS_TO SECTION
+
 /**
-*	DURC is handling the order for this invoice in DURC_invoice
+*	DURC is handling the order for this invoice in invoice
 *       but you can extend or override the defaults by editing this function...
 */
 	public function order(){
