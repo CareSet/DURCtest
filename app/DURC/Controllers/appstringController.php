@@ -238,7 +238,8 @@ class appstringController extends DURCController
 
 		//put the contents into the view...
 		foreach($appstring->toArray() as $key => $value){
-			if ( DURC::mapColumnDataTypeToInputType( $appstring::$field_type_map[$key], $key, $value ) == 'boolean' ) {
+			if ( isset($appstring::$field_type_map[$key]) &&
+			    DURC::mapColumnDataTypeToInputType( $appstring::$field_type_map[$key], $key, $value ) == 'boolean' ) {
                 if ( $value > 0 ) {
                     $this->view_data[ $key . '_checkbox' ] = 'checked';
                 }

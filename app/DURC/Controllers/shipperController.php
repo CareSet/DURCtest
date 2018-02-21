@@ -254,7 +254,8 @@ class shipperController extends DURCController
 
 		//put the contents into the view...
 		foreach($shipper->toArray() as $key => $value){
-			if ( DURC::mapColumnDataTypeToInputType( $shipper::$field_type_map[$key], $key, $value ) == 'boolean' ) {
+			if ( isset($shipper::$field_type_map[$key]) &&
+			    DURC::mapColumnDataTypeToInputType( $shipper::$field_type_map[$key], $key, $value ) == 'boolean' ) {
                 if ( $value > 0 ) {
                     $this->view_data[ $key . '_checkbox' ] = 'checked';
                 }

@@ -241,7 +241,8 @@ class postController extends DURCController
 
 		//put the contents into the view...
 		foreach($post->toArray() as $key => $value){
-			if ( DURC::mapColumnDataTypeToInputType( $post::$field_type_map[$key], $key, $value ) == 'boolean' ) {
+			if ( isset($post::$field_type_map[$key]) &&
+			    DURC::mapColumnDataTypeToInputType( $post::$field_type_map[$key], $key, $value ) == 'boolean' ) {
                 if ( $value > 0 ) {
                     $this->view_data[ $key . '_checkbox' ] = 'checked';
                 }

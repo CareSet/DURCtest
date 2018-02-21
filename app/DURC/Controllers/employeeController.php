@@ -254,7 +254,8 @@ class employeeController extends DURCController
 
 		//put the contents into the view...
 		foreach($employee->toArray() as $key => $value){
-			if ( DURC::mapColumnDataTypeToInputType( $employee::$field_type_map[$key], $key, $value ) == 'boolean' ) {
+			if ( isset($employee::$field_type_map[$key]) &&
+			    DURC::mapColumnDataTypeToInputType( $employee::$field_type_map[$key], $key, $value ) == 'boolean' ) {
                 if ( $value > 0 ) {
                     $this->view_data[ $key . '_checkbox' ] = 'checked';
                 }

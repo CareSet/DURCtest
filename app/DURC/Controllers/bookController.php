@@ -241,7 +241,8 @@ class bookController extends DURCController
 
 		//put the contents into the view...
 		foreach($book->toArray() as $key => $value){
-			if ( DURC::mapColumnDataTypeToInputType( $book::$field_type_map[$key], $key, $value ) == 'boolean' ) {
+			if ( isset($book::$field_type_map[$key]) &&
+			    DURC::mapColumnDataTypeToInputType( $book::$field_type_map[$key], $key, $value ) == 'boolean' ) {
                 if ( $value > 0 ) {
                     $this->view_data[ $key . '_checkbox' ] = 'checked';
                 }

@@ -240,7 +240,8 @@ class authortypeController extends DURCController
 
 		//put the contents into the view...
 		foreach($authortype->toArray() as $key => $value){
-			if ( DURC::mapColumnDataTypeToInputType( $authortype::$field_type_map[$key], $key, $value ) == 'boolean' ) {
+			if ( isset($authortype::$field_type_map[$key]) &&
+			    DURC::mapColumnDataTypeToInputType( $authortype::$field_type_map[$key], $key, $value ) == 'boolean' ) {
                 if ( $value > 0 ) {
                     $this->view_data[ $key . '_checkbox' ] = 'checked';
                 }

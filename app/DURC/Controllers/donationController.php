@@ -243,7 +243,8 @@ class donationController extends DURCController
 
 		//put the contents into the view...
 		foreach($donation->toArray() as $key => $value){
-			if ( DURC::mapColumnDataTypeToInputType( $donation::$field_type_map[$key], $key, $value ) == 'boolean' ) {
+			if ( isset($donation::$field_type_map[$key]) &&
+			    DURC::mapColumnDataTypeToInputType( $donation::$field_type_map[$key], $key, $value ) == 'boolean' ) {
                 if ( $value > 0 ) {
                     $this->view_data[ $key . '_checkbox' ] = 'checked';
                 }

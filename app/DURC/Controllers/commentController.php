@@ -242,7 +242,8 @@ class commentController extends DURCController
 
 		//put the contents into the view...
 		foreach($comment->toArray() as $key => $value){
-			if ( DURC::mapColumnDataTypeToInputType( $comment::$field_type_map[$key], $key, $value ) == 'boolean' ) {
+			if ( isset($comment::$field_type_map[$key]) &&
+			    DURC::mapColumnDataTypeToInputType( $comment::$field_type_map[$key], $key, $value ) == 'boolean' ) {
                 if ( $value > 0 ) {
                     $this->view_data[ $key . '_checkbox' ] = 'checked';
                 }

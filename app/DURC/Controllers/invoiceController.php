@@ -244,7 +244,8 @@ class invoiceController extends DURCController
 
 		//put the contents into the view...
 		foreach($invoice->toArray() as $key => $value){
-			if ( DURC::mapColumnDataTypeToInputType( $invoice::$field_type_map[$key], $key, $value ) == 'boolean' ) {
+			if ( isset($invoice::$field_type_map[$key]) &&
+			    DURC::mapColumnDataTypeToInputType( $invoice::$field_type_map[$key], $key, $value ) == 'boolean' ) {
                 if ( $value > 0 ) {
                     $this->view_data[ $key . '_checkbox' ] = 'checked';
                 }

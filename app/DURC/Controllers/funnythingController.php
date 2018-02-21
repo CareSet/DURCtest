@@ -249,7 +249,8 @@ class funnythingController extends DURCController
 
 		//put the contents into the view...
 		foreach($funnything->toArray() as $key => $value){
-			if ( DURC::mapColumnDataTypeToInputType( $funnything::$field_type_map[$key], $key, $value ) == 'boolean' ) {
+			if ( isset($funnything::$field_type_map[$key]) &&
+			    DURC::mapColumnDataTypeToInputType( $funnything::$field_type_map[$key], $key, $value ) == 'boolean' ) {
                 if ( $value > 0 ) {
                     $this->view_data[ $key . '_checkbox' ] = 'checked';
                 }

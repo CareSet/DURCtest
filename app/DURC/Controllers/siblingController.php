@@ -244,7 +244,8 @@ class siblingController extends DURCController
 
 		//put the contents into the view...
 		foreach($sibling->toArray() as $key => $value){
-			if ( DURC::mapColumnDataTypeToInputType( $sibling::$field_type_map[$key], $key, $value ) == 'boolean' ) {
+			if ( isset($sibling::$field_type_map[$key]) &&
+			    DURC::mapColumnDataTypeToInputType( $sibling::$field_type_map[$key], $key, $value ) == 'boolean' ) {
                 if ( $value > 0 ) {
                     $this->view_data[ $key . '_checkbox' ] = 'checked';
                 }

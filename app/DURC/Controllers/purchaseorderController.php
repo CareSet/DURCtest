@@ -256,7 +256,8 @@ class purchaseorderController extends DURCController
 
 		//put the contents into the view...
 		foreach($purchaseorder->toArray() as $key => $value){
-			if ( DURC::mapColumnDataTypeToInputType( $purchaseorder::$field_type_map[$key], $key, $value ) == 'boolean' ) {
+			if ( isset($purchaseorder::$field_type_map[$key]) &&
+			    DURC::mapColumnDataTypeToInputType( $purchaseorder::$field_type_map[$key], $key, $value ) == 'boolean' ) {
                 if ( $value > 0 ) {
                     $this->view_data[ $key . '_checkbox' ] = 'checked';
                 }

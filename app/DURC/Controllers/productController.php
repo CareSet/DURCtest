@@ -250,7 +250,8 @@ class productController extends DURCController
 
 		//put the contents into the view...
 		foreach($product->toArray() as $key => $value){
-			if ( DURC::mapColumnDataTypeToInputType( $product::$field_type_map[$key], $key, $value ) == 'boolean' ) {
+			if ( isset($product::$field_type_map[$key]) &&
+			    DURC::mapColumnDataTypeToInputType( $product::$field_type_map[$key], $key, $value ) == 'boolean' ) {
                 if ( $value > 0 ) {
                     $this->view_data[ $key . '_checkbox' ] = 'checked';
                 }
