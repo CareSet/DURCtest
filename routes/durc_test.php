@@ -64,6 +64,14 @@ Route::get('durctest', function () {
  			'/DURC/sibling/create', //from: aaaDurctest.sibling 
  			'/DURC/sibling/1', //from: aaaDurctest.sibling 
  			'/DURC/sibling/1/edit', //from: aaaDurctest.sibling 
+ 			'/DURC/test_boolean', //from: aaaDurctest.test_boolean 
+ 			'/DURC/test_boolean/create', //from: aaaDurctest.test_boolean 
+ 			'/DURC/test_boolean/1', //from: aaaDurctest.test_boolean 
+ 			'/DURC/test_boolean/1/edit', //from: aaaDurctest.test_boolean 
+ 			'/DURC/test_created_only', //from: aaaDurctest.test_created_only 
+ 			'/DURC/test_created_only/create', //from: aaaDurctest.test_created_only 
+ 			'/DURC/test_created_only/1', //from: aaaDurctest.test_created_only 
+ 			'/DURC/test_created_only/1/edit', //from: aaaDurctest.test_created_only 
  			'/DURC/vote', //from: aaaDurctest.vote 
  			'/DURC/vote/create', //from: aaaDurctest.vote 
  			'/DURC/vote/1', //from: aaaDurctest.vote 

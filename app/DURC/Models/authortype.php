@@ -28,10 +28,9 @@ class authortype extends DURCModel{
 
 	//DURC did not detect any date fields
 
-	public $timestamps = false;
-	//DURC NOTE: did not find updated_at and created_at fields for this model
-
-	
+	public $timestamps = true;
+	const UPDATED_AT = 'updated_at';
+	const CREATED_AT = 'created_at';
 
 	//for many functions to work, we need to be able to do a lookup on the field_type and get back the MariaDB/MySQL column type.
 	static $field_type_map = [

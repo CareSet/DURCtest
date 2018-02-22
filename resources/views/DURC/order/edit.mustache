@@ -31,14 +31,14 @@
     <legend>Edit {{durc_instance_name}}  </legend>
 	<input type='hidden' name='_token' value='{{csrf_token}}'>
 	
-  <div class='form-group row'>
+  <div class='form-group row {{id_row_class}}'>
     <label for='id' class='col-sm-2 col-form-label'>id</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='id' name='id' placeholder='' value='{{id}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{employee_id_row_class}}'>
     <label for='employee_id' class='col-sm-2 col-form-label'>employee_id</label>
     <div class='col-sm-10'>
 	Current id value: {{employee_id}} (see below for lookup value)<br>
@@ -61,7 +61,7 @@ $('.select2_employee_id').select2({
 </script>
 
 
-  <div class='form-group row'>
+  <div class='form-group row {{customer_id_row_class}}'>
     <label for='customer_id' class='col-sm-2 col-form-label'>customer_id</label>
     <div class='col-sm-10'>
 	Current id value: {{customer_id}} (see below for lookup value)<br>
@@ -84,7 +84,7 @@ $('.select2_customer_id').select2({
 </script>
 
 
-  <div class='form-group row'>
+  <div class='form-group row {{orderDate_row_class}}'>
     <label for='orderDate' class='col-sm-2 col-form-label'>orderDate</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='orderDate' name='orderDate' placeholder='' value='{{orderDate}}'>
@@ -114,7 +114,7 @@ $('.select2_customer_id').select2({
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{shippedDate_row_class}}'>
     <label for='shippedDate' class='col-sm-2 col-form-label'>shippedDate</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='shippedDate' name='shippedDate' placeholder='' value='{{shippedDate}}'>
@@ -144,7 +144,7 @@ $('.select2_customer_id').select2({
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{shipper_id_row_class}}'>
     <label for='shipper_id' class='col-sm-2 col-form-label'>shipper_id</label>
     <div class='col-sm-10'>
 	Current id value: {{shipper_id}} (see below for lookup value)<br>
@@ -167,70 +167,70 @@ $('.select2_shipper_id').select2({
 </script>
 
 
-  <div class='form-group row'>
+  <div class='form-group row {{shipName_row_class}}'>
     <label for='shipName' class='col-sm-2 col-form-label'>shipName</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='shipName' name='shipName' placeholder='' value='{{shipName}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{shipAddress_row_class}}'>
     <label for='shipAddress' class='col-sm-2 col-form-label'>shipAddress</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='shipAddress' name='shipAddress' placeholder='' value='{{shipAddress}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{shipCity_row_class}}'>
     <label for='shipCity' class='col-sm-2 col-form-label'>shipCity</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='shipCity' name='shipCity' placeholder='' value='{{shipCity}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{shipStateProvince_row_class}}'>
     <label for='shipStateProvince' class='col-sm-2 col-form-label'>shipStateProvince</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='shipStateProvince' name='shipStateProvince' placeholder='' value='{{shipStateProvince}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{shipZipPostalCode_row_class}}'>
     <label for='shipZipPostalCode' class='col-sm-2 col-form-label'>shipZipPostalCode</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='shipZipPostalCode' name='shipZipPostalCode' placeholder='' value='{{shipZipPostalCode}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{shipCountryRegion_row_class}}'>
     <label for='shipCountryRegion' class='col-sm-2 col-form-label'>shipCountryRegion</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='shipCountryRegion' name='shipCountryRegion' placeholder='' value='{{shipCountryRegion}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{shippingFee_row_class}}'>
     <label for='shippingFee' class='col-sm-2 col-form-label'>shippingFee</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='shippingFee' name='shippingFee' placeholder='' value='{{shippingFee}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{taxes_row_class}}'>
     <label for='taxes' class='col-sm-2 col-form-label'>taxes</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='taxes' name='taxes' placeholder='' value='{{taxes}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{paymentType_row_class}}'>
     <label for='paymentType' class='col-sm-2 col-form-label'>paymentType</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='paymentType' name='paymentType' placeholder='' value='{{paymentType}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{paidDate_row_class}}'>
     <label for='paidDate' class='col-sm-2 col-form-label'>paidDate</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='paidDate' name='paidDate' placeholder='' value='{{paidDate}}'>
@@ -260,21 +260,21 @@ $('.select2_shipper_id').select2({
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{notes_row_class}}'>
     <label for='notes' class='col-sm-2 col-form-label'>notes</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='notes' name='notes' placeholder='' value='{{notes}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{taxRate_row_class}}'>
     <label for='taxRate' class='col-sm-2 col-form-label'>taxRate</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='taxRate' name='taxRate' placeholder='' value='{{taxRate}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{taxStatus_id_row_class}}'>
     <label for='taxStatus_id' class='col-sm-2 col-form-label'>taxStatus_id</label>
     <div class='col-sm-10'>
 	Current id value: {{taxStatus_id}} (see below for lookup value)<br>
@@ -297,7 +297,7 @@ $('.select2_taxStatus_id').select2({
 </script>
 
 
-  <div class='form-group row'>
+  <div class='form-group row {{status_id_row_class}}'>
     <label for='status_id' class='col-sm-2 col-form-label'>status_id</label>
     <div class='col-sm-10'>
 	Current id value: {{status_id}} (see below for lookup value)<br>

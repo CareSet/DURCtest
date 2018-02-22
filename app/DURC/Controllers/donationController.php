@@ -14,6 +14,12 @@ class donationController extends DURCController
 
 	public $view_data = [];
 
+	protected static $hidden_fields_array = [
+		'created_at',
+		'updated_at',
+
+	];
+
 
 	public function getWithArgumentArray(){
 		
@@ -37,7 +43,35 @@ class donationController extends DURCController
 			$return_me[$key] = $value;
         	}
 
-		//collapse joined data..
+		//collapse and format joined data..
+		$return_me_data = [];
+        foreach($return_me['data'] as $data_i => $data_row){
+                foreach($data_row as $key => $value){
+                        if(is_array($value)){
+                                foreach($value as $lowest_key => $lowest_data){
+                                        //then this is a loaded attribute..
+                                        //lets move it one level higher...
+
+                                        if ( isset( donation::$field_type_map[$lowest_key] ) ) {
+                                            $field_type = donation::$field_type_map[ $lowest_key ];
+                                            $return_me_data[$data_i][$key .'_id_DURClabel'] = DURC::formatForDisplay( $field_type, $lowest_key, $lowest_data, true );
+                                        } else {
+                                            $return_me_data[$data_i][$key .'_id_DURClabel'] = $lowest_data;
+                                        }
+                                }
+                        }
+
+                        if ( isset( donation::$field_type_map[$key] ) ) {
+                            $field_type = donation::$field_type_map[ $key ];
+                            $return_me_data[$data_i][$key] = DURC::formatForDisplay( $field_type, $key, $value, true );
+                        } else {
+                            $return_me_data[$data_i][$key] = $value;
+                        }
+                }
+        }
+        $return_me['data'] = $return_me_data;
+		
+		
                 foreach($return_me['data'] as $data_i => $data_row){
                         foreach($data_row as $key => $value){
                                 if(is_array($value)){
@@ -174,8 +208,6 @@ class donationController extends DURCController
 			$tmp_donation->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
 		$tmp_donation->amount = DURC::formatForStorage( 'amount', 'int', $request->amount ); 
 		$tmp_donation->nonprofitcorp_id = DURC::formatForStorage( 'nonprofitcorp_id', 'int', $request->nonprofitcorp_id ); 
-		$tmp_donation->created_at = DURC::formatForStorage( 'created_at', 'datetime', $request->created_at ); 
-		$tmp_donation->updated_at = DURC::formatForStorage( 'updated_at', 'datetime', $request->updated_at ); 
 		$tmp_donation->deleted_at = DURC::formatForStorage( 'deleted_at', 'datetime', $request->deleted_at ); 
 		$tmp_donation->save();
 
@@ -235,6 +267,15 @@ class donationController extends DURCController
 	}
 
 	$this->view_data['csrf_token'] = csrf_token();
+	
+	
+	foreach ( donation::$field_type_map as $column_name => $field_type ) {
+        // If this field name is in the configured list of hidden fields, do not display the row.
+        $this->view_data["{$column_name}_row_class"] = '';
+        if ( in_array( $column_name, self::$hidden_fields_array ) ) {
+            $this->view_data["{$column_name}_row_class"] = 'd-none';
+        }
+    }
 
 	if($donation->exists){	//we will not have old data if this is a new object
 
@@ -243,14 +284,11 @@ class donationController extends DURCController
 
 		//put the contents into the view...
 		foreach($donation->toArray() as $key => $value){
-			if ( isset($donation::$field_type_map[$key]) &&
-			    DURC::mapColumnDataTypeToInputType( $donation::$field_type_map[$key], $key, $value ) == 'boolean' ) {
-                if ( $value > 0 ) {
-                    $this->view_data[ $key . '_checkbox' ] = 'checked';
-                }
+			if ( isset( donation::$field_type_map[$key] ) ) {
+                $field_type = donation::$field_type_map[ $key ];
+                $this->view_data[$key] = DURC::formatForDisplay( $field_type, $key, $value );
             } else {
-
-                $this->view_data[ $key ] = $value;
+                $this->view_data[$key] = $value;
             }
 		}
 
@@ -286,8 +324,6 @@ class donationController extends DURCController
 			$tmp_donation->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
 		$tmp_donation->amount = DURC::formatForStorage( 'amount', 'int', $request->amount ); 
 		$tmp_donation->nonprofitcorp_id = DURC::formatForStorage( 'nonprofitcorp_id', 'int', $request->nonprofitcorp_id ); 
-		$tmp_donation->created_at = DURC::formatForStorage( 'created_at', 'datetime', $request->created_at ); 
-		$tmp_donation->updated_at = DURC::formatForStorage( 'updated_at', 'datetime', $request->updated_at ); 
 		$tmp_donation->deleted_at = DURC::formatForStorage( 'deleted_at', 'datetime', $request->deleted_at ); 
 		$tmp_donation->save();
 

@@ -14,6 +14,12 @@ class voteController extends DURCController
 
 	public $view_data = [];
 
+	protected static $hidden_fields_array = [
+		'created_at',
+		'updated_at',
+
+	];
+
 
 	public function getWithArgumentArray(){
 		
@@ -37,7 +43,35 @@ class voteController extends DURCController
 			$return_me[$key] = $value;
         	}
 
-		//collapse joined data..
+		//collapse and format joined data..
+		$return_me_data = [];
+        foreach($return_me['data'] as $data_i => $data_row){
+                foreach($data_row as $key => $value){
+                        if(is_array($value)){
+                                foreach($value as $lowest_key => $lowest_data){
+                                        //then this is a loaded attribute..
+                                        //lets move it one level higher...
+
+                                        if ( isset( vote::$field_type_map[$lowest_key] ) ) {
+                                            $field_type = vote::$field_type_map[ $lowest_key ];
+                                            $return_me_data[$data_i][$key .'_id_DURClabel'] = DURC::formatForDisplay( $field_type, $lowest_key, $lowest_data, true );
+                                        } else {
+                                            $return_me_data[$data_i][$key .'_id_DURClabel'] = $lowest_data;
+                                        }
+                                }
+                        }
+
+                        if ( isset( vote::$field_type_map[$key] ) ) {
+                            $field_type = vote::$field_type_map[ $key ];
+                            $return_me_data[$data_i][$key] = DURC::formatForDisplay( $field_type, $key, $value, true );
+                        } else {
+                            $return_me_data[$data_i][$key] = $value;
+                        }
+                }
+        }
+        $return_me['data'] = $return_me_data;
+		
+		
                 foreach($return_me['data'] as $data_i => $data_row){
                         foreach($data_row as $key => $value){
                                 if(is_array($value)){
@@ -174,8 +208,6 @@ class voteController extends DURCController
 			$tmp_vote->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
 		$tmp_vote->post_id = DURC::formatForStorage( 'post_id', 'int', $request->post_id ); 
 		$tmp_vote->votenum = DURC::formatForStorage( 'votenum', 'varchar', $request->votenum ); 
-		$tmp_vote->updated_at = DURC::formatForStorage( 'updated_at', 'datetime', $request->updated_at ); 
-		$tmp_vote->created_at = DURC::formatForStorage( 'created_at', 'datetime', $request->created_at ); 
 		$tmp_vote->save();
 
 
@@ -234,6 +266,15 @@ class voteController extends DURCController
 	}
 
 	$this->view_data['csrf_token'] = csrf_token();
+	
+	
+	foreach ( vote::$field_type_map as $column_name => $field_type ) {
+        // If this field name is in the configured list of hidden fields, do not display the row.
+        $this->view_data["{$column_name}_row_class"] = '';
+        if ( in_array( $column_name, self::$hidden_fields_array ) ) {
+            $this->view_data["{$column_name}_row_class"] = 'd-none';
+        }
+    }
 
 	if($vote->exists){	//we will not have old data if this is a new object
 
@@ -242,14 +283,11 @@ class voteController extends DURCController
 
 		//put the contents into the view...
 		foreach($vote->toArray() as $key => $value){
-			if ( isset($vote::$field_type_map[$key]) &&
-			    DURC::mapColumnDataTypeToInputType( $vote::$field_type_map[$key], $key, $value ) == 'boolean' ) {
-                if ( $value > 0 ) {
-                    $this->view_data[ $key . '_checkbox' ] = 'checked';
-                }
+			if ( isset( vote::$field_type_map[$key] ) ) {
+                $field_type = vote::$field_type_map[ $key ];
+                $this->view_data[$key] = DURC::formatForDisplay( $field_type, $key, $value );
             } else {
-
-                $this->view_data[ $key ] = $value;
+                $this->view_data[$key] = $value;
             }
 		}
 
@@ -285,8 +323,6 @@ class voteController extends DURCController
 			$tmp_vote->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
 		$tmp_vote->post_id = DURC::formatForStorage( 'post_id', 'int', $request->post_id ); 
 		$tmp_vote->votenum = DURC::formatForStorage( 'votenum', 'varchar', $request->votenum ); 
-		$tmp_vote->updated_at = DURC::formatForStorage( 'updated_at', 'datetime', $request->updated_at ); 
-		$tmp_vote->created_at = DURC::formatForStorage( 'created_at', 'datetime', $request->created_at ); 
 		$tmp_vote->save();
 
 

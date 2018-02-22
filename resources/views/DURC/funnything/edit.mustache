@@ -31,42 +31,42 @@
     <legend>Edit {{durc_instance_name}}  </legend>
 	<input type='hidden' name='_token' value='{{csrf_token}}'>
 	
-  <div class='form-group row'>
+  <div class='form-group row {{id_row_class}}'>
     <label for='id' class='col-sm-2 col-form-label'>id</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='id' name='id' placeholder='' value='{{id}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thisint_row_class}}'>
     <label for='thisint' class='col-sm-2 col-form-label'>thisint</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thisint' name='thisint' placeholder='' value='{{thisint}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thisfloat_row_class}}'>
     <label for='thisfloat' class='col-sm-2 col-form-label'>thisfloat</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thisfloat' name='thisfloat' placeholder='' value='{{thisfloat}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thisdecimal_row_class}}'>
     <label for='thisdecimal' class='col-sm-2 col-form-label'>thisdecimal</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thisdecimal' name='thisdecimal' placeholder='' value='{{thisdecimal}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thisvarchar_row_class}}'>
     <label for='thisvarchar' class='col-sm-2 col-form-label'>thisvarchar</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thisvarchar' name='thisvarchar' placeholder='' value='{{thisvarchar}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thisdate_row_class}}'>
     <label for='thisdate' class='col-sm-2 col-form-label'>thisdate</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thisdate' name='thisdate' placeholder='' value='{{thisdate}}'>
@@ -96,7 +96,7 @@
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thisdatetime_row_class}}'>
     <label for='thisdatetime' class='col-sm-2 col-form-label'>thisdatetime</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thisdatetime' name='thisdatetime' placeholder='' value='{{thisdatetime}}'>
@@ -126,7 +126,7 @@
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thistimestamp_row_class}}'>
     <label for='thistimestamp' class='col-sm-2 col-form-label'>thistimestamp</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thistimestamp' name='thistimestamp' placeholder='' value='{{thistimestamp}}'>
@@ -156,35 +156,35 @@
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thischar_row_class}}'>
     <label for='thischar' class='col-sm-2 col-form-label'>thischar</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thischar' name='thischar' placeholder='' value='{{thischar}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thistext_row_class}}'>
     <label for='thistext' class='col-sm-2 col-form-label'>thistext</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thistext' name='thistext' placeholder='' value='{{thistext}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thisblob_row_class}}'>
     <label for='thisblob' class='col-sm-2 col-form-label'>thisblob</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thisblob' name='thisblob' placeholder='' value='{{thisblob}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thistinyint_row_class}}'>
     <label for='thistinyint' class='col-sm-2 col-form-label'>thistinyint</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thistinyint' name='thistinyint' placeholder='' value='{{thistinyint}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thistinytext_row_class}}'>
     <label for='thistinytext' class='col-sm-2 col-form-label'>thistinytext</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thistinytext' name='thistinytext' placeholder='' value='{{thistinytext}}'>

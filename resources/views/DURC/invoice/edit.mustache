@@ -31,14 +31,14 @@
     <legend>Edit {{durc_instance_name}}  </legend>
 	<input type='hidden' name='_token' value='{{csrf_token}}'>
 	
-  <div class='form-group row'>
+  <div class='form-group row {{id_row_class}}'>
     <label for='id' class='col-sm-2 col-form-label'>id</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='id' name='id' placeholder='' value='{{id}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{order_id_row_class}}'>
     <label for='order_id' class='col-sm-2 col-form-label'>order_id</label>
     <div class='col-sm-10'>
 	Current id value: {{order_id}} (see below for lookup value)<br>
@@ -61,7 +61,7 @@ $('.select2_order_id').select2({
 </script>
 
 
-  <div class='form-group row'>
+  <div class='form-group row {{invoiceDate_row_class}}'>
     <label for='invoiceDate' class='col-sm-2 col-form-label'>invoiceDate</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='invoiceDate' name='invoiceDate' placeholder='' value='{{invoiceDate}}'>
@@ -91,7 +91,7 @@ $('.select2_order_id').select2({
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{dueDate_row_class}}'>
     <label for='dueDate' class='col-sm-2 col-form-label'>dueDate</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='dueDate' name='dueDate' placeholder='' value='{{dueDate}}'>
@@ -121,21 +121,21 @@ $('.select2_order_id').select2({
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{tax_row_class}}'>
     <label for='tax' class='col-sm-2 col-form-label'>tax</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='tax' name='tax' placeholder='' value='{{tax}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{shipping_row_class}}'>
     <label for='shipping' class='col-sm-2 col-form-label'>shipping</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='shipping' name='shipping' placeholder='' value='{{shipping}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{amountDue_row_class}}'>
     <label for='amountDue' class='col-sm-2 col-form-label'>amountDue</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='amountDue' name='amountDue' placeholder='' value='{{amountDue}}'>

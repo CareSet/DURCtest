@@ -79,6 +79,18 @@ Route::get("/DURC/json/sibling/{sibling_id}", 'siblingController@jsonone');
 Route::get("/DURC/json/sibling/", 'siblingController@jsonall');
 Route::get("/DURC/searchjson/sibling/", 'siblingController@search');
  
+//DURC->	aaaDurctest.test_boolean
+Route::resource("/DURC/test_boolean", 'test_booleanController');
+Route::get("/DURC/json/test_boolean/{test_boolean_id}", 'test_booleanController@jsonone');
+Route::get("/DURC/json/test_boolean/", 'test_booleanController@jsonall');
+Route::get("/DURC/searchjson/test_boolean/", 'test_booleanController@search');
+ 
+//DURC->	aaaDurctest.test_created_only
+Route::resource("/DURC/test_created_only", 'test_created_onlyController');
+Route::get("/DURC/json/test_created_only/{test_created_only_id}", 'test_created_onlyController@jsonone');
+Route::get("/DURC/json/test_created_only/", 'test_created_onlyController@jsonall');
+Route::get("/DURC/searchjson/test_created_only/", 'test_created_onlyController@search');
+ 
 //DURC->	aaaDurctest.vote
 Route::resource("/DURC/vote", 'voteController');
 Route::get("/DURC/json/vote/{vote_id}", 'voteController@jsonone');
