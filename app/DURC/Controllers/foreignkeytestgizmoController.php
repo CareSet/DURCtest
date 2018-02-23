@@ -17,6 +17,7 @@ class foreignkeytestgizmoController extends DURCController
 	protected static $hidden_fields_array = [
 		'created_at',
 		'updated_at',
+		'deleted_at',
 
 	];
 
