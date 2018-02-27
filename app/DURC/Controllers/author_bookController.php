@@ -340,8 +340,17 @@ class author_bookController extends DURCController
      * @return \Illuminate\Http\Response
      */
     public function destroy(author_book $author_book){
-	$main_template_name = $this->_getMainTemplateName();
-	$durc_template_results = view('DURC.author_book.destroy');        
-	return view($main_template_name,['content' => $durc_template_results]);
+	    return author_book::destroy( $author_book->id );  
+    }
+    
+    /**
+     * Restore the specified resource from storage.
+     * @param  $id ID of resource
+     * @return \Illuminate\Http\Response
+     */
+    public function restore( $id )
+    {
+        $author_book = author_book::withTrashed()->find($id)->restore();
+        return redirect("/DURC/test_soft_delete/$id")->with('status', 'Data Restored!');
     }
 }

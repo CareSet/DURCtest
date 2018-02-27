@@ -365,8 +365,17 @@ class purchaseorderController extends DURCController
      * @return \Illuminate\Http\Response
      */
     public function destroy(purchaseorder $purchaseorder){
-	$main_template_name = $this->_getMainTemplateName();
-	$durc_template_results = view('DURC.purchaseorder.destroy');        
-	return view($main_template_name,['content' => $durc_template_results]);
+	    return purchaseorder::destroy( $purchaseorder->id );  
+    }
+    
+    /**
+     * Restore the specified resource from storage.
+     * @param  $id ID of resource
+     * @return \Illuminate\Http\Response
+     */
+    public function restore( $id )
+    {
+        $purchaseorder = purchaseorder::withTrashed()->find($id)->restore();
+        return redirect("/DURC/test_soft_delete/$id")->with('status', 'Data Restored!');
     }
 }

@@ -334,8 +334,17 @@ class test_created_onlyController extends DURCController
      * @return \Illuminate\Http\Response
      */
     public function destroy(test_created_only $test_created_only){
-	$main_template_name = $this->_getMainTemplateName();
-	$durc_template_results = view('DURC.test_created_only.destroy');        
-	return view($main_template_name,['content' => $durc_template_results]);
+	    return test_created_only::destroy( $test_created_only->id );  
+    }
+    
+    /**
+     * Restore the specified resource from storage.
+     * @param  $id ID of resource
+     * @return \Illuminate\Http\Response
+     */
+    public function restore( $id )
+    {
+        $test_created_only = test_created_only::withTrashed()->find($id)->restore();
+        return redirect("/DURC/test_soft_delete/$id")->with('status', 'Data Restored!');
     }
 }

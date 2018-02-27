@@ -21,16 +21,6 @@ class test_soft_deleteController extends DURCController
 
 	];
 
-    public function destroy( test_soft_delete $test_soft_delete )
-    {
-        return test_soft_delete::destroy( $test_soft_delete->id );
-    }
-
-    public function restore( $id )
-    {
-        $test_soft_delete = test_soft_delete::withTrashed()->find($id)->restore();
-        return redirect("/DURC/test_soft_delete/$id")->with('status', 'Data Restored!');
-    }
 
 	public function getWithArgumentArray(){
 		
@@ -330,9 +320,9 @@ class test_soft_deleteController extends DURCController
     public function update(Request $request, test_soft_delete $test_soft_delete){
 
 	$tmp_test_soft_delete = $test_soft_delete;
-			$tmp_test_soft_delete->id = DURC::formatForStorage( 'id', 'int', $request->id );
-		$tmp_test_soft_delete->label = DURC::formatForStorage( 'label', 'varchar', $request->label );
-		$tmp_test_soft_delete->deleted_at = DURC::formatForStorage( 'deleted_at', 'datetime', $request->deleted_at );
+			$tmp_test_soft_delete->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
+		$tmp_test_soft_delete->label = DURC::formatForStorage( 'label', 'varchar', $request->label ); 
+		$tmp_test_soft_delete->deleted_at = DURC::formatForStorage( 'deleted_at', 'datetime', $request->deleted_at ); 
 		$tmp_test_soft_delete->save();
 
 
@@ -347,9 +337,18 @@ class test_soft_deleteController extends DURCController
      * @param  \App\test_soft_delete  $test_soft_delete
      * @return \Illuminate\Http\Response
      */
-//    public function destroy(test_soft_delete $test_soft_delete){
-//	$main_template_name = $this->_getMainTemplateName();
-//	$durc_template_results = view('DURC.test_soft_delete.destroy');
-//	return view($main_template_name,['content' => $durc_template_results]);
-//    }
+    public function destroy(test_soft_delete $test_soft_delete){
+	    return test_soft_delete::destroy( $test_soft_delete->id );  
+    }
+    
+    /**
+     * Restore the specified resource from storage.
+     * @param  $id ID of resource
+     * @return \Illuminate\Http\Response
+     */
+    public function restore( $id )
+    {
+        $test_soft_delete = test_soft_delete::withTrashed()->find($id)->restore();
+        return redirect("/DURC/test_soft_delete/$id")->with('status', 'Data Restored!');
+    }
 }

@@ -333,8 +333,17 @@ class privilegeController extends DURCController
      * @return \Illuminate\Http\Response
      */
     public function destroy(privilege $privilege){
-	$main_template_name = $this->_getMainTemplateName();
-	$durc_template_results = view('DURC.privilege.destroy');        
-	return view($main_template_name,['content' => $durc_template_results]);
+	    return privilege::destroy( $privilege->id );  
+    }
+    
+    /**
+     * Restore the specified resource from storage.
+     * @param  $id ID of resource
+     * @return \Illuminate\Http\Response
+     */
+    public function restore( $id )
+    {
+        $privilege = privilege::withTrashed()->find($id)->restore();
+        return redirect("/DURC/test_soft_delete/$id")->with('status', 'Data Restored!');
     }
 }
