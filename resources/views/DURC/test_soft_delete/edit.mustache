@@ -1,0 +1,158 @@
+
+{{#has_session_status}}
+<div class='alert alert-info' role='alert'>
+  {{session_status}}
+</div>
+{{/has_session_status}}
+
+<div id='delete-success-alert' class='alert alert-success' role='alert' style='display: none;'>
+You have successfully deleted this record. <a href="/DURC/test_soft_delete/restore/{{id}}" data-id="{{id}}" data-controller="test_soft_delete" class='do-recover btn btn-secondary'>Undo</a>
+</div>
+
+{{#is_new}}
+<form action='/DURC/test_soft_delete' method='POST'>
+{{/is_new}}
+
+{{^is_new}}
+<form action='/DURC/test_soft_delete/{{id}}' method='POST'>
+    <input type='hidden' name='_method' value='PUT'>
+{{/is_new}}
+
+	<h1>test_soft_delete</h1>
+<div class='card'>
+  <div class='card-header'>
+<h4> {{durc_instance_name}}</h4>
+<ul>
+<li> <a href='/DURC/test_soft_delete/'>Return to test_soft_delete list</a> </li>
+{{^is_new}}
+<li> <a href='/DURC/test_soft_delete/create'>Create new test_soft_delete </a> </li>
+{{/is_new}}
+</ul>
+  </div>
+<div class='card-body'>
+
+  <fieldset>
+    <legend>Edit {{durc_instance_name}}  </legend>
+	<input type='hidden' name='_token' value='{{csrf_token}}'>
+	
+  <div class='form-group row {{id_row_class}}'>
+    <label for='id' class='col-sm-2 col-form-label'>id</label>
+    <div class='col-sm-10'>
+      <input type='text' class='form-control' id='id' name='id' placeholder='' value='{{id}}'>
+    </div>
+  </div>
+
+  <div class='form-group row {{label_row_class}}'>
+    <label for='label' class='col-sm-2 col-form-label'>label</label>
+    <div class='col-sm-10'>
+      <input type='text' class='form-control' id='label' name='label' placeholder='' value='{{label}}'>
+    </div>
+  </div>
+
+  <div class='form-group row {{created_at_row_class}}'>
+    <label for='created_at' class='col-sm-2 col-form-label'>created_at</label>
+    <div class='col-sm-10'>
+      <input type='text' class='form-control' id='created_at' name='created_at' placeholder='' value='{{created_at}}'>
+
+<button type='button' class='btn btn-primary' id='created_at_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='created_at_TodayNow'> Today and Now</button>
+
+<script>
+	var created_atConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#created_at_TodayNow').click( function(e) {
+      		$('#created_at').val(created_atConv.format(new Date())).change(); } );
+
+    	$('#created_at_FontPicker').click(
+      		function(e) {
+        		$('#created_at').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
+    </div>
+  </div>
+
+  <div class='form-group row {{updated_at_row_class}}'>
+    <label for='updated_at' class='col-sm-2 col-form-label'>updated_at</label>
+    <div class='col-sm-10'>
+      <input type='text' class='form-control' id='updated_at' name='updated_at' placeholder='' value='{{updated_at}}'>
+
+<button type='button' class='btn btn-primary' id='updated_at_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='updated_at_TodayNow'> Today and Now</button>
+
+<script>
+	var updated_atConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#updated_at_TodayNow').click( function(e) {
+      		$('#updated_at').val(updated_atConv.format(new Date())).change(); } );
+
+    	$('#updated_at_FontPicker').click(
+      		function(e) {
+        		$('#updated_at').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
+    </div>
+  </div>
+
+  <div class='form-group row {{deleted_at_row_class}}'>
+    <label for='deleted_at' class='col-sm-2 col-form-label'>deleted_at</label>
+    <div class='col-sm-10'>
+      <input type='text' class='form-control' id='deleted_at' name='deleted_at' placeholder='' value='{{deleted_at}}'>
+
+<button type='button' class='btn btn-primary' id='deleted_at_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='deleted_at_TodayNow'> Today and Now</button>
+
+<script>
+	var deleted_atConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#deleted_at_TodayNow').click( function(e) {
+      		$('#deleted_at').val(deleted_atConv.format(new Date())).change(); } );
+
+    	$('#deleted_at_FontPicker').click(
+      		function(e) {
+        		$('#deleted_at').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
+    </div>
+  </div>
+
+  <div class='form-group row'>
+    <div class='col-sm-1'>
+      <button type='submit' class='btn btn-primary'>Save Data</button>
+    </div>
+
+  </div>
+  <div class='form-group row'>
+      <div class='col-sm-12 text-right'>
+      <button type="button" data-id="{{id}}" data-controller="test_soft_delete" class="do-soft-delete btn btn-outline-danger">Delete</button>
+      </div>
+    </div>
+
+</fieldset>
+</div></div>
+</form>
+
+<br>

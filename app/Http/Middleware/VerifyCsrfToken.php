@@ -13,5 +13,6 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         //
+        // 'http://durc:8888/DURC/*',
     ];
 }

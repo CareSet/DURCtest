@@ -17,6 +17,7 @@ aaaDurctest.author by DURC.
 
 class author extends DURCModel{
 
+    
         // the datbase for this model
         protected $table = 'aaaDurctest.author';
 
@@ -31,6 +32,8 @@ class author extends DURCModel{
 	public $timestamps = true;
 	const UPDATED_AT = 'updated_date';
 	const CREATED_AT = null;
+	
+	
 
 	//for many functions to work, we need to be able to do a lookup on the field_type and get back the MariaDB/MySQL column type.
 	static $field_type_map = [

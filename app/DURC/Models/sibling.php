@@ -17,6 +17,7 @@ aaaDurctest.sibling by DURC.
 
 class sibling extends DURCModel{
 
+    
         // the datbase for this model
         protected $table = 'aaaDurctest.sibling';
 
@@ -32,6 +33,8 @@ class sibling extends DURCModel{
 	public $timestamps = true;
 	const UPDATED_AT = 'updated_at';
 	const CREATED_AT = 'created_at';
+	
+	
 
 	//for many functions to work, we need to be able to do a lookup on the field_type and get back the MariaDB/MySQL column type.
 	static $field_type_map = [

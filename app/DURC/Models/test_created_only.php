@@ -17,6 +17,7 @@ aaaDurctest.test_created_only by DURC.
 
 class test_created_only extends DURCModel{
 
+    
         // the datbase for this model
         protected $table = 'aaaDurctest.test_created_only';
 
@@ -30,6 +31,8 @@ class test_created_only extends DURCModel{
 	public $timestamps = true;
 	const UPDATED_AT = null;
 	const CREATED_AT = 'created_at';
+	
+	
 
 	//for many functions to work, we need to be able to do a lookup on the field_type and get back the MariaDB/MySQL column type.
 	static $field_type_map = [

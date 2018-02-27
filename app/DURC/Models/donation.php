@@ -1,7 +1,7 @@
 <?php
 
 namespace App\DURC\Models;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 use CareSet\DURC\DURCModel;
 /*
 	Note this class was auto-generated from 
@@ -17,6 +17,8 @@ aaaDurctest.donation by DURC.
 
 class donation extends DURCModel{
 
+    use SoftDeletes;
+
         // the datbase for this model
         protected $table = 'aaaDurctest.donation';
 
@@ -31,6 +33,9 @@ class donation extends DURCModel{
 	public $timestamps = true;
 	const UPDATED_AT = 'updated_at';
 	const CREATED_AT = 'created_at';
+	
+	protected $dates = ['deleted_at'];
+
 
 	//for many functions to work, we need to be able to do a lookup on the field_type and get back the MariaDB/MySQL column type.
 	static $field_type_map = [

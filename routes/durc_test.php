@@ -32,10 +32,6 @@ Route::get('durctest', function () {
  			'/DURC/book/create', //from: aaaDurctest.book 
  			'/DURC/book/1', //from: aaaDurctest.book 
  			'/DURC/book/1/edit', //from: aaaDurctest.book 
- 			'/DURC/booleantest', //from: aaaDurctest.booleantest 
- 			'/DURC/booleantest/create', //from: aaaDurctest.booleantest 
- 			'/DURC/booleantest/1', //from: aaaDurctest.booleantest 
- 			'/DURC/booleantest/1/edit', //from: aaaDurctest.booleantest 
  			'/DURC/comment', //from: aaaDurctest.comment 
  			'/DURC/comment/create', //from: aaaDurctest.comment 
  			'/DURC/comment/1', //from: aaaDurctest.comment 
@@ -72,6 +68,10 @@ Route::get('durctest', function () {
  			'/DURC/test_created_only/create', //from: aaaDurctest.test_created_only 
  			'/DURC/test_created_only/1', //from: aaaDurctest.test_created_only 
  			'/DURC/test_created_only/1/edit', //from: aaaDurctest.test_created_only 
+ 			'/DURC/test_soft_delete', //from: aaaDurctest.test_soft_delete 
+ 			'/DURC/test_soft_delete/create', //from: aaaDurctest.test_soft_delete 
+ 			'/DURC/test_soft_delete/1', //from: aaaDurctest.test_soft_delete 
+ 			'/DURC/test_soft_delete/1/edit', //from: aaaDurctest.test_soft_delete 
  			'/DURC/vote', //from: aaaDurctest.vote 
  			'/DURC/vote/create', //from: aaaDurctest.vote 
  			'/DURC/vote/1', //from: aaaDurctest.vote 

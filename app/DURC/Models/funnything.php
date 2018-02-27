@@ -17,6 +17,7 @@ aaaDurctest.funnything by DURC.
 
 class funnything extends DURCModel{
 
+    
         // the datbase for this model
         protected $table = 'aaaDurctest.funnything';
 
@@ -30,6 +31,8 @@ class funnything extends DURCModel{
 	public $timestamps = false;
 	//DURC NOTE: did not find updated_at and created_at fields for this model
 
+	
+	
 	
 
 	//for many functions to work, we need to be able to do a lookup on the field_type and get back the MariaDB/MySQL column type.

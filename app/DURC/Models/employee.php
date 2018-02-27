@@ -17,6 +17,7 @@ northwind_model.employee by DURC.
 
 class employee extends DURCModel{
 
+    
         // the datbase for this model
         protected $table = 'northwind_model.employee';
 
@@ -35,6 +36,8 @@ class employee extends DURCModel{
 	public $timestamps = false;
 	//DURC NOTE: did not find updated_at and created_at fields for this model
 
+	
+	
 	
 
 	//for many functions to work, we need to be able to do a lookup on the field_type and get back the MariaDB/MySQL column type.

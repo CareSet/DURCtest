@@ -31,12 +31,6 @@ Route::get("/DURC/json/book/{book_id}", 'bookController@jsonone');
 Route::get("/DURC/json/book/", 'bookController@jsonall');
 Route::get("/DURC/searchjson/book/", 'bookController@search');
  
-//DURC->	aaaDurctest.booleantest
-Route::resource("/DURC/booleantest", 'booleantestController');
-Route::get("/DURC/json/booleantest/{booleantest_id}", 'booleantestController@jsonone');
-Route::get("/DURC/json/booleantest/", 'booleantestController@jsonall');
-Route::get("/DURC/searchjson/booleantest/", 'booleantestController@search');
- 
 //DURC->	aaaDurctest.comment
 Route::resource("/DURC/comment", 'commentController');
 Route::get("/DURC/json/comment/{comment_id}", 'commentController@jsonone');
@@ -90,6 +84,13 @@ Route::resource("/DURC/test_created_only", 'test_created_onlyController');
 Route::get("/DURC/json/test_created_only/{test_created_only_id}", 'test_created_onlyController@jsonone');
 Route::get("/DURC/json/test_created_only/", 'test_created_onlyController@jsonall');
 Route::get("/DURC/searchjson/test_created_only/", 'test_created_onlyController@search');
+ 
+//DURC->	aaaDurctest.test_soft_delete
+Route::resource("/DURC/test_soft_delete", 'test_soft_deleteController');
+Route::get("/DURC/json/test_soft_delete/{test_soft_delete_id}", 'test_soft_deleteController@jsonone');
+Route::get("/DURC/json/test_soft_delete/", 'test_soft_deleteController@jsonall');
+Route::get("/DURC/searchjson/test_soft_delete/", 'test_soft_deleteController@search');
+Route::get("/DURC/test_soft_delete/restore/{id}", 'test_soft_deleteController@restore');
  
 //DURC->	aaaDurctest.vote
 Route::resource("/DURC/vote", 'voteController');
