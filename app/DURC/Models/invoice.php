@@ -18,6 +18,8 @@ northwind_data.invoice by DURC.
 class invoice extends DURCModel{
 
     
+
+    
         // the datbase for this model
         protected $table = 'northwind_data.invoice';
 
@@ -55,6 +57,11 @@ class invoice extends DURCModel{
 //DURC HAS_MANY SECTION
 
 			//DURC did not detect any has_many relationships
+		
+		
+//DURC HAS_ONE SECTION
+
+			//DURC did not detect any has_one relationships
 
 		
 //DURC BELONGS_TO SECTION

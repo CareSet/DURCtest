@@ -18,6 +18,8 @@ northwind_model.product by DURC.
 class product extends DURCModel{
 
     
+
+    
         // the datbase for this model
         protected $table = 'northwind_model.product';
 
@@ -87,6 +89,11 @@ class product extends DURCModel{
 	}
 
 
+		
+		
+//DURC HAS_ONE SECTION
+
+			//DURC did not detect any has_one relationships
 
 		
 //DURC BELONGS_TO SECTION

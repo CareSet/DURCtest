@@ -32,6 +32,10 @@ Route::get('durctest', function () {
  			'/DURC/book/create', //from: aaaDurctest.book 
  			'/DURC/book/1', //from: aaaDurctest.book 
  			'/DURC/book/1/edit', //from: aaaDurctest.book 
+ 			'/DURC/bookextended', //from: aaaDurctest.bookextended 
+ 			'/DURC/bookextended/create', //from: aaaDurctest.bookextended 
+ 			'/DURC/bookextended/1', //from: aaaDurctest.bookextended 
+ 			'/DURC/bookextended/1/edit', //from: aaaDurctest.bookextended 
  			'/DURC/comment', //from: aaaDurctest.comment 
  			'/DURC/comment/create', //from: aaaDurctest.comment 
  			'/DURC/comment/1', //from: aaaDurctest.comment 

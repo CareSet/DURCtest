@@ -152,13 +152,13 @@
 <br>
 <div class='card'>
   <div class='card-header'>
-    Has Many Relationships
+    Relationships
   </div>
 <div class='card-body'>
 
 <div class='card'>
   <div class='card-header'>
-    author_book ( <a href='/DURC/author_book/'>see all</a> )
+    Has many author_book ( <a href='/DURC/author_book/'>see all</a> )
 {{^author_book}}
 (no values)
 {{/author_book}}
@@ -187,6 +187,42 @@
 </tbody>
 </table>
 </div></div> <!-- end author_book card-->
+<br>
+
+<div class='card'>
+  <div class='card-header'>
+    Has one bookextended ( <a href='/DURC/bookextended/'>see all</a> )
+{{^bookextended}}
+(no values)
+{{/bookextended}}
+  </div>
+<div class='card-body'>
+
+<table id='table_bookextended' class='table table-bordered table-hover table-responsive table-sm'>
+<thead>
+<tr>
+			<th> book_id </th>
+			<th> ISBN </th>
+			<th> local_isle </th>
+			<th> local_shelf </th>
+
+</tr>
+</thead>
+<tbody>
+{{#bookextended}}
+	<tr>
+		{{#.}}
+			<td><a href='/DURC/bookextended/{{book_id}}'>{{book_id}}</a></td>
+			<td>{{ISBN}}</td>
+			<td>{{local_isle}}</td>
+			<td>{{local_shelf}}</td>
+		
+		{{/.}}
+	</tr>
+{{/bookextended}}
+</tbody>
+</table>
+</div></div> <!-- end bookextended card-->
 <br>
 </div></div> <!--end has many card-->
 <br>

@@ -18,6 +18,8 @@ northwind_model.shipper by DURC.
 class shipper extends DURCModel{
 
     
+
+    
         // the datbase for this model
         protected $table = 'northwind_model.shipper';
 
@@ -73,6 +75,11 @@ class shipper extends DURCModel{
 	}
 
 
+		
+		
+//DURC HAS_ONE SECTION
+
+			//DURC did not detect any has_one relationships
 
 		
 //DURC BELONGS_TO SECTION

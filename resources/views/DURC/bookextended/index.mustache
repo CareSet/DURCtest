@@ -1,0 +1,116 @@
+
+<h1>bookextended list </h1>
+Create <a href='/DURC/bookextended/create/'>new bookextended</a><br>
+
+
+{{^is_need_paging}}
+<p>
+{{total}} results. All rows shown.
+</p>
+{{/is_need_paging}}
+
+{{#is_need_paging}}
+
+<div class='dataTables_paginate paging_simple_numbers' id='table_bookextended_page'>
+	<ul class='pagination'>
+		<li class='paginate_button page-item previous {{first_page_class}}' 
+			id='table_bookextended_previous'>
+			<a href='{{first_page_url}}' aria-controls='table_bookextended' data-dt-idx='0' tabindex='0' class='page-link'>First</a>
+		</li>
+		<li class='paginate_button page-item {{prev_page_class}}'>
+			<a href='{{prev_page_url}}' aria-controls='table_bookextended' data-dt-idx='1' tabindex='0' class='page-link'>Previous</a>
+		</li>
+		<li class='paginate_button page-item active'>
+			<a href='#' aria-controls='table_bookextended' data-dt-idx='2' tabindex='0' class='page-link'>{{current_page}}</a>
+		</li>
+		<li class='paginate_button page-item {{next_page_class}} '>
+			<a href='{{next_page_url}}' aria-controls='table_bookextended' data-dt-idx='3' tabindex='0' class='page-link'>Next</a>
+		</li>
+		<li class='paginate_button page-item {{last_page_class}}'>
+			<a href='{{last_page_url}}' aria-controls='table_bookextended' data-dt-idx='4' tabindex='0' class='page-link'>Last</a>
+		</li>
+	</ul>
+</div>
+{{/is_need_paging}}
+
+
+<table id='table_bookextended' class='table table-bordered table-hover table-responsive table-sm'>
+<thead><tr>
+<th scope='col'>book_id</th>
+<th scope='col'>ISBN</th>
+<th scope='col'>local_isle</th>
+<th scope='col'>local_shelf</th>
+
+</tr></thead>
+<tfoot><tr>
+<th scope='col'>book_id</th>
+<th scope='col'>ISBN</th>
+<th scope='col'>local_isle</th>
+<th scope='col'>local_shelf</th>
+
+</tr></tfoot>
+<tbody>
+  {{#data}}
+    <tr>
+				<td>{{book_id_DURClabel}} <a href='/DURC/book/{{book_id}}/'> ({{book_id}})</a> </td>			<td>{{ISBN}}</td>
+			<td>{{local_isle}}</td>
+			<td>{{local_shelf}}</td>
+
+    </tr>
+  {{/data}}
+
+<tbody></table>
+
+
+
+{{^is_need_paging}}
+<p>
+{{total}} results. All rows shown.
+</p>
+{{/is_need_paging}}
+
+{{#is_need_paging}}
+
+<div class='dataTables_paginate paging_simple_numbers' id='table_bookextended_page'>
+	<ul class='pagination'>
+		<li class='paginate_button page-item previous {{first_page_class}}' 
+			id='table_bookextended_previous'>
+			<a href='{{first_page_url}}' aria-controls='table_bookextended' data-dt-idx='0' tabindex='0' class='page-link'>First</a>
+		</li>
+		<li class='paginate_button page-item {{prev_page_class}}'>
+			<a href='{{prev_page_url}}' aria-controls='table_bookextended' data-dt-idx='1' tabindex='0' class='page-link'>Previous</a>
+		</li>
+		<li class='paginate_button page-item active'>
+			<a href='#' aria-controls='table_bookextended' data-dt-idx='2' tabindex='0' class='page-link'>{{current_page}}</a>
+		</li>
+		<li class='paginate_button page-item {{next_page_class}} '>
+			<a href='{{next_page_url}}' aria-controls='table_bookextended' data-dt-idx='3' tabindex='0' class='page-link'>Next</a>
+		</li>
+		<li class='paginate_button page-item {{last_page_class}}'>
+			<a href='{{last_page_url}}' aria-controls='table_bookextended' data-dt-idx='4' tabindex='0' class='page-link'>Last</a>
+		</li>
+	</ul>
+</div>
+{{/is_need_paging}}
+
+
+<script type='text/javascript'>
+//we need a way to check to see if the page is loaded before we call DataTable()
+//but we frequently do not have JQuery yet... it could be loaded at the bottom of the page...
+//so we have a pure JS alternative to the ready() function..
+var DURC_checkReadyState = setInterval(() => {
+  if (document.readyState === 'complete') {
+    clearInterval(DURC_checkReadyState);
+    // document is ready
+    $('#table_bookextended').DataTable(
+{
+        'paging':   false,
+        'info':     false
+}
+);
+  }
+}, 100);
+
+
+</script>
+

@@ -17,6 +17,8 @@ northwind_model.customer by DURC.
 
 class customer extends DURCModel{
 
+    
+
     use SoftDeletes;
 
         // the datbase for this model
@@ -78,6 +80,11 @@ class customer extends DURCModel{
 	}
 
 
+		
+		
+//DURC HAS_ONE SECTION
+
+			//DURC did not detect any has_one relationships
 
 		
 //DURC BELONGS_TO SECTION

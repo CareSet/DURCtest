@@ -19,7 +19,7 @@ class employee extends \App\DURC\Models\employee
 			'createdBy_purchaseorder', //from from many
 			'approvedBy_purchaseorder', //from from many
 			'submittedBy_purchaseorder', //from from many
-			'employeeprivilege', //from from many
+			'employeeprivilege', //from from one
 		];
 
 */
@@ -81,15 +81,6 @@ class employee extends \App\DURC\Models\employee
 */
 	public function submittedBy_purchaseorder(){
 		return parent::submittedBy_purchaseorder();
-	}
-
-
-/**
-*	DURC is handling the employeeprivilege for this employee in employee
-*       but you can extend or override the defaults by editing this function...
-*/
-	public function employeeprivilege(){
-		return parent::employeeprivilege();
 	}
 
 

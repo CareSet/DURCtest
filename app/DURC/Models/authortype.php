@@ -18,6 +18,8 @@ aaaDurctest.authortype by DURC.
 class authortype extends DURCModel{
 
     
+
+    
         // the datbase for this model
         protected $table = 'aaaDurctest.authortype';
 
@@ -58,6 +60,11 @@ class authortype extends DURCModel{
 	}
 
 
+		
+		
+//DURC HAS_ONE SECTION
+
+			//DURC did not detect any has_one relationships
 
 		
 //DURC BELONGS_TO SECTION

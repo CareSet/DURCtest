@@ -174,13 +174,13 @@
 <br>
 <div class='card'>
   <div class='card-header'>
-    Has Many Relationships
+    Relationships
   </div>
 <div class='card-body'>
 
 <div class='card'>
   <div class='card-header'>
-    order ( <a href='/DURC/order/'>see all</a> )
+    Has many order ( <a href='/DURC/order/'>see all</a> )
 {{^order}}
 (no values)
 {{/order}}
@@ -243,7 +243,7 @@
 
 <div class='card'>
   <div class='card-header'>
-    created_by_purchaseorder ( <a href='/DURC/purchaseorder/'>see all</a> )
+    Has many created_by_purchaseorder ( <a href='/DURC/purchaseorder/'>see all</a> )
 {{^created_by_purchaseorder}}
 (no values)
 {{/created_by_purchaseorder}}
@@ -298,7 +298,7 @@
 
 <div class='card'>
   <div class='card-header'>
-    approved_by_purchaseorder ( <a href='/DURC/purchaseorder/'>see all</a> )
+    Has many approved_by_purchaseorder ( <a href='/DURC/purchaseorder/'>see all</a> )
 {{^approved_by_purchaseorder}}
 (no values)
 {{/approved_by_purchaseorder}}
@@ -353,7 +353,7 @@
 
 <div class='card'>
   <div class='card-header'>
-    submitted_by_purchaseorder ( <a href='/DURC/purchaseorder/'>see all</a> )
+    Has many submitted_by_purchaseorder ( <a href='/DURC/purchaseorder/'>see all</a> )
 {{^submitted_by_purchaseorder}}
 (no values)
 {{/submitted_by_purchaseorder}}
@@ -408,7 +408,7 @@
 
 <div class='card'>
   <div class='card-header'>
-    employeeprivilege ( <a href='/DURC/employeeprivilege/'>see all</a> )
+    Has one employeeprivilege ( <a href='/DURC/employeeprivilege/'>see all</a> )
 {{^employeeprivilege}}
 (no values)
 {{/employeeprivilege}}
@@ -427,7 +427,9 @@
 {{#employeeprivilege}}
 	<tr>
 		{{#.}}
-			<td>{{employee_id_DURClabel}} ({{employee_id}}) </td>			<td>{{privilege_id_DURClabel}} ({{privilege_id}}) </td>		
+			<td><a href='/DURC/employeeprivilege/{{employee_id}}'>{{employee_id}}</a></td>
+			<td><a href='/DURC/employeeprivilege/{{privilege_id}}'>{{privilege_id}}</a></td>
+		
 		{{/.}}
 	</tr>
 {{/employeeprivilege}}

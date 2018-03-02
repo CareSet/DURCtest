@@ -18,6 +18,8 @@ northwind_model.supplier by DURC.
 class supplier extends DURCModel{
 
     
+
+    
         // the datbase for this model
         protected $table = 'northwind_model.supplier';
 
@@ -73,6 +75,11 @@ class supplier extends DURCModel{
 	}
 
 
+		
+		
+//DURC HAS_ONE SECTION
+
+			//DURC did not detect any has_one relationships
 
 		
 //DURC BELONGS_TO SECTION

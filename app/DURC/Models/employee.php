@@ -18,6 +18,8 @@ northwind_model.employee by DURC.
 class employee extends DURCModel{
 
     
+
+    
         // the datbase for this model
         protected $table = 'northwind_model.employee';
 
@@ -27,7 +29,7 @@ class employee extends DURCModel{
 			'createdBy_purchaseorder', //from from many
 			'approvedBy_purchaseorder', //from from many
 			'submittedBy_purchaseorder', //from from many
-			'employeeprivilege', //from from many
+			'employeeprivilege', //from from one
 		];
 
 
@@ -101,11 +103,15 @@ class employee extends DURCModel{
 	}
 
 
+		
+		
+//DURC HAS_ONE SECTION
+
 /**
 *	get all the employeeprivilege for this employee
 */
 	public function employeeprivilege(){
-		return $this->hasMany('App\employeeprivilege','employee_id','id');
+		return $this->hasOne('App\employeeprivilege','employee_id','id');
 	}
 
 

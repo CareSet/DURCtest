@@ -18,6 +18,8 @@ northwind_model.appstring by DURC.
 class appstring extends DURCModel{
 
     
+
+    
         // the datbase for this model
         protected $table = 'northwind_model.appstring';
 
@@ -49,6 +51,11 @@ class appstring extends DURCModel{
 //DURC HAS_MANY SECTION
 
 			//DURC did not detect any has_many relationships
+		
+		
+//DURC HAS_ONE SECTION
+
+			//DURC did not detect any has_one relationships
 
 		
 //DURC BELONGS_TO SECTION

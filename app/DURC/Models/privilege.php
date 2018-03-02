@@ -18,12 +18,14 @@ northwind_model.privilege by DURC.
 class privilege extends DURCModel{
 
     
+
+    
         // the datbase for this model
         protected $table = 'northwind_model.privilege';
 
 	//DURC will dymanically copy these into the $with variable... which prevents recursion problem: https://laracasts.com/discuss/channels/eloquent/eager-load-deep-recursion-problem?page=1
 		protected $DURC_selfish_with = [ 
-			'employeeprivilege', //from from many
+			'employeeprivilege', //from from one
 		];
 
 
@@ -49,11 +51,16 @@ class privilege extends DURCModel{
 		
 //DURC HAS_MANY SECTION
 
+			//DURC did not detect any has_many relationships
+		
+		
+//DURC HAS_ONE SECTION
+
 /**
 *	get all the employeeprivilege for this privilege
 */
 	public function employeeprivilege(){
-		return $this->hasMany('App\employeeprivilege','privilege_id','id');
+		return $this->hasOne('App\employeeprivilege','privilege_id','id');
 	}
 
 

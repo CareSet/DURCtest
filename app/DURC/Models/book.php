@@ -18,12 +18,15 @@ aaaDurctest.book by DURC.
 class book extends DURCModel{
 
     
+
+    
         // the datbase for this model
         protected $table = 'aaaDurctest.book';
 
 	//DURC will dymanically copy these into the $with variable... which prevents recursion problem: https://laracasts.com/discuss/channels/eloquent/eager-load-deep-recursion-problem?page=1
 		protected $DURC_selfish_with = [ 
 			'author_book', //from from many
+			'bookextended', //from from one
 		];
 
 
@@ -56,6 +59,18 @@ class book extends DURCModel{
 */
 	public function author_book(){
 		return $this->hasMany('App\author_book','book_id','id');
+	}
+
+
+		
+		
+//DURC HAS_ONE SECTION
+
+/**
+*	get all the bookextended for this book
+*/
+	public function bookextended(){
+		return $this->hasOne('App\bookextended','book_id','id');
 	}
 
 

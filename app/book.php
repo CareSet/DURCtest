@@ -16,6 +16,7 @@ class book extends \App\DURC\Models\book
 /*
 		protected $DURC_selfish_with = [ 
 			'author_book', //from from many
+			'bookextended', //from from one
 		];
 
 */

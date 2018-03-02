@@ -17,6 +17,8 @@ aaaDurctest.test_soft_delete by DURC.
 
 class test_soft_delete extends DURCModel{
 
+    
+
     use SoftDeletes;
 
         // the datbase for this model
@@ -53,6 +55,11 @@ class test_soft_delete extends DURCModel{
 //DURC HAS_MANY SECTION
 
 			//DURC did not detect any has_many relationships
+		
+		
+//DURC HAS_ONE SECTION
+
+			//DURC did not detect any has_one relationships
 
 		
 //DURC BELONGS_TO SECTION

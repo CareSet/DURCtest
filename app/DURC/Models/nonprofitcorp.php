@@ -18,6 +18,8 @@ irs.nonprofitcorp by DURC.
 class nonprofitcorp extends DURCModel{
 
     
+
+    
         // the datbase for this model
         protected $table = 'irs.nonprofitcorp';
 
@@ -58,6 +60,11 @@ class nonprofitcorp extends DURCModel{
 	}
 
 
+		
+		
+//DURC HAS_ONE SECTION
+
+			//DURC did not detect any has_one relationships
 
 		
 //DURC BELONGS_TO SECTION

@@ -1,0 +1,135 @@
+
+{{#has_session_status}}
+<div class='alert alert-info' role='alert'>
+  {{session_status}}
+</div>
+{{/has_session_status}}
+
+
+
+{{#is_new}}
+<form action='/DURC/bookextended' method='POST'>
+{{/is_new}}
+
+{{^is_new}}
+<form action='/DURC/bookextended/{{id}}' method='POST'>
+    <input type='hidden' name='_method' value='PUT'>
+{{/is_new}}
+
+	<h1>bookextended</h1>
+<div class='card'>
+  <div class='card-header'>
+<h4> {{durc_instance_name}}</h4>
+<ul>
+<li> <a href='/DURC/bookextended/'>Return to bookextended list</a> </li>
+{{^is_new}}
+<li> <a href='/DURC/bookextended/create'>Create new bookextended </a> </li>
+{{/is_new}}
+</ul>
+  </div>
+<div class='card-body'>
+
+  <fieldset>
+    <legend>Edit {{durc_instance_name}}  </legend>
+	<input type='hidden' name='_token' value='{{csrf_token}}'>
+	
+  <div class='form-group row {{book_id_row_class}}'>
+    <label for='book_id' class='col-sm-2 col-form-label'>book_id</label>
+    <div class='col-sm-10'>
+	Current id value: {{book_id}} (see below for lookup value)<br>
+	<select class='select2_book_id form-control' id='book_id' name='book_id' form-control'>
+	<option value='{{book_id}}' selected='selected'>{{book_id}}</option>
+	</select>
+    </div>
+  </div>
+
+<script type='text/javascript'>
+
+$('.select2_book_id').select2({
+  ajax: {
+    	url: '/DURC/searchjson/book/',
+    	dataType: 'json'
+  }
+});
+
+
+</script>
+
+
+  <div class='form-group row {{ISBN_row_class}}'>
+    <label for='ISBN' class='col-sm-2 col-form-label'>ISBN</label>
+    <div class='col-sm-10'>
+      <input type='text' class='form-control' id='ISBN' name='ISBN' placeholder='' value='{{ISBN}}'>
+    </div>
+  </div>
+
+  <div class='form-group row {{local_isle_row_class}}'>
+    <label for='local_isle' class='col-sm-2 col-form-label'>local_isle</label>
+    <div class='col-sm-10'>
+      <input type='text' class='form-control' id='local_isle' name='local_isle' placeholder='' value='{{local_isle}}'>
+    </div>
+  </div>
+
+  <div class='form-group row {{local_shelf_row_class}}'>
+    <label for='local_shelf' class='col-sm-2 col-form-label'>local_shelf</label>
+    <div class='col-sm-10'>
+      <input type='text' class='form-control' id='local_shelf' name='local_shelf' placeholder='' value='{{local_shelf}}'>
+    </div>
+  </div>
+
+  <div class='form-group row'>
+    <div class='col-sm-10'>
+      <button type='submit' class='btn btn-primary'>Save Data</button>
+    </div>
+  </div>
+  
+  
+
+</fieldset>
+</div></div>
+</form>
+
+<br>
+<div class='card'>
+  <div class='card-header'>
+    Belongs To Relationships
+  </div>
+<div class='card-body'>
+
+<div class='card'>
+  <div class='card-header'>
+    book ( <a href='/DURC/book/'>see all</a> )
+{{^book}}
+(no values)
+{{/book}}
+  </div>
+<div class='card-body'>
+<table id='table_book' class='table table-bordered table-hover table-responsive table-sm'>
+<thead>
+<tr>
+			<th> id </th>
+			<th> title </th>
+			<th> release_date </th>
+			<th> created_at </th>
+			<th> updated_at </th>
+
+</tr>
+</thead>
+<tbody>
+{{#book}}
+	<tr>
+		{{#.}}
+			<td><a href='/DURC/book/{{id}}'>{{id}}</a></td>
+			<td>{{title}}</td>
+			<td>{{release_date}}</td>
+			<td>{{created_at}}</td>
+			<td>{{updated_at}}</td>
+		
+		{{/.}}
+	</tr>
+{{/book}}
+</tbody>
+</table>
+</div></div> <!-- end book card-->
+</div></div> <!--end belongs to card-->
+<br>

@@ -18,6 +18,8 @@ northwind_data.orderDetail by DURC.
 class orderdetail extends DURCModel{
 
     
+
+    
         // the datbase for this model
         protected $table = 'northwind_data.orderDetail';
 
@@ -60,6 +62,11 @@ class orderdetail extends DURCModel{
 //DURC HAS_MANY SECTION
 
 			//DURC did not detect any has_many relationships
+		
+		
+//DURC HAS_ONE SECTION
+
+			//DURC did not detect any has_one relationships
 
 		
 //DURC BELONGS_TO SECTION

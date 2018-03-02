@@ -18,6 +18,8 @@ northwind_data.purchaseOrder by DURC.
 class purchaseorder extends DURCModel{
 
     
+
+    
         // the datbase for this model
         protected $table = 'northwind_data.purchaseOrder';
 
@@ -93,6 +95,11 @@ class purchaseorder extends DURCModel{
 	}
 
 
+		
+		
+//DURC HAS_ONE SECTION
+
+			//DURC did not detect any has_one relationships
 
 		
 //DURC BELONGS_TO SECTION

@@ -35,6 +35,13 @@ Route::get("/DURC/json/book/", 'bookController@jsonall');
 Route::get("/DURC/searchjson/book/", 'bookController@search');
 
  
+//DURC->	aaaDurctest.bookextended
+Route::resource("/DURC/bookextended", 'bookextendedController');
+Route::get("/DURC/json/bookextended/{bookextended_id}", 'bookextendedController@jsonone');
+Route::get("/DURC/json/bookextended/", 'bookextendedController@jsonall');
+Route::get("/DURC/searchjson/bookextended/", 'bookextendedController@search');
+
+ 
 //DURC->	aaaDurctest.comment
 Route::resource("/DURC/comment", 'commentController');
 Route::get("/DURC/json/comment/{comment_id}", 'commentController@jsonone');

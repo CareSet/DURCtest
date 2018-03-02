@@ -18,6 +18,8 @@ northwind_data.inventoryTransaction by DURC.
 class inventorytransaction extends DURCModel{
 
     
+
+    
         // the datbase for this model
         protected $table = 'northwind_data.inventoryTransaction';
 
@@ -58,6 +60,11 @@ class inventorytransaction extends DURCModel{
 //DURC HAS_MANY SECTION
 
 			//DURC did not detect any has_many relationships
+		
+		
+//DURC HAS_ONE SECTION
+
+			//DURC did not detect any has_one relationships
 
 		
 //DURC BELONGS_TO SECTION

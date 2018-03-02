@@ -18,6 +18,8 @@ aaaDurctest.test_created_only by DURC.
 class test_created_only extends DURCModel{
 
     
+
+    
         // the datbase for this model
         protected $table = 'aaaDurctest.test_created_only';
 
@@ -49,6 +51,11 @@ class test_created_only extends DURCModel{
 //DURC HAS_MANY SECTION
 
 			//DURC did not detect any has_many relationships
+		
+		
+//DURC HAS_ONE SECTION
+
+			//DURC did not detect any has_one relationships
 
 		
 //DURC BELONGS_TO SECTION

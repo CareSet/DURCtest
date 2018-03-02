@@ -2,35 +2,46 @@
 
 namespace App;
 /*
-	privilege: controls northwind_model.privilege
+	bookextended: controls aaaDurctest.bookextended
 
 This class started life as a DURC model, but itwill no longer be overwritten by the generator
 this is safe to edit.
 
 
 */
-class privilege extends \App\DURC\Models\privilege
+class bookextended extends \App\DURC\Models\bookextended
 {
 
 	//You may need to change these for 'one to very very many' relationships.
 /*
 		protected $DURC_selfish_with = [ 
-			'employeeprivilege', //from from one
+			'book', //from belongs to
 		];
 
 */
 	//you can uncomment fields to prevent them from being serialized into the API!
 	protected  $hidden = [
-			//'id', //int
-			//'privilegeName', //varchar
+			//'book_id', //int
+			//'ISBN', //varchar
+			//'local_isle', //varchar
+			//'local_shelf', //int
 		]; //end hidden array
 
 
 //DURC HAS_MANY SECTION
 			//DURC did not detect any has_many relationships
 //DURC BELONGS_TO SECTION
-			//DURC did not detect any belongs_to relationships
+
+/**
+*	DURC is handling the book for this bookextended in bookextended
+*       but you can extend or override the defaults by editing this function...
+*/
+	public function book(){
+		return parent::book();
+	}
+
+
 	//your stuff goes here..
 	
 
-}//end privilege
+}//end bookextended

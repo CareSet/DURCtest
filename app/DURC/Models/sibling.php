@@ -18,6 +18,8 @@ aaaDurctest.sibling by DURC.
 class sibling extends DURCModel{
 
     
+
+    
         // the datbase for this model
         protected $table = 'aaaDurctest.sibling';
 
@@ -69,6 +71,11 @@ class sibling extends DURCModel{
 	}
 
 
+		
+		
+//DURC HAS_ONE SECTION
+
+			//DURC did not detect any has_one relationships
 
 		
 //DURC BELONGS_TO SECTION

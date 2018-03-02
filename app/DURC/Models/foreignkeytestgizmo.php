@@ -17,6 +17,8 @@ aaaDurctest.foreignkeytestgizmo by DURC.
 
 class foreignkeytestgizmo extends DURCModel{
 
+    
+
     use SoftDeletes;
 
         // the datbase for this model
@@ -53,6 +55,11 @@ class foreignkeytestgizmo extends DURCModel{
 //DURC HAS_MANY SECTION
 
 			//DURC did not detect any has_many relationships
+		
+		
+//DURC HAS_ONE SECTION
+
+			//DURC did not detect any has_one relationships
 
 		
 //DURC BELONGS_TO SECTION

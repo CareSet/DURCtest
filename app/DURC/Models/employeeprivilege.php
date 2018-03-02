@@ -17,6 +17,8 @@ northwind_model.employeePrivilege by DURC.
 
 class employeeprivilege extends DURCModel{
 
+    protected $primaryKey = 'privilege_id';
+
     
         // the datbase for this model
         protected $table = 'northwind_model.employeePrivilege';
@@ -51,6 +53,11 @@ class employeeprivilege extends DURCModel{
 //DURC HAS_MANY SECTION
 
 			//DURC did not detect any has_many relationships
+		
+		
+//DURC HAS_ONE SECTION
+
+			//DURC did not detect any has_one relationships
 
 		
 //DURC BELONGS_TO SECTION
