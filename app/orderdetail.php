@@ -7,10 +7,9 @@ namespace App;
 This class started life as a DURC model, but itwill no longer be overwritten by the generator
 this is safe to edit.
 
-DURC Generated At: Monday 1st of January 2018 04:58:04 PM
 
 */
-class orderdetail extends \App\DURC\Models\DURC_orderdetail
+class orderdetail extends \App\DURC\Models\orderdetail
 {
 
 	//You may need to change these for 'one to very very many' relationships.
@@ -36,9 +35,13 @@ class orderdetail extends \App\DURC\Models\DURC_orderdetail
 			//'inventory_id', //int
 		]; //end hidden array
 
-//DURC HAS_MANY SECTION			//DURC did not detect any has_many relationships//DURC BELONGS_TO SECTION
+
+//DURC HAS_MANY SECTION
+			//DURC did not detect any has_many relationships
+//DURC BELONGS_TO SECTION
+
 /**
-*	DURC is handling the order for this orderdetail in DURC_orderdetail
+*	DURC is handling the order for this orderdetail in orderdetail
 *       but you can extend or override the defaults by editing this function...
 */
 	public function order(){
@@ -47,7 +50,7 @@ class orderdetail extends \App\DURC\Models\DURC_orderdetail
 
 
 /**
-*	DURC is handling the product for this orderdetail in DURC_orderdetail
+*	DURC is handling the product for this orderdetail in orderdetail
 *       but you can extend or override the defaults by editing this function...
 */
 	public function product(){
@@ -56,7 +59,7 @@ class orderdetail extends \App\DURC\Models\DURC_orderdetail
 
 
 /**
-*	DURC is handling the purchaseorder for this orderdetail in DURC_orderdetail
+*	DURC is handling the purchaseorder for this orderdetail in orderdetail
 *       but you can extend or override the defaults by editing this function...
 */
 	public function purchaseorder(){

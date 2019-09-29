@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\purchaseorderdetail;
-use App\DURC\Controllers\DURC_purchaseorderdetailController;
+use App\DURC\Controllers\purchaseorderdetailController as DURCParentController;
 use Illuminate\Http\Request;
 
-//DURC Generated At: Monday 1st of January 2018 04:58:04 PM
-class purchaseorderdetailController extends DURC_purchaseorderdetailController
+class purchaseorderdetailController extends DURCParentController
 {
     /**
      * Display a listing of the resource.

@@ -5,8 +5,10 @@
 </div>
 {{/has_session_status}}
 
+
+
 {{#is_new}}
-<form action='/DURC/employeeprivilege/' method='POST'>
+<form action='/DURC/employeeprivilege' method='POST'>
 {{/is_new}}
 
 {{^is_new}}
@@ -20,6 +22,9 @@
 <h4> {{durc_instance_name}}</h4>
 <ul>
 <li> <a href='/DURC/employeeprivilege/'>Return to employeeprivilege list</a> </li>
+{{^is_new}}
+<li> <a href='/DURC/employeeprivilege/create'>Create new employeeprivilege </a> </li>
+{{/is_new}}
 </ul>
   </div>
 <div class='card-body'>
@@ -28,7 +33,7 @@
     <legend>Edit {{durc_instance_name}}  </legend>
 	<input type='hidden' name='_token' value='{{csrf_token}}'>
 	
-  <div class='form-group row'>
+  <div class='form-group row {{employee_id_row_class}}'>
     <label for='employee_id' class='col-sm-2 col-form-label'>employee_id</label>
     <div class='col-sm-10'>
 	Current id value: {{employee_id}} (see below for lookup value)<br>
@@ -42,7 +47,7 @@
 
 $('.select2_employee_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/employee/',
+    	url: '/DURC/searchjson/employee/',
     	dataType: 'json'
   }
 });
@@ -51,7 +56,7 @@ $('.select2_employee_id').select2({
 </script>
 
 
-  <div class='form-group row'>
+  <div class='form-group row {{privilege_id_row_class}}'>
     <label for='privilege_id' class='col-sm-2 col-form-label'>privilege_id</label>
     <div class='col-sm-10'>
 	Current id value: {{privilege_id}} (see below for lookup value)<br>
@@ -65,7 +70,7 @@ $('.select2_employee_id').select2({
 
 $('.select2_privilege_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/privilege/',
+    	url: '/DURC/searchjson/privilege/',
     	dataType: 'json'
   }
 });
@@ -79,9 +84,12 @@ $('.select2_privilege_id').select2({
       <button type='submit' class='btn btn-primary'>Save Data</button>
     </div>
   </div>
+  
+  
 
-</fieldset></form>
+</fieldset>
 </div></div>
+</form>
 
 <br>
 <div class='card'>
@@ -183,7 +191,3 @@ $('.select2_privilege_id').select2({
 </div></div> <!-- end privilege card-->
 </div></div> <!--end belongs to card-->
 <br>
-<h5>Form Meta Data </h5>
-<ul>
-<li> DURC Generated At: Monday 1st of January 2018 04:58:04 PM </li>
-</ul>

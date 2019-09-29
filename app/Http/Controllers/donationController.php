@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\donation;
-use App\DURC\Controllers\DURC_donationController;
+use App\DURC\Controllers\donationController as DURCParentController;
 use Illuminate\Http\Request;
 
-//DURC Generated At: Monday 1st of January 2018 04:58:04 PM
-class donationController extends DURC_donationController
+class donationController extends DURCParentController
 {
     /**
      * Display a listing of the resource.

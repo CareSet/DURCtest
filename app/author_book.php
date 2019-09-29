@@ -7,10 +7,9 @@ namespace App;
 This class started life as a DURC model, but itwill no longer be overwritten by the generator
 this is safe to edit.
 
-DURC Generated At: Monday 1st of January 2018 04:58:04 PM
 
 */
-class author_book extends \App\DURC\Models\DURC_author_book
+class author_book extends \App\DURC\Models\author_book
 {
 
 	//You may need to change these for 'one to very very many' relationships.
@@ -30,9 +29,13 @@ class author_book extends \App\DURC\Models\DURC_author_book
 			//'authortype_id', //int
 		]; //end hidden array
 
-//DURC HAS_MANY SECTION			//DURC did not detect any has_many relationships//DURC BELONGS_TO SECTION
+
+//DURC HAS_MANY SECTION
+			//DURC did not detect any has_many relationships
+//DURC BELONGS_TO SECTION
+
 /**
-*	DURC is handling the author for this author_book in DURC_author_book
+*	DURC is handling the author for this author_book in author_book
 *       but you can extend or override the defaults by editing this function...
 */
 	public function author(){
@@ -41,7 +44,7 @@ class author_book extends \App\DURC\Models\DURC_author_book
 
 
 /**
-*	DURC is handling the book for this author_book in DURC_author_book
+*	DURC is handling the book for this author_book in author_book
 *       but you can extend or override the defaults by editing this function...
 */
 	public function book(){
@@ -50,7 +53,7 @@ class author_book extends \App\DURC\Models\DURC_author_book
 
 
 /**
-*	DURC is handling the authortype for this author_book in DURC_author_book
+*	DURC is handling the authortype for this author_book in author_book
 *       but you can extend or override the defaults by editing this function...
 */
 	public function authortype(){

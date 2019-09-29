@@ -1,0 +1,62 @@
+
+{{#has_session_status}}
+<div class='alert alert-info' role='alert'>
+  {{session_status}}
+</div>
+{{/has_session_status}}
+
+
+
+{{#is_new}}
+<form action='/DURC/ordertaxstat' method='POST'>
+{{/is_new}}
+
+{{^is_new}}
+<form action='/DURC/ordertaxstat/{{id}}' method='POST'>
+    <input type='hidden' name='_method' value='PUT'>
+{{/is_new}}
+
+	<h1>ordertaxstat</h1>
+<div class='card'>
+  <div class='card-header'>
+<h4> {{durc_instance_name}}</h4>
+<ul>
+<li> <a href='/DURC/ordertaxstat/'>Return to ordertaxstat list</a> </li>
+{{^is_new}}
+<li> <a href='/DURC/ordertaxstat/create'>Create new ordertaxstat </a> </li>
+{{/is_new}}
+</ul>
+  </div>
+<div class='card-body'>
+
+  <fieldset>
+    <legend>Edit {{durc_instance_name}}  </legend>
+	<input type='hidden' name='_token' value='{{csrf_token}}'>
+	
+  <div class='form-group row {{id_row_class}}'>
+    <label for='id' class='col-sm-2 col-form-label'>id</label>
+    <div class='col-sm-10'>
+      <input type='text' class='form-control' id='id' name='id' placeholder='' value='{{id}}'>
+    </div>
+  </div>
+
+  <div class='form-group row {{taxStatName_row_class}}'>
+    <label for='taxStatName' class='col-sm-2 col-form-label'>taxStatName</label>
+    <div class='col-sm-10'>
+      <input type='text' class='form-control' id='taxStatName' name='taxStatName' placeholder='' value='{{taxStatName}}'>
+    </div>
+  </div>
+
+  <div class='form-group row'>
+    <div class='col-sm-10'>
+      <button type='submit' class='btn btn-primary'>Save Data</button>
+    </div>
+  </div>
+  
+  
+
+</fieldset>
+</div></div>
+</form>
+
+<br>

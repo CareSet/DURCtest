@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\product;
-use App\DURC\Controllers\DURC_productController;
+use App\DURC\Controllers\productController as DURCParentController;
 use Illuminate\Http\Request;
 
-//DURC Generated At: Monday 1st of January 2018 04:58:04 PM
-class productController extends DURC_productController
+class productController extends DURCParentController
 {
     /**
      * Display a listing of the resource.

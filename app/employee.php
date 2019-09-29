@@ -7,10 +7,9 @@ namespace App;
 This class started life as a DURC model, but itwill no longer be overwritten by the generator
 this is safe to edit.
 
-DURC Generated At: Monday 1st of January 2018 04:58:04 PM
 
 */
-class employee extends \App\DURC\Models\DURC_employee
+class employee extends \App\DURC\Models\employee
 {
 
 	//You may need to change these for 'one to very very many' relationships.
@@ -20,7 +19,7 @@ class employee extends \App\DURC\Models\DURC_employee
 			'createdBy_purchaseorder', //from from many
 			'approvedBy_purchaseorder', //from from many
 			'submittedBy_purchaseorder', //from from many
-			'employeeprivilege', //from from many
+			'employeeprivilege', //from from one
 		];
 
 */
@@ -46,9 +45,11 @@ class employee extends \App\DURC\Models\DURC_employee
 			//'attachments', //longblob
 		]; //end hidden array
 
+
 //DURC HAS_MANY SECTION
+
 /**
-*	DURC is handling the order for this employee in DURC_employee
+*	DURC is handling the order for this employee in employee
 *       but you can extend or override the defaults by editing this function...
 */
 	public function order(){
@@ -57,7 +58,7 @@ class employee extends \App\DURC\Models\DURC_employee
 
 
 /**
-*	DURC is handling the createdBy_purchaseorder for this employee in DURC_employee
+*	DURC is handling the createdBy_purchaseorder for this employee in employee
 *       but you can extend or override the defaults by editing this function...
 */
 	public function createdBy_purchaseorder(){
@@ -66,7 +67,7 @@ class employee extends \App\DURC\Models\DURC_employee
 
 
 /**
-*	DURC is handling the approvedBy_purchaseorder for this employee in DURC_employee
+*	DURC is handling the approvedBy_purchaseorder for this employee in employee
 *       but you can extend or override the defaults by editing this function...
 */
 	public function approvedBy_purchaseorder(){
@@ -75,7 +76,7 @@ class employee extends \App\DURC\Models\DURC_employee
 
 
 /**
-*	DURC is handling the submittedBy_purchaseorder for this employee in DURC_employee
+*	DURC is handling the submittedBy_purchaseorder for this employee in employee
 *       but you can extend or override the defaults by editing this function...
 */
 	public function submittedBy_purchaseorder(){
@@ -83,15 +84,8 @@ class employee extends \App\DURC\Models\DURC_employee
 	}
 
 
-/**
-*	DURC is handling the employeeprivilege for this employee in DURC_employee
-*       but you can extend or override the defaults by editing this function...
-*/
-	public function employeeprivilege(){
-		return parent::employeeprivilege();
-	}
-
-//DURC BELONGS_TO SECTION			//DURC did not detect any belongs_to relationships
+//DURC BELONGS_TO SECTION
+			//DURC did not detect any belongs_to relationships
 	//your stuff goes here..
 	
 

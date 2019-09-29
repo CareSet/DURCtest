@@ -5,8 +5,10 @@
 </div>
 {{/has_session_status}}
 
+
+
 {{#is_new}}
-<form action='/DURC/product/' method='POST'>
+<form action='/DURC/product' method='POST'>
 {{/is_new}}
 
 {{^is_new}}
@@ -20,6 +22,9 @@
 <h4> {{durc_instance_name}}</h4>
 <ul>
 <li> <a href='/DURC/product/'>Return to product list</a> </li>
+{{^is_new}}
+<li> <a href='/DURC/product/create'>Create new product </a> </li>
+{{/is_new}}
 </ul>
   </div>
 <div class='card-body'>
@@ -28,98 +33,98 @@
     <legend>Edit {{durc_instance_name}}  </legend>
 	<input type='hidden' name='_token' value='{{csrf_token}}'>
 	
-  <div class='form-group row'>
+  <div class='form-group row {{supplier_ids_row_class}}'>
     <label for='supplier_ids' class='col-sm-2 col-form-label'>supplier_ids</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='supplier_ids' name='supplier_ids' placeholder='' value='{{supplier_ids}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{id_row_class}}'>
     <label for='id' class='col-sm-2 col-form-label'>id</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='id' name='id' placeholder='' value='{{id}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{productCode_row_class}}'>
     <label for='productCode' class='col-sm-2 col-form-label'>productCode</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='productCode' name='productCode' placeholder='' value='{{productCode}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{productName_row_class}}'>
     <label for='productName' class='col-sm-2 col-form-label'>productName</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='productName' name='productName' placeholder='' value='{{productName}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{description_row_class}}'>
     <label for='description' class='col-sm-2 col-form-label'>description</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='description' name='description' placeholder='' value='{{description}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{standardCost_row_class}}'>
     <label for='standardCost' class='col-sm-2 col-form-label'>standardCost</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='standardCost' name='standardCost' placeholder='' value='{{standardCost}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{listPrice_row_class}}'>
     <label for='listPrice' class='col-sm-2 col-form-label'>listPrice</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='listPrice' name='listPrice' placeholder='' value='{{listPrice}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{reorderLevel_row_class}}'>
     <label for='reorderLevel' class='col-sm-2 col-form-label'>reorderLevel</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='reorderLevel' name='reorderLevel' placeholder='' value='{{reorderLevel}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{targetLevel_row_class}}'>
     <label for='targetLevel' class='col-sm-2 col-form-label'>targetLevel</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='targetLevel' name='targetLevel' placeholder='' value='{{targetLevel}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{quantityPerUnit_row_class}}'>
     <label for='quantityPerUnit' class='col-sm-2 col-form-label'>quantityPerUnit</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='quantityPerUnit' name='quantityPerUnit' placeholder='' value='{{quantityPerUnit}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{discontinued_row_class}}'>
     <label for='discontinued' class='col-sm-2 col-form-label'>discontinued</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='discontinued' name='discontinued' placeholder='' value='{{discontinued}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{minimumReorderQuantity_row_class}}'>
     <label for='minimumReorderQuantity' class='col-sm-2 col-form-label'>minimumReorderQuantity</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='minimumReorderQuantity' name='minimumReorderQuantity' placeholder='' value='{{minimumReorderQuantity}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{category_row_class}}'>
     <label for='category' class='col-sm-2 col-form-label'>category</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='category' name='category' placeholder='' value='{{category}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{attachments_row_class}}'>
     <label for='attachments' class='col-sm-2 col-form-label'>attachments</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='attachments' name='attachments' placeholder='' value='{{attachments}}'>
@@ -131,20 +136,23 @@
       <button type='submit' class='btn btn-primary'>Save Data</button>
     </div>
   </div>
+  
+  
 
-</fieldset></form>
+</fieldset>
 </div></div>
+</form>
 
 <br>
 <div class='card'>
   <div class='card-header'>
-    Has Many Relationships
+    Relationships
   </div>
 <div class='card-body'>
 
 <div class='card'>
   <div class='card-header'>
-    inventorytransaction ( <a href='/DURC/inventorytransaction/'>see all</a> )
+    Has many inventorytransaction ( <a href='/DURC/inventorytransaction/'>see all</a> )
 {{^inventorytransaction}}
 (no values)
 {{/inventorytransaction}}
@@ -187,7 +195,7 @@
 
 <div class='card'>
   <div class='card-header'>
-    orderdetail ( <a href='/DURC/orderdetail/'>see all</a> )
+    Has many orderdetail ( <a href='/DURC/orderdetail/'>see all</a> )
 {{^orderdetail}}
 (no values)
 {{/orderdetail}}
@@ -230,7 +238,7 @@
 
 <div class='card'>
   <div class='card-header'>
-    purchaseorderdetail ( <a href='/DURC/purchaseorderdetail/'>see all</a> )
+    Has many purchaseorderdetail ( <a href='/DURC/purchaseorderdetail/'>see all</a> )
 {{^purchaseorderdetail}}
 (no values)
 {{/purchaseorderdetail}}
@@ -270,7 +278,3 @@
 <br>
 </div></div> <!--end has many card-->
 <br>
-<h5>Form Meta Data </h5>
-<ul>
-<li> DURC Generated At: Monday 1st of January 2018 04:58:04 PM </li>
-</ul>

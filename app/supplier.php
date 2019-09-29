@@ -7,10 +7,9 @@ namespace App;
 This class started life as a DURC model, but itwill no longer be overwritten by the generator
 this is safe to edit.
 
-DURC Generated At: Monday 1st of January 2018 04:58:04 PM
 
 */
-class supplier extends \App\DURC\Models\DURC_supplier
+class supplier extends \App\DURC\Models\supplier
 {
 
 	//You may need to change these for 'one to very very many' relationships.
@@ -42,16 +41,20 @@ class supplier extends \App\DURC\Models\DURC_supplier
 			//'attachments', //longblob
 		]; //end hidden array
 
+
 //DURC HAS_MANY SECTION
+
 /**
-*	DURC is handling the purchaseorder for this supplier in DURC_supplier
+*	DURC is handling the purchaseorder for this supplier in supplier
 *       but you can extend or override the defaults by editing this function...
 */
 	public function purchaseorder(){
 		return parent::purchaseorder();
 	}
 
-//DURC BELONGS_TO SECTION			//DURC did not detect any belongs_to relationships
+
+//DURC BELONGS_TO SECTION
+			//DURC did not detect any belongs_to relationships
 	//your stuff goes here..
 	
 

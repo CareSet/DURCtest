@@ -5,8 +5,10 @@
 </div>
 {{/has_session_status}}
 
+
+
 {{#is_new}}
-<form action='/DURC/funnything/' method='POST'>
+<form action='/DURC/funnything' method='POST'>
 {{/is_new}}
 
 {{^is_new}}
@@ -20,6 +22,9 @@
 <h4> {{durc_instance_name}}</h4>
 <ul>
 <li> <a href='/DURC/funnything/'>Return to funnything list</a> </li>
+{{^is_new}}
+<li> <a href='/DURC/funnything/create'>Create new funnything </a> </li>
+{{/is_new}}
 </ul>
   </div>
 <div class='card-body'>
@@ -28,93 +33,160 @@
     <legend>Edit {{durc_instance_name}}  </legend>
 	<input type='hidden' name='_token' value='{{csrf_token}}'>
 	
-  <div class='form-group row'>
+  <div class='form-group row {{id_row_class}}'>
     <label for='id' class='col-sm-2 col-form-label'>id</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='id' name='id' placeholder='' value='{{id}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thisint_row_class}}'>
     <label for='thisint' class='col-sm-2 col-form-label'>thisint</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thisint' name='thisint' placeholder='' value='{{thisint}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thisfloat_row_class}}'>
     <label for='thisfloat' class='col-sm-2 col-form-label'>thisfloat</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thisfloat' name='thisfloat' placeholder='' value='{{thisfloat}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thisdecimal_row_class}}'>
     <label for='thisdecimal' class='col-sm-2 col-form-label'>thisdecimal</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thisdecimal' name='thisdecimal' placeholder='' value='{{thisdecimal}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thisvarchar_row_class}}'>
     <label for='thisvarchar' class='col-sm-2 col-form-label'>thisvarchar</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thisvarchar' name='thisvarchar' placeholder='' value='{{thisvarchar}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thisdate_row_class}}'>
     <label for='thisdate' class='col-sm-2 col-form-label'>thisdate</label>
     <div class='col-sm-10'>
-	Current Value: {{thisdate}}
-      <input type='date' class='form-control' id='thisdate' name='thisdate' placeholder='' value='{{thisdate}}'>
+      <input type='text' class='form-control' id='thisdate' name='thisdate' placeholder='' value='{{thisdate}}'>
+
+<button type='button' class='btn btn-primary' id='thisdate_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='thisdate_TodayNow'> Today and Now</button>
+
+<script>
+	var thisdateConv = new AnyTime.Converter({format: '%Y-%m-%d'});
+  	$('#thisdate_TodayNow').click( function(e) {
+      		$('#thisdate').val(thisdateConv.format(new Date())).change(); } );
+
+    	$('#thisdate_FontPicker').click(
+      		function(e) {
+        		$('#thisdate').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thisdatetime_row_class}}'>
     <label for='thisdatetime' class='col-sm-2 col-form-label'>thisdatetime</label>
     <div class='col-sm-10'>
-	Current Value: {{thisdatetime}}<br>
       <input type='text' class='form-control' id='thisdatetime' name='thisdatetime' placeholder='' value='{{thisdatetime}}'>
+
+<button type='button' class='btn btn-primary' id='thisdatetime_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='thisdatetime_TodayNow'> Today and Now</button>
+
+<script>
+	var thisdatetimeConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#thisdatetime_TodayNow').click( function(e) {
+      		$('#thisdatetime').val(thisdatetimeConv.format(new Date())).change(); } );
+
+    	$('#thisdatetime_FontPicker').click(
+      		function(e) {
+        		$('#thisdatetime').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thistimestamp_row_class}}'>
     <label for='thistimestamp' class='col-sm-2 col-form-label'>thistimestamp</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thistimestamp' name='thistimestamp' placeholder='' value='{{thistimestamp}}'>
+
+<button type='button' class='btn btn-primary' id='thistimestamp_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='thistimestamp_TodayNow'> Today and Now</button>
+
+<script>
+	var thistimestampConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#thistimestamp_TodayNow').click( function(e) {
+      		$('#thistimestamp').val(thistimestampConv.format(new Date())).change(); } );
+
+    	$('#thistimestamp_FontPicker').click(
+      		function(e) {
+        		$('#thistimestamp').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thischar_row_class}}'>
     <label for='thischar' class='col-sm-2 col-form-label'>thischar</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thischar' name='thischar' placeholder='' value='{{thischar}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thistext_row_class}}'>
     <label for='thistext' class='col-sm-2 col-form-label'>thistext</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thistext' name='thistext' placeholder='' value='{{thistext}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thisblob_row_class}}'>
     <label for='thisblob' class='col-sm-2 col-form-label'>thisblob</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thisblob' name='thisblob' placeholder='' value='{{thisblob}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thistinyint_row_class}}'>
     <label for='thistinyint' class='col-sm-2 col-form-label'>thistinyint</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thistinyint' name='thistinyint' placeholder='' value='{{thistinyint}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{thistinytext_row_class}}'>
     <label for='thistinytext' class='col-sm-2 col-form-label'>thistinytext</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='thistinytext' name='thistinytext' placeholder='' value='{{thistinytext}}'>
@@ -126,12 +198,11 @@
       <button type='submit' class='btn btn-primary'>Save Data</button>
     </div>
   </div>
+  
+  
 
-</fieldset></form>
+</fieldset>
 </div></div>
+</form>
 
 <br>
-<h5>Form Meta Data </h5>
-<ul>
-<li> DURC Generated At: Monday 1st of January 2018 04:58:04 PM </li>
-</ul>

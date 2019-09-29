@@ -7,10 +7,9 @@ namespace App;
 This class started life as a DURC model, but itwill no longer be overwritten by the generator
 this is safe to edit.
 
-DURC Generated At: Monday 1st of January 2018 04:58:04 PM
 
 */
-class purchaseorder extends \App\DURC\Models\DURC_purchaseorder
+class purchaseorder extends \App\DURC\Models\purchaseorder
 {
 
 	//You may need to change these for 'one to very very many' relationships.
@@ -46,9 +45,11 @@ class purchaseorder extends \App\DURC\Models\DURC_purchaseorder
 			//'submittedBy_employee_id', //int
 		]; //end hidden array
 
+
 //DURC HAS_MANY SECTION
+
 /**
-*	DURC is handling the inventorytransaction for this purchaseorder in DURC_purchaseorder
+*	DURC is handling the inventorytransaction for this purchaseorder in purchaseorder
 *       but you can extend or override the defaults by editing this function...
 */
 	public function inventorytransaction(){
@@ -57,7 +58,7 @@ class purchaseorder extends \App\DURC\Models\DURC_purchaseorder
 
 
 /**
-*	DURC is handling the orderdetail for this purchaseorder in DURC_purchaseorder
+*	DURC is handling the orderdetail for this purchaseorder in purchaseorder
 *       but you can extend or override the defaults by editing this function...
 */
 	public function orderdetail(){
@@ -66,16 +67,18 @@ class purchaseorder extends \App\DURC\Models\DURC_purchaseorder
 
 
 /**
-*	DURC is handling the purchaseorderdetail for this purchaseorder in DURC_purchaseorder
+*	DURC is handling the purchaseorderdetail for this purchaseorder in purchaseorder
 *       but you can extend or override the defaults by editing this function...
 */
 	public function purchaseorderdetail(){
 		return parent::purchaseorderdetail();
 	}
 
+
 //DURC BELONGS_TO SECTION
+
 /**
-*	DURC is handling the supplier for this purchaseorder in DURC_purchaseorder
+*	DURC is handling the supplier for this purchaseorder in purchaseorder
 *       but you can extend or override the defaults by editing this function...
 */
 	public function supplier(){
@@ -84,7 +87,7 @@ class purchaseorder extends \App\DURC\Models\DURC_purchaseorder
 
 
 /**
-*	DURC is handling the createdBy_employee for this purchaseorder in DURC_purchaseorder
+*	DURC is handling the createdBy_employee for this purchaseorder in purchaseorder
 *       but you can extend or override the defaults by editing this function...
 */
 	public function createdBy_employee(){
@@ -93,7 +96,7 @@ class purchaseorder extends \App\DURC\Models\DURC_purchaseorder
 
 
 /**
-*	DURC is handling the approvedBy_employee for this purchaseorder in DURC_purchaseorder
+*	DURC is handling the approvedBy_employee for this purchaseorder in purchaseorder
 *       but you can extend or override the defaults by editing this function...
 */
 	public function approvedBy_employee(){
@@ -102,7 +105,7 @@ class purchaseorder extends \App\DURC\Models\DURC_purchaseorder
 
 
 /**
-*	DURC is handling the submittedBy_employee for this purchaseorder in DURC_purchaseorder
+*	DURC is handling the submittedBy_employee for this purchaseorder in purchaseorder
 *       but you can extend or override the defaults by editing this function...
 */
 	public function submittedBy_employee(){

@@ -7,10 +7,9 @@ namespace App;
 This class started life as a DURC model, but itwill no longer be overwritten by the generator
 this is safe to edit.
 
-DURC Generated At: Monday 1st of January 2018 04:58:04 PM
 
 */
-class shipper extends \App\DURC\Models\DURC_shipper
+class shipper extends \App\DURC\Models\shipper
 {
 
 	//You may need to change these for 'one to very very many' relationships.
@@ -42,16 +41,20 @@ class shipper extends \App\DURC\Models\DURC_shipper
 			//'attachments', //longblob
 		]; //end hidden array
 
+
 //DURC HAS_MANY SECTION
+
 /**
-*	DURC is handling the order for this shipper in DURC_shipper
+*	DURC is handling the order for this shipper in shipper
 *       but you can extend or override the defaults by editing this function...
 */
 	public function order(){
 		return parent::order();
 	}
 
-//DURC BELONGS_TO SECTION			//DURC did not detect any belongs_to relationships
+
+//DURC BELONGS_TO SECTION
+			//DURC did not detect any belongs_to relationships
 	//your stuff goes here..
 	
 

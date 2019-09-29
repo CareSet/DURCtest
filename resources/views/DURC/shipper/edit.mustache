@@ -5,8 +5,10 @@
 </div>
 {{/has_session_status}}
 
+
+
 {{#is_new}}
-<form action='/DURC/shipper/' method='POST'>
+<form action='/DURC/shipper' method='POST'>
 {{/is_new}}
 
 {{^is_new}}
@@ -20,6 +22,9 @@
 <h4> {{durc_instance_name}}</h4>
 <ul>
 <li> <a href='/DURC/shipper/'>Return to shipper list</a> </li>
+{{^is_new}}
+<li> <a href='/DURC/shipper/create'>Create new shipper </a> </li>
+{{/is_new}}
 </ul>
   </div>
 <div class='card-body'>
@@ -28,126 +33,126 @@
     <legend>Edit {{durc_instance_name}}  </legend>
 	<input type='hidden' name='_token' value='{{csrf_token}}'>
 	
-  <div class='form-group row'>
+  <div class='form-group row {{id_row_class}}'>
     <label for='id' class='col-sm-2 col-form-label'>id</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='id' name='id' placeholder='' value='{{id}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{company_row_class}}'>
     <label for='company' class='col-sm-2 col-form-label'>company</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='company' name='company' placeholder='' value='{{company}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{lastName_row_class}}'>
     <label for='lastName' class='col-sm-2 col-form-label'>lastName</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='lastName' name='lastName' placeholder='' value='{{lastName}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{firstName_row_class}}'>
     <label for='firstName' class='col-sm-2 col-form-label'>firstName</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='firstName' name='firstName' placeholder='' value='{{firstName}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{emailAddress_row_class}}'>
     <label for='emailAddress' class='col-sm-2 col-form-label'>emailAddress</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='emailAddress' name='emailAddress' placeholder='' value='{{emailAddress}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{jobTitle_row_class}}'>
     <label for='jobTitle' class='col-sm-2 col-form-label'>jobTitle</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='jobTitle' name='jobTitle' placeholder='' value='{{jobTitle}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{businessPhone_row_class}}'>
     <label for='businessPhone' class='col-sm-2 col-form-label'>businessPhone</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='businessPhone' name='businessPhone' placeholder='' value='{{businessPhone}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{homePhone_row_class}}'>
     <label for='homePhone' class='col-sm-2 col-form-label'>homePhone</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='homePhone' name='homePhone' placeholder='' value='{{homePhone}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{mobilePhone_row_class}}'>
     <label for='mobilePhone' class='col-sm-2 col-form-label'>mobilePhone</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='mobilePhone' name='mobilePhone' placeholder='' value='{{mobilePhone}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{faxNumber_row_class}}'>
     <label for='faxNumber' class='col-sm-2 col-form-label'>faxNumber</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='faxNumber' name='faxNumber' placeholder='' value='{{faxNumber}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{address_row_class}}'>
     <label for='address' class='col-sm-2 col-form-label'>address</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='address' name='address' placeholder='' value='{{address}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{city_row_class}}'>
     <label for='city' class='col-sm-2 col-form-label'>city</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='city' name='city' placeholder='' value='{{city}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{stateProvince_row_class}}'>
     <label for='stateProvince' class='col-sm-2 col-form-label'>stateProvince</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='stateProvince' name='stateProvince' placeholder='' value='{{stateProvince}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{zipPostalCode_row_class}}'>
     <label for='zipPostalCode' class='col-sm-2 col-form-label'>zipPostalCode</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='zipPostalCode' name='zipPostalCode' placeholder='' value='{{zipPostalCode}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{countryRegion_row_class}}'>
     <label for='countryRegion' class='col-sm-2 col-form-label'>countryRegion</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='countryRegion' name='countryRegion' placeholder='' value='{{countryRegion}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{webPage_row_class}}'>
     <label for='webPage' class='col-sm-2 col-form-label'>webPage</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='webPage' name='webPage' placeholder='' value='{{webPage}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{notes_row_class}}'>
     <label for='notes' class='col-sm-2 col-form-label'>notes</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='notes' name='notes' placeholder='' value='{{notes}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{attachments_row_class}}'>
     <label for='attachments' class='col-sm-2 col-form-label'>attachments</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='attachments' name='attachments' placeholder='' value='{{attachments}}'>
@@ -159,20 +164,23 @@
       <button type='submit' class='btn btn-primary'>Save Data</button>
     </div>
   </div>
+  
+  
 
-</fieldset></form>
+</fieldset>
 </div></div>
+</form>
 
 <br>
 <div class='card'>
   <div class='card-header'>
-    Has Many Relationships
+    Relationships
   </div>
 <div class='card-body'>
 
 <div class='card'>
   <div class='card-header'>
-    order ( <a href='/DURC/order/'>see all</a> )
+    Has many order ( <a href='/DURC/order/'>see all</a> )
 {{^order}}
 (no values)
 {{/order}}
@@ -234,7 +242,3 @@
 <br>
 </div></div> <!--end has many card-->
 <br>
-<h5>Form Meta Data </h5>
-<ul>
-<li> DURC Generated At: Monday 1st of January 2018 04:58:04 PM </li>
-</ul>

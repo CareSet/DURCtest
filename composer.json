@@ -4,14 +4,20 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/careset/DURC.git"
+        }
+    ],
     "require": {
-        "php": ">=7.0.0",
+        "php": ">=7.1.3",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "nesbot/carbon": "^1.22",
         "proai/laravel-handlebars": "~1.6",
-        "careset/durc": "@dev"
+        "careset/durc": "dev-develop-7"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
@@ -50,10 +56,13 @@
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
         ]
+
     },
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
         "optimize-autoloader": true
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

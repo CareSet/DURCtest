@@ -5,8 +5,10 @@
 </div>
 {{/has_session_status}}
 
+
+
 {{#is_new}}
-<form action='/DURC/author_book/' method='POST'>
+<form action='/DURC/author_book' method='POST'>
 {{/is_new}}
 
 {{^is_new}}
@@ -20,6 +22,9 @@
 <h4> {{durc_instance_name}}</h4>
 <ul>
 <li> <a href='/DURC/author_book/'>Return to author_book list</a> </li>
+{{^is_new}}
+<li> <a href='/DURC/author_book/create'>Create new author_book </a> </li>
+{{/is_new}}
 </ul>
   </div>
 <div class='card-body'>
@@ -28,14 +33,14 @@
     <legend>Edit {{durc_instance_name}}  </legend>
 	<input type='hidden' name='_token' value='{{csrf_token}}'>
 	
-  <div class='form-group row'>
+  <div class='form-group row {{id_row_class}}'>
     <label for='id' class='col-sm-2 col-form-label'>id</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='id' name='id' placeholder='' value='{{id}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{author_id_row_class}}'>
     <label for='author_id' class='col-sm-2 col-form-label'>author_id</label>
     <div class='col-sm-10'>
 	Current id value: {{author_id}} (see below for lookup value)<br>
@@ -49,7 +54,7 @@
 
 $('.select2_author_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/author/',
+    	url: '/DURC/searchjson/author/',
     	dataType: 'json'
   }
 });
@@ -58,7 +63,7 @@ $('.select2_author_id').select2({
 </script>
 
 
-  <div class='form-group row'>
+  <div class='form-group row {{book_id_row_class}}'>
     <label for='book_id' class='col-sm-2 col-form-label'>book_id</label>
     <div class='col-sm-10'>
 	Current id value: {{book_id}} (see below for lookup value)<br>
@@ -72,7 +77,7 @@ $('.select2_author_id').select2({
 
 $('.select2_book_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/book/',
+    	url: '/DURC/searchjson/book/',
     	dataType: 'json'
   }
 });
@@ -81,7 +86,7 @@ $('.select2_book_id').select2({
 </script>
 
 
-  <div class='form-group row'>
+  <div class='form-group row {{authortype_id_row_class}}'>
     <label for='authortype_id' class='col-sm-2 col-form-label'>authortype_id</label>
     <div class='col-sm-10'>
 	Current id value: {{authortype_id}} (see below for lookup value)<br>
@@ -95,7 +100,7 @@ $('.select2_book_id').select2({
 
 $('.select2_authortype_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/authortype/',
+    	url: '/DURC/searchjson/authortype/',
     	dataType: 'json'
   }
 });
@@ -109,9 +114,12 @@ $('.select2_authortype_id').select2({
       <button type='submit' class='btn btn-primary'>Save Data</button>
     </div>
   </div>
+  
+  
 
-</fieldset></form>
+</fieldset>
 </div></div>
+</form>
 
 <br>
 <div class='card'>
@@ -134,7 +142,6 @@ $('.select2_authortype_id').select2({
 			<th> id </th>
 			<th> lastname </th>
 			<th> firstname </th>
-			<th> select_name </th>
 			<th> created_date </th>
 			<th> updated_date </th>
 
@@ -147,7 +154,6 @@ $('.select2_authortype_id').select2({
 			<td><a href='/DURC/author/{{id}}'>{{id}}</a></td>
 			<td>{{lastname}}</td>
 			<td>{{firstname}}</td>
-			<td>{{select_name}}</td>
 			<td>{{created_date}}</td>
 			<td>{{updated_date}}</td>
 		
@@ -229,7 +235,3 @@ $('.select2_authortype_id').select2({
 </div></div> <!-- end authortype card-->
 </div></div> <!--end belongs to card-->
 <br>
-<h5>Form Meta Data </h5>
-<ul>
-<li> DURC Generated At: Monday 1st of January 2018 04:58:04 PM </li>
-</ul>

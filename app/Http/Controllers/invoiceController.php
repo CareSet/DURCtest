@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\invoice;
-use App\DURC\Controllers\DURC_invoiceController;
+use App\DURC\Controllers\invoiceController as DURCParentController;
 use Illuminate\Http\Request;
 
-//DURC Generated At: Monday 1st of January 2018 04:58:04 PM
-class invoiceController extends DURC_invoiceController
+class invoiceController extends DURCParentController
 {
     /**
      * Display a listing of the resource.

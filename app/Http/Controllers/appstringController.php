@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\appstring;
-use App\DURC\Controllers\DURC_appstringController;
+use App\DURC\Controllers\appstringController as DURCParentController;
 use Illuminate\Http\Request;
 
-//DURC Generated At: Monday 1st of January 2018 04:58:04 PM
-class appstringController extends DURC_appstringController
+class appstringController extends DURCParentController
 {
     /**
      * Display a listing of the resource.

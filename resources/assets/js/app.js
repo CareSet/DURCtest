@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+require('../../../vendor/careset/durc/assets/js/form');
 
 window.Vue = require('vue');
 

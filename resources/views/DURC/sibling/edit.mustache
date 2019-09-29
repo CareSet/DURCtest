@@ -5,8 +5,10 @@
 </div>
 {{/has_session_status}}
 
+
+
 {{#is_new}}
-<form action='/DURC/sibling/' method='POST'>
+<form action='/DURC/sibling' method='POST'>
 {{/is_new}}
 
 {{^is_new}}
@@ -20,6 +22,9 @@
 <h4> {{durc_instance_name}}</h4>
 <ul>
 <li> <a href='/DURC/sibling/'>Return to sibling list</a> </li>
+{{^is_new}}
+<li> <a href='/DURC/sibling/create'>Create new sibling </a> </li>
+{{/is_new}}
 </ul>
   </div>
 <div class='card-body'>
@@ -28,21 +33,21 @@
     <legend>Edit {{durc_instance_name}}  </legend>
 	<input type='hidden' name='_token' value='{{csrf_token}}'>
 	
-  <div class='form-group row'>
+  <div class='form-group row {{id_row_class}}'>
     <label for='id' class='col-sm-2 col-form-label'>id</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='id' name='id' placeholder='' value='{{id}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{siblingname_row_class}}'>
     <label for='siblingname' class='col-sm-2 col-form-label'>siblingname</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='siblingname' name='siblingname' placeholder='' value='{{siblingname}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{step_sibling_id_row_class}}'>
     <label for='step_sibling_id' class='col-sm-2 col-form-label'>step_sibling_id</label>
     <div class='col-sm-10'>
 	Current id value: {{step_sibling_id}} (see below for lookup value)<br>
@@ -56,7 +61,7 @@
 
 $('.select2_step_sibling_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/sibling/',
+    	url: '/DURC/searchjson/sibling/',
     	dataType: 'json'
   }
 });
@@ -65,7 +70,7 @@ $('.select2_step_sibling_id').select2({
 </script>
 
 
-  <div class='form-group row'>
+  <div class='form-group row {{sibling_id_row_class}}'>
     <label for='sibling_id' class='col-sm-2 col-form-label'>sibling_id</label>
     <div class='col-sm-10'>
 	Current id value: {{sibling_id}} (see below for lookup value)<br>
@@ -79,7 +84,7 @@ $('.select2_step_sibling_id').select2({
 
 $('.select2_sibling_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/sibling/',
+    	url: '/DURC/searchjson/sibling/',
     	dataType: 'json'
   }
 });
@@ -88,19 +93,63 @@ $('.select2_sibling_id').select2({
 </script>
 
 
-  <div class='form-group row'>
+  <div class='form-group row {{created_at_row_class}}'>
     <label for='created_at' class='col-sm-2 col-form-label'>created_at</label>
     <div class='col-sm-10'>
-	Current Value: {{created_at}}<br>
       <input type='text' class='form-control' id='created_at' name='created_at' placeholder='' value='{{created_at}}'>
+
+<button type='button' class='btn btn-primary' id='created_at_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='created_at_TodayNow'> Today and Now</button>
+
+<script>
+	var created_atConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#created_at_TodayNow').click( function(e) {
+      		$('#created_at').val(created_atConv.format(new Date())).change(); } );
+
+    	$('#created_at_FontPicker').click(
+      		function(e) {
+        		$('#created_at').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{updated_at_row_class}}'>
     <label for='updated_at' class='col-sm-2 col-form-label'>updated_at</label>
     <div class='col-sm-10'>
-	Current Value: {{updated_at}}<br>
       <input type='text' class='form-control' id='updated_at' name='updated_at' placeholder='' value='{{updated_at}}'>
+
+<button type='button' class='btn btn-primary' id='updated_at_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='updated_at_TodayNow'> Today and Now</button>
+
+<script>
+	var updated_atConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#updated_at_TodayNow').click( function(e) {
+      		$('#updated_at').val(updated_atConv.format(new Date())).change(); } );
+
+    	$('#updated_at_FontPicker').click(
+      		function(e) {
+        		$('#updated_at').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
@@ -109,20 +158,23 @@ $('.select2_sibling_id').select2({
       <button type='submit' class='btn btn-primary'>Save Data</button>
     </div>
   </div>
+  
+  
 
-</fieldset></form>
+</fieldset>
 </div></div>
+</form>
 
 <br>
 <div class='card'>
   <div class='card-header'>
-    Has Many Relationships
+    Relationships
   </div>
 <div class='card-body'>
 
 <div class='card'>
   <div class='card-header'>
-    step_sibling ( <a href='/DURC/sibling/'>see all</a> )
+    Has many step_sibling ( <a href='/DURC/sibling/'>see all</a> )
 {{^step_sibling}}
 (no values)
 {{/step_sibling}}
@@ -160,7 +212,7 @@ $('.select2_sibling_id').select2({
 
 <div class='card'>
   <div class='card-header'>
-    sibling ( <a href='/DURC/sibling/'>see all</a> )
+    Has many sibling ( <a href='/DURC/sibling/'>see all</a> )
 {{^sibling}}
 (no values)
 {{/sibling}}
@@ -276,7 +328,3 @@ $('.select2_sibling_id').select2({
 </div></div> <!-- end sibling card-->
 </div></div> <!--end belongs to card-->
 <br>
-<h5>Form Meta Data </h5>
-<ul>
-<li> DURC Generated At: Monday 1st of January 2018 04:58:04 PM </li>
-</ul>

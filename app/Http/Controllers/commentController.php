@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\comment;
-use App\DURC\Controllers\DURC_commentController;
+use App\DURC\Controllers\commentController as DURCParentController;
 use Illuminate\Http\Request;
 
-//DURC Generated At: Monday 1st of January 2018 04:58:04 PM
-class commentController extends DURC_commentController
+class commentController extends DURCParentController
 {
     /**
      * Display a listing of the resource.

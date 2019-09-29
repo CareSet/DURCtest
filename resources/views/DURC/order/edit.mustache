@@ -5,8 +5,10 @@
 </div>
 {{/has_session_status}}
 
+
+
 {{#is_new}}
-<form action='/DURC/order/' method='POST'>
+<form action='/DURC/order' method='POST'>
 {{/is_new}}
 
 {{^is_new}}
@@ -20,6 +22,9 @@
 <h4> {{durc_instance_name}}</h4>
 <ul>
 <li> <a href='/DURC/order/'>Return to order list</a> </li>
+{{^is_new}}
+<li> <a href='/DURC/order/create'>Create new order </a> </li>
+{{/is_new}}
 </ul>
   </div>
 <div class='card-body'>
@@ -28,14 +33,14 @@
     <legend>Edit {{durc_instance_name}}  </legend>
 	<input type='hidden' name='_token' value='{{csrf_token}}'>
 	
-  <div class='form-group row'>
+  <div class='form-group row {{id_row_class}}'>
     <label for='id' class='col-sm-2 col-form-label'>id</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='id' name='id' placeholder='' value='{{id}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{employee_id_row_class}}'>
     <label for='employee_id' class='col-sm-2 col-form-label'>employee_id</label>
     <div class='col-sm-10'>
 	Current id value: {{employee_id}} (see below for lookup value)<br>
@@ -49,7 +54,7 @@
 
 $('.select2_employee_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/employee/',
+    	url: '/DURC/searchjson/employee/',
     	dataType: 'json'
   }
 });
@@ -58,7 +63,7 @@ $('.select2_employee_id').select2({
 </script>
 
 
-  <div class='form-group row'>
+  <div class='form-group row {{customer_id_row_class}}'>
     <label for='customer_id' class='col-sm-2 col-form-label'>customer_id</label>
     <div class='col-sm-10'>
 	Current id value: {{customer_id}} (see below for lookup value)<br>
@@ -72,7 +77,7 @@ $('.select2_employee_id').select2({
 
 $('.select2_customer_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/customer/',
+    	url: '/DURC/searchjson/customer/',
     	dataType: 'json'
   }
 });
@@ -81,23 +86,67 @@ $('.select2_customer_id').select2({
 </script>
 
 
-  <div class='form-group row'>
+  <div class='form-group row {{orderDate_row_class}}'>
     <label for='orderDate' class='col-sm-2 col-form-label'>orderDate</label>
     <div class='col-sm-10'>
-	Current Value: {{orderDate}}<br>
       <input type='text' class='form-control' id='orderDate' name='orderDate' placeholder='' value='{{orderDate}}'>
+
+<button type='button' class='btn btn-primary' id='orderDate_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='orderDate_TodayNow'> Today and Now</button>
+
+<script>
+	var orderDateConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#orderDate_TodayNow').click( function(e) {
+      		$('#orderDate').val(orderDateConv.format(new Date())).change(); } );
+
+    	$('#orderDate_FontPicker').click(
+      		function(e) {
+        		$('#orderDate').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{shippedDate_row_class}}'>
     <label for='shippedDate' class='col-sm-2 col-form-label'>shippedDate</label>
     <div class='col-sm-10'>
-	Current Value: {{shippedDate}}<br>
       <input type='text' class='form-control' id='shippedDate' name='shippedDate' placeholder='' value='{{shippedDate}}'>
+
+<button type='button' class='btn btn-primary' id='shippedDate_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='shippedDate_TodayNow'> Today and Now</button>
+
+<script>
+	var shippedDateConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#shippedDate_TodayNow').click( function(e) {
+      		$('#shippedDate').val(shippedDateConv.format(new Date())).change(); } );
+
+    	$('#shippedDate_FontPicker').click(
+      		function(e) {
+        		$('#shippedDate').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{shipper_id_row_class}}'>
     <label for='shipper_id' class='col-sm-2 col-form-label'>shipper_id</label>
     <div class='col-sm-10'>
 	Current id value: {{shipper_id}} (see below for lookup value)<br>
@@ -111,7 +160,7 @@ $('.select2_customer_id').select2({
 
 $('.select2_shipper_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/shipper/',
+    	url: '/DURC/searchjson/shipper/',
     	dataType: 'json'
   }
 });
@@ -120,92 +169,114 @@ $('.select2_shipper_id').select2({
 </script>
 
 
-  <div class='form-group row'>
+  <div class='form-group row {{shipName_row_class}}'>
     <label for='shipName' class='col-sm-2 col-form-label'>shipName</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='shipName' name='shipName' placeholder='' value='{{shipName}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{shipAddress_row_class}}'>
     <label for='shipAddress' class='col-sm-2 col-form-label'>shipAddress</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='shipAddress' name='shipAddress' placeholder='' value='{{shipAddress}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{shipCity_row_class}}'>
     <label for='shipCity' class='col-sm-2 col-form-label'>shipCity</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='shipCity' name='shipCity' placeholder='' value='{{shipCity}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{shipStateProvince_row_class}}'>
     <label for='shipStateProvince' class='col-sm-2 col-form-label'>shipStateProvince</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='shipStateProvince' name='shipStateProvince' placeholder='' value='{{shipStateProvince}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{shipZipPostalCode_row_class}}'>
     <label for='shipZipPostalCode' class='col-sm-2 col-form-label'>shipZipPostalCode</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='shipZipPostalCode' name='shipZipPostalCode' placeholder='' value='{{shipZipPostalCode}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{shipCountryRegion_row_class}}'>
     <label for='shipCountryRegion' class='col-sm-2 col-form-label'>shipCountryRegion</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='shipCountryRegion' name='shipCountryRegion' placeholder='' value='{{shipCountryRegion}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{shippingFee_row_class}}'>
     <label for='shippingFee' class='col-sm-2 col-form-label'>shippingFee</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='shippingFee' name='shippingFee' placeholder='' value='{{shippingFee}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{taxes_row_class}}'>
     <label for='taxes' class='col-sm-2 col-form-label'>taxes</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='taxes' name='taxes' placeholder='' value='{{taxes}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{paymentType_row_class}}'>
     <label for='paymentType' class='col-sm-2 col-form-label'>paymentType</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='paymentType' name='paymentType' placeholder='' value='{{paymentType}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{paidDate_row_class}}'>
     <label for='paidDate' class='col-sm-2 col-form-label'>paidDate</label>
     <div class='col-sm-10'>
-	Current Value: {{paidDate}}<br>
       <input type='text' class='form-control' id='paidDate' name='paidDate' placeholder='' value='{{paidDate}}'>
+
+<button type='button' class='btn btn-primary' id='paidDate_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='paidDate_TodayNow'> Today and Now</button>
+
+<script>
+	var paidDateConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#paidDate_TodayNow').click( function(e) {
+      		$('#paidDate').val(paidDateConv.format(new Date())).change(); } );
+
+    	$('#paidDate_FontPicker').click(
+      		function(e) {
+        		$('#paidDate').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{notes_row_class}}'>
     <label for='notes' class='col-sm-2 col-form-label'>notes</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='notes' name='notes' placeholder='' value='{{notes}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{taxRate_row_class}}'>
     <label for='taxRate' class='col-sm-2 col-form-label'>taxRate</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='taxRate' name='taxRate' placeholder='' value='{{taxRate}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{taxStatus_id_row_class}}'>
     <label for='taxStatus_id' class='col-sm-2 col-form-label'>taxStatus_id</label>
     <div class='col-sm-10'>
 	Current id value: {{taxStatus_id}} (see below for lookup value)<br>
@@ -219,7 +290,7 @@ $('.select2_shipper_id').select2({
 
 $('.select2_taxStatus_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/orderTaxStatus/',
+    	url: '/DURC/searchjson/orderTaxStatus/',
     	dataType: 'json'
   }
 });
@@ -228,7 +299,7 @@ $('.select2_taxStatus_id').select2({
 </script>
 
 
-  <div class='form-group row'>
+  <div class='form-group row {{status_id_row_class}}'>
     <label for='status_id' class='col-sm-2 col-form-label'>status_id</label>
     <div class='col-sm-10'>
 	Current id value: {{status_id}} (see below for lookup value)<br>
@@ -242,7 +313,7 @@ $('.select2_taxStatus_id').select2({
 
 $('.select2_status_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/orderStatus/',
+    	url: '/DURC/searchjson/orderStatus/',
     	dataType: 'json'
   }
 });
@@ -256,20 +327,23 @@ $('.select2_status_id').select2({
       <button type='submit' class='btn btn-primary'>Save Data</button>
     </div>
   </div>
+  
+  
 
-</fieldset></form>
+</fieldset>
 </div></div>
+</form>
 
 <br>
 <div class='card'>
   <div class='card-header'>
-    Has Many Relationships
+    Relationships
   </div>
 <div class='card-body'>
 
 <div class='card'>
   <div class='card-header'>
-    invoice ( <a href='/DURC/invoice/'>see all</a> )
+    Has many invoice ( <a href='/DURC/invoice/'>see all</a> )
 {{^invoice}}
 (no values)
 {{/invoice}}
@@ -310,7 +384,7 @@ $('.select2_status_id').select2({
 
 <div class='card'>
   <div class='card-header'>
-    orderdetail ( <a href='/DURC/orderdetail/'>see all</a> )
+    Has many orderdetail ( <a href='/DURC/orderdetail/'>see all</a> )
 {{^orderdetail}}
 (no values)
 {{/orderdetail}}
@@ -553,7 +627,3 @@ $('.select2_status_id').select2({
 </div></div> <!-- end shipper card-->
 </div></div> <!--end belongs to card-->
 <br>
-<h5>Form Meta Data </h5>
-<ul>
-<li> DURC Generated At: Monday 1st of January 2018 04:58:04 PM </li>
-</ul>

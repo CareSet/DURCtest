@@ -5,8 +5,10 @@
 </div>
 {{/has_session_status}}
 
+
+
 {{#is_new}}
-<form action='/DURC/purchaseorderdetail/' method='POST'>
+<form action='/DURC/purchaseorderdetail' method='POST'>
 {{/is_new}}
 
 {{^is_new}}
@@ -20,6 +22,9 @@
 <h4> {{durc_instance_name}}</h4>
 <ul>
 <li> <a href='/DURC/purchaseorderdetail/'>Return to purchaseorderdetail list</a> </li>
+{{^is_new}}
+<li> <a href='/DURC/purchaseorderdetail/create'>Create new purchaseorderdetail </a> </li>
+{{/is_new}}
 </ul>
   </div>
 <div class='card-body'>
@@ -28,14 +33,14 @@
     <legend>Edit {{durc_instance_name}}  </legend>
 	<input type='hidden' name='_token' value='{{csrf_token}}'>
 	
-  <div class='form-group row'>
+  <div class='form-group row {{id_row_class}}'>
     <label for='id' class='col-sm-2 col-form-label'>id</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='id' name='id' placeholder='' value='{{id}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{purchaseOrder_id_row_class}}'>
     <label for='purchaseOrder_id' class='col-sm-2 col-form-label'>purchaseOrder_id</label>
     <div class='col-sm-10'>
 	Current id value: {{purchaseOrder_id}} (see below for lookup value)<br>
@@ -49,7 +54,7 @@
 
 $('.select2_purchaseOrder_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/purchaseOrder/',
+    	url: '/DURC/searchjson/purchaseOrder/',
     	dataType: 'json'
   }
 });
@@ -58,7 +63,7 @@ $('.select2_purchaseOrder_id').select2({
 </script>
 
 
-  <div class='form-group row'>
+  <div class='form-group row {{product_id_row_class}}'>
     <label for='product_id' class='col-sm-2 col-form-label'>product_id</label>
     <div class='col-sm-10'>
 	Current id value: {{product_id}} (see below for lookup value)<br>
@@ -72,7 +77,7 @@ $('.select2_purchaseOrder_id').select2({
 
 $('.select2_product_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/product/',
+    	url: '/DURC/searchjson/product/',
     	dataType: 'json'
   }
 });
@@ -81,36 +86,58 @@ $('.select2_product_id').select2({
 </script>
 
 
-  <div class='form-group row'>
+  <div class='form-group row {{quantity_row_class}}'>
     <label for='quantity' class='col-sm-2 col-form-label'>quantity</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='quantity' name='quantity' placeholder='' value='{{quantity}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{unitCost_row_class}}'>
     <label for='unitCost' class='col-sm-2 col-form-label'>unitCost</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='unitCost' name='unitCost' placeholder='' value='{{unitCost}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{dateReceived_row_class}}'>
     <label for='dateReceived' class='col-sm-2 col-form-label'>dateReceived</label>
     <div class='col-sm-10'>
-	Current Value: {{dateReceived}}<br>
       <input type='text' class='form-control' id='dateReceived' name='dateReceived' placeholder='' value='{{dateReceived}}'>
+
+<button type='button' class='btn btn-primary' id='dateReceived_FontPicker'>
+<img src='/images/DURC/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='dateReceived_TodayNow'> Today and Now</button>
+
+<script>
+	var dateReceivedConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#dateReceived_TodayNow').click( function(e) {
+      		$('#dateReceived').val(dateReceivedConv.format(new Date())).change(); } );
+
+    	$('#dateReceived_FontPicker').click(
+      		function(e) {
+        		$('#dateReceived').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{postedToInventory_row_class}}'>
     <label for='postedToInventory' class='col-sm-2 col-form-label'>postedToInventory</label>
     <div class='col-sm-10'>
       <input type='text' class='form-control' id='postedToInventory' name='postedToInventory' placeholder='' value='{{postedToInventory}}'>
     </div>
   </div>
 
-  <div class='form-group row'>
+  <div class='form-group row {{inventory_id_row_class}}'>
     <label for='inventory_id' class='col-sm-2 col-form-label'>inventory_id</label>
     <div class='col-sm-10'>
 	Current id value: {{inventory_id}} (see below for lookup value)<br>
@@ -124,7 +151,7 @@ $('.select2_product_id').select2({
 
 $('.select2_inventory_id').select2({
   ajax: {
-    	url: '/DURCsearchjson/inventoryTransaction/',
+    	url: '/DURC/searchjson/inventoryTransaction/',
     	dataType: 'json'
   }
 });
@@ -138,9 +165,12 @@ $('.select2_inventory_id').select2({
       <button type='submit' class='btn btn-primary'>Save Data</button>
     </div>
   </div>
+  
+  
 
-</fieldset></form>
+</fieldset>
 </div></div>
+</form>
 
 <br>
 <div class='card'>
@@ -257,7 +287,3 @@ $('.select2_inventory_id').select2({
 </div></div> <!-- end product card-->
 </div></div> <!--end belongs to card-->
 <br>
-<h5>Form Meta Data </h5>
-<ul>
-<li> DURC Generated At: Monday 1st of January 2018 04:58:04 PM </li>
-</ul>

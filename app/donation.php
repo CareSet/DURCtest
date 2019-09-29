@@ -7,10 +7,9 @@ namespace App;
 This class started life as a DURC model, but itwill no longer be overwritten by the generator
 this is safe to edit.
 
-DURC Generated At: Monday 1st of January 2018 04:58:04 PM
 
 */
-class donation extends \App\DURC\Models\DURC_donation
+class donation extends \App\DURC\Models\donation
 {
 
 	//You may need to change these for 'one to very very many' relationships.
@@ -30,9 +29,13 @@ class donation extends \App\DURC\Models\DURC_donation
 			//'deleted_at', //datetime
 		]; //end hidden array
 
-//DURC HAS_MANY SECTION			//DURC did not detect any has_many relationships//DURC BELONGS_TO SECTION
+
+//DURC HAS_MANY SECTION
+			//DURC did not detect any has_many relationships
+//DURC BELONGS_TO SECTION
+
 /**
-*	DURC is handling the nonprofitcorp for this donation in DURC_donation
+*	DURC is handling the nonprofitcorp for this donation in donation
 *       but you can extend or override the defaults by editing this function...
 */
 	public function nonprofitcorp(){
