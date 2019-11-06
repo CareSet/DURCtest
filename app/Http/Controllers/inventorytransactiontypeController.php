@@ -1,13 +1,15 @@
 <?php
-
+/*
+Note: because this file was signed, everything originally placed before the name space line has been replaced... with this comment ;)
+FILE_SIG=7eef2206c3bd356bf7f4760e6cbafb8b
+*/
 namespace App\Http\Controllers;
 
 use App\inventorytransactiontype;
-use App\DURC\Controllers\DURC_inventorytransactiontypeController;
+use App\DURC\Controllers\inventorytransactiontypeController as DURCParentController;
 use Illuminate\Http\Request;
 
-//DURC Generated At: Monday 1st of January 2018 04:58:04 PM
-class inventorytransactiontypeController extends DURC_inventorytransactiontypeController
+class inventorytransactiontypeController extends DURCParentController
 {
     /**
      * Display a listing of the resource.

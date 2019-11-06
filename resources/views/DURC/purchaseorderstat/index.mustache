@@ -1,0 +1,109 @@
+
+<h1>purchaseorderstat list </h1>
+<h3> <a href='/Zermelo/DURC_purchaseorderstat'>Zermelo purchaseorderstat Report</a></h3>
+Create <a href='/DURC/purchaseorderstat/create/'>new purchaseorderstat</a><br>
+
+
+{{^is_need_paging}}
+<p>
+{{total}} results. All rows shown.
+</p>
+{{/is_need_paging}}
+
+{{#is_need_paging}}
+
+<div class='dataTables_paginate paging_simple_numbers' id='table_purchaseorderstat_page'>
+	<ul class='pagination'>
+		<li class='paginate_button page-item previous {{first_page_class}}' 
+			id='table_purchaseorderstat_previous'>
+			<a href='{{first_page_url}}' aria-controls='table_purchaseorderstat' data-dt-idx='0' tabindex='0' class='page-link'>First</a>
+		</li>
+		<li class='paginate_button page-item {{prev_page_class}}'>
+			<a href='{{prev_page_url}}' aria-controls='table_purchaseorderstat' data-dt-idx='1' tabindex='0' class='page-link'>Previous</a>
+		</li>
+		<li class='paginate_button page-item active'>
+			<a href='#' aria-controls='table_purchaseorderstat' data-dt-idx='2' tabindex='0' class='page-link'>{{current_page}}</a>
+		</li>
+		<li class='paginate_button page-item {{next_page_class}} '>
+			<a href='{{next_page_url}}' aria-controls='table_purchaseorderstat' data-dt-idx='3' tabindex='0' class='page-link'>Next</a>
+		</li>
+		<li class='paginate_button page-item {{last_page_class}}'>
+			<a href='{{last_page_url}}' aria-controls='table_purchaseorderstat' data-dt-idx='4' tabindex='0' class='page-link'>Last</a>
+		</li>
+	</ul>
+</div>
+{{/is_need_paging}}
+
+
+<table id='table_purchaseorderstat' class='table table-bordered table-hover table-responsive table-sm'>
+<thead><tr>
+<th scope='col'>#</th><th scope='col'>status</th>
+
+</tr></thead>
+<tfoot><tr>
+<th scope='col'>#</th><th scope='col'>status</th>
+
+</tr></tfoot>
+<tbody>
+  {{#data}}
+    <tr>
+	<th scope='row'><a href='/DURC/purchaseorderstat/{{id}}/'> {{id}} </a></th>			<td>{{status}}</td>
+
+    </tr>
+  {{/data}}
+
+<tbody></table>
+
+
+
+{{^is_need_paging}}
+<p>
+{{total}} results. All rows shown.
+</p>
+{{/is_need_paging}}
+
+{{#is_need_paging}}
+
+<div class='dataTables_paginate paging_simple_numbers' id='table_purchaseorderstat_page'>
+	<ul class='pagination'>
+		<li class='paginate_button page-item previous {{first_page_class}}' 
+			id='table_purchaseorderstat_previous'>
+			<a href='{{first_page_url}}' aria-controls='table_purchaseorderstat' data-dt-idx='0' tabindex='0' class='page-link'>First</a>
+		</li>
+		<li class='paginate_button page-item {{prev_page_class}}'>
+			<a href='{{prev_page_url}}' aria-controls='table_purchaseorderstat' data-dt-idx='1' tabindex='0' class='page-link'>Previous</a>
+		</li>
+		<li class='paginate_button page-item active'>
+			<a href='#' aria-controls='table_purchaseorderstat' data-dt-idx='2' tabindex='0' class='page-link'>{{current_page}}</a>
+		</li>
+		<li class='paginate_button page-item {{next_page_class}} '>
+			<a href='{{next_page_url}}' aria-controls='table_purchaseorderstat' data-dt-idx='3' tabindex='0' class='page-link'>Next</a>
+		</li>
+		<li class='paginate_button page-item {{last_page_class}}'>
+			<a href='{{last_page_url}}' aria-controls='table_purchaseorderstat' data-dt-idx='4' tabindex='0' class='page-link'>Last</a>
+		</li>
+	</ul>
+</div>
+{{/is_need_paging}}
+
+
+<script type='text/javascript'>
+//we need a way to check to see if the page is loaded before we call DataTable()
+//but we frequently do not have JQuery yet... it could be loaded at the bottom of the page...
+//so we have a pure JS alternative to the ready() function..
+var DURC_checkReadyState = setInterval(() => {
+  if (document.readyState === 'complete') {
+    clearInterval(DURC_checkReadyState);
+    // document is ready
+    $('#table_purchaseorderstat').DataTable(
+{
+        'paging':   false,
+        'info':     false
+}
+);
+  }
+}, 100);
+
+
+</script>
+

@@ -1,13 +1,15 @@
 <?php
-
+/*
+Note: because this file was signed, everything originally placed before the name space line has been replaced... with this comment ;)
+FILE_SIG=9d4894b3b24b9cedeaf1e313eb30cc46
+*/
 namespace App\Http\Controllers;
 
 use App\sibling;
-use App\DURC\Controllers\DURC_siblingController;
+use App\DURC\Controllers\siblingController as DURCParentController;
 use Illuminate\Http\Request;
 
-//DURC Generated At: Monday 1st of January 2018 04:58:04 PM
-class siblingController extends DURC_siblingController
+class siblingController extends DURCParentController
 {
     /**
      * Display a listing of the resource.

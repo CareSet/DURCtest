@@ -1,13 +1,15 @@
 <?php
-
+/*
+Note: because this file was signed, everything originally placed before the name space line has been replaced... with this comment ;)
+FILE_SIG=2c9c6659f3028695907913f222190c9a
+*/
 namespace App\Http\Controllers;
 
 use App\employeeprivilege;
-use App\DURC\Controllers\DURC_employeeprivilegeController;
+use App\DURC\Controllers\employeeprivilegeController as DURCParentController;
 use Illuminate\Http\Request;
 
-//DURC Generated At: Monday 1st of January 2018 04:58:04 PM
-class employeeprivilegeController extends DURC_employeeprivilegeController
+class employeeprivilegeController extends DURCParentController
 {
     /**
      * Display a listing of the resource.

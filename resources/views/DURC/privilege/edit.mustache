@@ -5,8 +5,12 @@
 </div>
 {{/has_session_status}}
 
+<div id='delete-success-alert' class='alert alert-success' role='alert' style='display: none;'>
+                You have successfully deleted this record. This was a hard delete, no going back. But you can save again if you want.. 
+            </div>
+
 {{#is_new}}
-<form action='/DURC/privilege/' method='POST'>
+<form action='/DURC/privilege' method='POST'>
 {{/is_new}}
 
 {{^is_new}}
@@ -20,6 +24,9 @@
 <h4> {{durc_instance_name}}</h4>
 <ul>
 <li> <a href='/DURC/privilege/'>Return to privilege list</a> </li>
+{{^is_new}}
+<li> <a href='/DURC/privilege/create'>Create new privilege </a> </li>
+{{/is_new}}
 </ul>
   </div>
 <div class='card-body'>
@@ -28,39 +35,53 @@
     <legend>Edit {{durc_instance_name}}  </legend>
 	<input type='hidden' name='_token' value='{{csrf_token}}'>
 	
-  <div class='form-group row'>
-    <label for='id' class='col-sm-2 col-form-label'>id</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='id' name='id' placeholder='' value='{{id}}'>
+  <div class='form-group row {{id_row_class}}'>
+    <label for='id' class='col-sm-4 col-form-label'>id</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='id' name='id' placeholder='' value='{{id}}'  required>
+    </div>
+  </div>
+
+  <div class='form-group row {{privilegeName_row_class}}'>
+    <label for='privilegeName' class='col-sm-4 col-form-label'>privilegeName</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='privilegeName' name='privilegeName' placeholder='' value='{{privilegeName}}'  >
     </div>
   </div>
 
   <div class='form-group row'>
-    <label for='privilegeName' class='col-sm-2 col-form-label'>privilegeName</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='privilegeName' name='privilegeName' placeholder='' value='{{privilegeName}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <div class='col-sm-10'>
+    <div class='col-sm-8'>
       <button type='submit' class='btn btn-primary'>Save Data</button>
     </div>
   </div>
-
-</fieldset></form>
+  
+</fieldset>
 </div></div>
+</form>
+<br>
+  <div class='form-group row'>
+              <div class='col-sm-12 text-right'>
+
+<form action='/DURC/privilege/{{id}}' method='POST'>
+    	<input type='hidden' name='_method' value='DELETE'>
+	<input type='hidden' name='_token' value='{{csrf_token}}'>
+
+              <button type='button' data-id='{{id}}' data-controller='privilege' class='do-soft-delete btn btn-outline-danger'>Hard Delete privilege</button>
+</form>
+              </div>
+            </div>
+
 
 <br>
 <div class='card'>
   <div class='card-header'>
-    Has Many Relationships
+    Relationships
   </div>
 <div class='card-body'>
 
 <div class='card'>
   <div class='card-header'>
-    employeeprivilege ( <a href='/DURC/employeeprivilege/'>see all</a> )
+    Has one employeeprivilege ( <a href='/DURC/employeeprivilege/'>see all</a> )
 {{^employeeprivilege}}
 (no values)
 {{/employeeprivilege}}
@@ -79,7 +100,9 @@
 {{#employeeprivilege}}
 	<tr>
 		{{#.}}
-			<td>{{employee_id_DURClabel}} ({{employee_id}}) </td>			<td>{{privilege_id_DURClabel}} ({{privilege_id}}) </td>		
+			<td><a href='/DURC/employeeprivilege/{{employee_id}}'>{{employee_id}}</a></td>
+			<td><a href='/DURC/employeeprivilege/{{privilege_id}}'>{{privilege_id}}</a></td>
+		
 		{{/.}}
 	</tr>
 {{/employeeprivilege}}
@@ -89,7 +112,3 @@
 <br>
 </div></div> <!--end has many card-->
 <br>
-<h5>Form Meta Data </h5>
-<ul>
-<li> DURC Generated At: Monday 1st of January 2018 04:58:04 PM </li>
-</ul>

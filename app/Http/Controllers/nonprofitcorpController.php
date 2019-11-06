@@ -1,13 +1,15 @@
 <?php
-
+/*
+Note: because this file was signed, everything originally placed before the name space line has been replaced... with this comment ;)
+FILE_SIG=d78d849975671578084f146d4c40cad5
+*/
 namespace App\Http\Controllers;
 
 use App\nonprofitcorp;
-use App\DURC\Controllers\DURC_nonprofitcorpController;
+use App\DURC\Controllers\nonprofitcorpController as DURCParentController;
 use Illuminate\Http\Request;
 
-//DURC Generated At: Monday 1st of January 2018 04:58:04 PM
-class nonprofitcorpController extends DURC_nonprofitcorpController
+class nonprofitcorpController extends DURCParentController
 {
     /**
      * Display a listing of the resource.

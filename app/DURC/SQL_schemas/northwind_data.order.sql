@@ -1,0 +1,38 @@
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `order` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `employee_id` int(11) DEFAULT NULL,
+  `customer_id` int(11) DEFAULT NULL,
+  `orderDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `shippedDate` datetime DEFAULT NULL,
+  `shipper_id` int(11) DEFAULT NULL,
+  `shipName` varchar(50) DEFAULT NULL,
+  `shipAddress` longtext,
+  `shipCity` varchar(50) DEFAULT NULL,
+  `shipStateProvince` varchar(50) DEFAULT NULL,
+  `shipZipPostalCode` varchar(50) DEFAULT NULL,
+  `shipCountryRegion` varchar(50) DEFAULT NULL,
+  `shippingFee` decimal(19,4) DEFAULT '0.0000',
+  `taxes` decimal(19,4) DEFAULT '0.0000',
+  `paymentType` varchar(50) DEFAULT NULL,
+  `paidDate` datetime DEFAULT NULL,
+  `notes` longtext,
+  `taxRate` double DEFAULT '0',
+  `taxStatus_id` tinyint(4) DEFAULT NULL,
+  `status_id` tinyint(4) DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customer_id`),
+  KEY `employee_id` (`employee_id`),
+  KEY `id` (`id`),
+  KEY `shipper_id` (`shipper_id`),
+  KEY `taxStatus` (`taxStatus_id`),
+  KEY `shipZipPostalCode` (`shipZipPostalCode`),
+  KEY `fkOrderOrderStatus1` (`status_id`),
+  CONSTRAINT `fkOrderCustomers` FOREIGN KEY (`customer_id`) REFERENCES `northwind_model`.`customer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fkOrderEmployees1` FOREIGN KEY (`employee_id`) REFERENCES `northwind_model`.`employee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fkOrderOrderStatus1` FOREIGN KEY (`status_id`) REFERENCES `northwind_model`.`orderStatus` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fkOrderOrderTaxStatus1` FOREIGN KEY (`taxStatus_id`) REFERENCES `northwind_model`.`orderTaxStatus` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fkOrderShippers1` FOREIGN KEY (`shipper_id`) REFERENCES `northwind_model`.`shipper` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;

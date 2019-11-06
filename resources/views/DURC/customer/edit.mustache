@@ -5,8 +5,12 @@
 </div>
 {{/has_session_status}}
 
+<div id='delete-success-alert' class='alert alert-success' role='alert' style='display: none;'>
+                You have successfully deleted this record. <a href='/DURC/customer/restore/{{id}}' data-id='{{id}}' data-controller='customer' class='do-recover btn btn-secondary'>Undo</a>
+            </div>
+
 {{#is_new}}
-<form action='/DURC/customer/' method='POST'>
+<form action='/DURC/customer' method='POST'>
 {{/is_new}}
 
 {{^is_new}}
@@ -20,6 +24,9 @@
 <h4> {{durc_instance_name}}</h4>
 <ul>
 <li> <a href='/DURC/customer/'>Return to customer list</a> </li>
+{{^is_new}}
+<li> <a href='/DURC/customer/create'>Create new customer </a> </li>
+{{/is_new}}
 </ul>
   </div>
 <div class='card-body'>
@@ -28,245 +35,279 @@
     <legend>Edit {{durc_instance_name}}  </legend>
 	<input type='hidden' name='_token' value='{{csrf_token}}'>
 	
-  <div class='form-group row'>
-    <label for='id' class='col-sm-2 col-form-label'>id</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='id' name='id' placeholder='' value='{{id}}'>
+  <div class='form-group row {{id_row_class}}'>
+    <label for='id' class='col-sm-4 col-form-label'>id</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='id' name='id' placeholder='' value='{{id}}'  required>
+    </div>
+  </div>
+
+  <div class='form-group row {{companyName_row_class}}'>
+    <label for='companyName' class='col-sm-4 col-form-label'>companyName</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='companyName' name='companyName' placeholder='' value='{{companyName}}'  >
+    </div>
+  </div>
+
+  <div class='form-group row {{lastName_row_class}}'>
+    <label for='lastName' class='col-sm-4 col-form-label'>lastName</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='lastName' name='lastName' placeholder='' value='{{lastName}}'  >
+    </div>
+  </div>
+
+  <div class='form-group row {{firstName_row_class}}'>
+    <label for='firstName' class='col-sm-4 col-form-label'>firstName</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='firstName' name='firstName' placeholder='' value='{{firstName}}'  >
+    </div>
+  </div>
+
+  <div class='form-group row {{emailAddress_row_class}}'>
+    <label for='emailAddress' class='col-sm-4 col-form-label'>emailAddress</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='emailAddress' name='emailAddress' placeholder='' value='{{emailAddress}}'  >
+    </div>
+  </div>
+
+  <div class='form-group row {{jobTitle_row_class}}'>
+    <label for='jobTitle' class='col-sm-4 col-form-label'>jobTitle</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='jobTitle' name='jobTitle' placeholder='' value='{{jobTitle}}'  >
+    </div>
+  </div>
+
+  <div class='form-group row {{businessPhone_row_class}}'>
+    <label for='businessPhone' class='col-sm-4 col-form-label'>businessPhone</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='businessPhone' name='businessPhone' placeholder='' value='{{businessPhone}}'  >
+    </div>
+  </div>
+
+  <div class='form-group row {{homePhone_row_class}}'>
+    <label for='homePhone' class='col-sm-4 col-form-label'>homePhone</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='homePhone' name='homePhone' placeholder='' value='{{homePhone}}'  >
+    </div>
+  </div>
+
+  <div class='form-group row {{mobilePhone_row_class}}'>
+    <label for='mobilePhone' class='col-sm-4 col-form-label'>mobilePhone</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='mobilePhone' name='mobilePhone' placeholder='' value='{{mobilePhone}}'  >
+    </div>
+  </div>
+
+  <div class='form-group row {{faxNumber_row_class}}'>
+    <label for='faxNumber' class='col-sm-4 col-form-label'>faxNumber</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='faxNumber' name='faxNumber' placeholder='' value='{{faxNumber}}'  >
+    </div>
+  </div>
+
+  <div class='form-group row {{address_row_class}}'>
+    <label for='address' class='col-sm-4 col-form-label'>address</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='address' name='address' placeholder='' value='{{address}}'  >
+    </div>
+  </div>
+
+  <div class='form-group row {{city_row_class}}'>
+    <label for='city' class='col-sm-4 col-form-label'>city</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='city' name='city' placeholder='' value='{{city}}'  >
+    </div>
+  </div>
+
+  <div class='form-group row {{stateProvince_row_class}}'>
+    <label for='stateProvince' class='col-sm-4 col-form-label'>stateProvince</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='stateProvince' name='stateProvince' placeholder='' value='{{stateProvince}}'  >
+    </div>
+  </div>
+
+  <div class='form-group row {{zipPostalCode_row_class}}'>
+    <label for='zipPostalCode' class='col-sm-4 col-form-label'>zipPostalCode</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='zipPostalCode' name='zipPostalCode' placeholder='' value='{{zipPostalCode}}'  >
+    </div>
+  </div>
+
+  <div class='form-group row {{countryRegion_row_class}}'>
+    <label for='countryRegion' class='col-sm-4 col-form-label'>countryRegion</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='countryRegion' name='countryRegion' placeholder='' value='{{countryRegion}}'  >
+    </div>
+  </div>
+
+  <div class='form-group row {{webPage_row_class}}'>
+    <label for='webPage' class='col-sm-4 col-form-label'>webPage</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='webPage' name='webPage' placeholder='' value='{{webPage}}'  >
+    </div>
+  </div>
+
+  <div class='form-group row {{notes_row_class}}'>
+    <label for='notes' class='col-sm-4 col-form-label'>notes</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='notes' name='notes' placeholder='' value='{{notes}}'  >
+    </div>
+  </div>
+
+  <div class='form-group row {{attachments_row_class}}'>
+    <label for='attachments' class='col-sm-4 col-form-label'>attachments</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='attachments' name='attachments' placeholder='' value='{{attachments}}'  >
+    </div>
+  </div>
+
+  <div class='form-group row {{random_date_row_class}}'>
+    <label for='random_date' class='col-sm-4 col-form-label'>random_date</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='random_date' name='random_date' placeholder='' value='{{random_date}}'  >
+
+<button type='button' class='btn btn-primary' id='random_date_FontPicker'>
+<img src='/css/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='random_date_TodayNow'> Today and Now</button>
+
+<script>
+	var random_dateConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#random_date_TodayNow').click( function(e) {
+      		$('#random_date').val(random_dateConv.format(new Date())).change(); } );
+
+    	$('#random_date_FontPicker').click(
+      		function(e) {
+        		$('#random_date').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
+    </div>
+  </div>
+
+  <div class='form-group row {{created_at_row_class}}'>
+    <label for='created_at' class='col-sm-4 col-form-label'>created_at</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='created_at' name='created_at' placeholder='' value='{{created_at}}'  >
+
+<button type='button' class='btn btn-primary' id='created_at_FontPicker'>
+<img src='/css/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='created_at_TodayNow'> Today and Now</button>
+
+<script>
+	var created_atConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#created_at_TodayNow').click( function(e) {
+      		$('#created_at').val(created_atConv.format(new Date())).change(); } );
+
+    	$('#created_at_FontPicker').click(
+      		function(e) {
+        		$('#created_at').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
+    </div>
+  </div>
+
+  <div class='form-group row {{updated_at_row_class}}'>
+    <label for='updated_at' class='col-sm-4 col-form-label'>updated_at</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='updated_at' name='updated_at' placeholder='' value='{{updated_at}}'  >
+
+<button type='button' class='btn btn-primary' id='updated_at_FontPicker'>
+<img src='/css/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='updated_at_TodayNow'> Today and Now</button>
+
+<script>
+	var updated_atConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#updated_at_TodayNow').click( function(e) {
+      		$('#updated_at').val(updated_atConv.format(new Date())).change(); } );
+
+    	$('#updated_at_FontPicker').click(
+      		function(e) {
+        		$('#updated_at').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
+    </div>
+  </div>
+
+  <div class='form-group row {{deleted_at_row_class}}'>
+    <label for='deleted_at' class='col-sm-4 col-form-label'>deleted_at</label>
+    <div class='col-sm-8'>
+      <input type='text' class='form-control' id='deleted_at' name='deleted_at' placeholder='' value='{{deleted_at}}'  >
+
+<button type='button' class='btn btn-primary' id='deleted_at_FontPicker'>
+<img src='/css/ic_today_black_24dp_1x.png'> 
+</button>
+<button type='button' class='btn btn-primary' id='deleted_at_TodayNow'> Today and Now</button>
+
+<script>
+	var deleted_atConv = new AnyTime.Converter({format: '%Y-%m-%d %T'});
+  	$('#deleted_at_TodayNow').click( function(e) {
+      		$('#deleted_at').val(deleted_atConv.format(new Date())).change(); } );
+
+    	$('#deleted_at_FontPicker').click(
+      		function(e) {
+        		$('#deleted_at').AnyTime_noPicker().AnyTime_picker(
+				{
+    					format: '%Y-%m-%d %T',
+    					formatUtcOffset: '%: (%@)'
+				} 
+			).focus();
+        	e.preventDefault();
+        	} );
+</script>
+
     </div>
   </div>
 
   <div class='form-group row'>
-    <label for='companyName' class='col-sm-2 col-form-label'>companyName</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='companyName' name='companyName' placeholder='' value='{{companyName}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='lastName' class='col-sm-2 col-form-label'>lastName</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='lastName' name='lastName' placeholder='' value='{{lastName}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='firstName' class='col-sm-2 col-form-label'>firstName</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='firstName' name='firstName' placeholder='' value='{{firstName}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='emailAddress' class='col-sm-2 col-form-label'>emailAddress</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='emailAddress' name='emailAddress' placeholder='' value='{{emailAddress}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='jobTitle' class='col-sm-2 col-form-label'>jobTitle</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='jobTitle' name='jobTitle' placeholder='' value='{{jobTitle}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='businessPhone' class='col-sm-2 col-form-label'>businessPhone</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='businessPhone' name='businessPhone' placeholder='' value='{{businessPhone}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='homePhone' class='col-sm-2 col-form-label'>homePhone</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='homePhone' name='homePhone' placeholder='' value='{{homePhone}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='mobilePhone' class='col-sm-2 col-form-label'>mobilePhone</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='mobilePhone' name='mobilePhone' placeholder='' value='{{mobilePhone}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='faxNumber' class='col-sm-2 col-form-label'>faxNumber</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='faxNumber' name='faxNumber' placeholder='' value='{{faxNumber}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='address' class='col-sm-2 col-form-label'>address</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='address' name='address' placeholder='' value='{{address}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='city' class='col-sm-2 col-form-label'>city</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='city' name='city' placeholder='' value='{{city}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='stateProvince' class='col-sm-2 col-form-label'>stateProvince</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='stateProvince' name='stateProvince' placeholder='' value='{{stateProvince}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='zipPostalCode' class='col-sm-2 col-form-label'>zipPostalCode</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='zipPostalCode' name='zipPostalCode' placeholder='' value='{{zipPostalCode}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='countryRegion' class='col-sm-2 col-form-label'>countryRegion</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='countryRegion' name='countryRegion' placeholder='' value='{{countryRegion}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='webPage' class='col-sm-2 col-form-label'>webPage</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='webPage' name='webPage' placeholder='' value='{{webPage}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='notes' class='col-sm-2 col-form-label'>notes</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='notes' name='notes' placeholder='' value='{{notes}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='attachments' class='col-sm-2 col-form-label'>attachments</label>
-    <div class='col-sm-10'>
-      <input type='text' class='form-control' id='attachments' name='attachments' placeholder='' value='{{attachments}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='random_date' class='col-sm-2 col-form-label'>random_date</label>
-    <div class='col-sm-10'>
-	Current Value: {{random_date}}<br>
-      <input type='text' class='form-control' id='random_date' name='random_date' placeholder='' value='{{random_date}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='created_at' class='col-sm-2 col-form-label'>created_at</label>
-    <div class='col-sm-10'>
-	Current Value: {{created_at}}<br>
-      <input type='text' class='form-control' id='created_at' name='created_at' placeholder='' value='{{created_at}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='updated_at' class='col-sm-2 col-form-label'>updated_at</label>
-    <div class='col-sm-10'>
-	Current Value: {{updated_at}}<br>
-      <input type='text' class='form-control' id='updated_at' name='updated_at' placeholder='' value='{{updated_at}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <label for='deleted_at' class='col-sm-2 col-form-label'>deleted_at</label>
-    <div class='col-sm-10'>
-	Current Value: {{deleted_at}}<br>
-      <input type='text' class='form-control' id='deleted_at' name='deleted_at' placeholder='' value='{{deleted_at}}'>
-    </div>
-  </div>
-
-  <div class='form-group row'>
-    <div class='col-sm-10'>
+    <div class='col-sm-8'>
       <button type='submit' class='btn btn-primary'>Save Data</button>
     </div>
   </div>
-
-</fieldset></form>
+  
+</fieldset>
 </div></div>
+</form>
+<br>
+  
+{{#is_new}}
+<form action='/DURC/customer' method='POST'>
+{{/is_new}}
+
+{{^is_new}}
+<form action='/DURC/customer/{{id}}' method='POST'>
+    <input type='hidden' name='_method' value='PUT'>
+{{/is_new}}
+
+<div class='form-group row'>
+              <div class='col-sm-12 text-right'>
+              <button type='button' data-id='{{id}}' data-controller='customer' class='do-soft-delete btn btn-outline-danger'>Delete</button>
+              </div>
+            </div>
+</form>
+
+
 
 <br>
-<div class='card'>
-  <div class='card-header'>
-    Has Many Relationships
-  </div>
-<div class='card-body'>
-
-<div class='card'>
-  <div class='card-header'>
-    order ( <a href='/DURC/order/'>see all</a> )
-{{^order}}
-(no values)
-{{/order}}
-  </div>
-<div class='card-body'>
-
-<table id='table_order' class='table table-bordered table-hover table-responsive table-sm'>
-<thead>
-<tr>
-			<th> id </th>
-			<th> employee_id </th>
-			<th> customer_id </th>
-			<th> orderDate </th>
-			<th> shippedDate </th>
-			<th> shipper_id </th>
-			<th> shipName </th>
-			<th> shipAddress </th>
-			<th> shipCity </th>
-			<th> shipStateProvince </th>
-			<th> shipZipPostalCode </th>
-			<th> shipCountryRegion </th>
-			<th> shippingFee </th>
-			<th> taxes </th>
-			<th> paymentType </th>
-			<th> paidDate </th>
-			<th> notes </th>
-			<th> taxRate </th>
-			<th> taxStatus_id </th>
-			<th> status_id </th>
-
-</tr>
-</thead>
-<tbody>
-{{#order}}
-	<tr>
-		{{#.}}
-			<td><a href='/DURC/order/{{id}}'>{{id}}</a></td>
-			<td>{{employee_id_DURClabel}} ({{employee_id}}) </td>			<td>{{customer_id_DURClabel}} ({{customer_id}}) </td>			<td>{{orderDate}}</td>
-			<td>{{shippedDate}}</td>
-			<td>{{shipper_id_DURClabel}} ({{shipper_id}}) </td>			<td>{{shipName}}</td>
-			<td>{{shipAddress}}</td>
-			<td>{{shipCity}}</td>
-			<td>{{shipStateProvince}}</td>
-			<td>{{shipZipPostalCode}}</td>
-			<td>{{shipCountryRegion}}</td>
-			<td>{{shippingFee}}</td>
-			<td>{{taxes}}</td>
-			<td>{{paymentType}}</td>
-			<td>{{paidDate}}</td>
-			<td>{{notes}}</td>
-			<td>{{taxRate}}</td>
-			<td>{{taxStatus_id_DURClabel}} ({{taxStatus_id}}) </td>			<td>{{status_id_DURClabel}} ({{status_id}}) </td>		
-		{{/.}}
-	</tr>
-{{/order}}
-</tbody>
-</table>
-</div></div> <!-- end order card-->
-<br>
-</div></div> <!--end has many card-->
-<br>
-<h5>Form Meta Data </h5>
-<ul>
-<li> DURC Generated At: Monday 1st of January 2018 04:58:04 PM </li>
-</ul>

@@ -1,13 +1,15 @@
 <?php
-
+/*
+Note: because this file was signed, everything originally placed before the name space line has been replaced... with this comment ;)
+FILE_SIG=ccd8144513b8fc1d7e599b6afb667aa9
+*/
 namespace App\Http\Controllers;
 
 use App\comment;
-use App\DURC\Controllers\DURC_commentController;
+use App\DURC\Controllers\commentController as DURCParentController;
 use Illuminate\Http\Request;
 
-//DURC Generated At: Monday 1st of January 2018 04:58:04 PM
-class commentController extends DURC_commentController
+class commentController extends DURCParentController
 {
     /**
      * Display a listing of the resource.

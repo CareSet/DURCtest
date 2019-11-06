@@ -1,13 +1,15 @@
 <?php
-
+/*
+Note: because this file was signed, everything originally placed before the name space line has been replaced... with this comment ;)
+FILE_SIG=cdd398a2900166c956d7eb5148cb4b8c
+*/
 namespace App\Http\Controllers;
 
 use App\customer;
-use App\DURC\Controllers\DURC_customerController;
+use App\DURC\Controllers\customerController as DURCParentController;
 use Illuminate\Http\Request;
 
-//DURC Generated At: Monday 1st of January 2018 04:58:04 PM
-class customerController extends DURC_customerController
+class customerController extends DURCParentController
 {
     /**
      * Display a listing of the resource.

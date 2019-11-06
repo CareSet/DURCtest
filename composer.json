@@ -4,14 +4,37 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/CareSet/ZermeloInstaller.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/CareSet/ZermeloBladeTabular.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/CareSet/ZermeloBladeGraph.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/CareSet/ZermeloBladeCard.git"
+        },
+        {
+            "type": "git",
+            "url":"https://github.com/CareSet/Zermelo.git"
+        }
+    ],
     "require": {
         "php": ">=7.0.0",
+        "careset/durc": "dev-master",
+        "careset/zermelo_installer": "dev-master",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "nesbot/carbon": "^1.22",
-        "proai/laravel-handlebars": "~1.6",
-        "careset/durc": "@dev"
+        "proai/laravel-handlebars": "~1.6"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
@@ -55,5 +78,7 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "optimize-autoloader": true
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

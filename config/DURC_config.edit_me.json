@@ -1,1558 +1,4 @@
 {
-    "aaaDurctest": {
-        "author": {
-            "table_name": "author",
-            "db": "aaaDurctest",
-            "column_data": [
-                {
-                    "column_name": "id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "lastname",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "firstname",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "select_name",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "created_date",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "updated_date",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                }
-            ],
-            "has_many": {
-                "author_book": {
-                    "prefix": null,
-                    "type": "author_book",
-                    "from_table": "author_book",
-                    "from_db": "aaaDurctest",
-                    "from_column": "author_id"
-                }
-            }
-        },
-        "author_book": {
-            "table_name": "author_book",
-            "db": "aaaDurctest",
-            "column_data": [
-                {
-                    "column_name": "id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "author_id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": true,
-                    "foreign_db": "aaaDurctest",
-                    "foreign_table": "author"
-                },
-                {
-                    "column_name": "book_id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": true,
-                    "foreign_db": "aaaDurctest",
-                    "foreign_table": "book"
-                },
-                {
-                    "column_name": "authortype_id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": true,
-                    "foreign_db": "aaaDurctest",
-                    "foreign_table": "authortype"
-                }
-            ],
-            "belongs_to": {
-                "author": {
-                    "prefix": null,
-                    "type": "author",
-                    "to_table": "author",
-                    "to_db": "aaaDurctest",
-                    "local_key": "author_id"
-                },
-                "book": {
-                    "prefix": null,
-                    "type": "book",
-                    "to_table": "book",
-                    "to_db": "aaaDurctest",
-                    "local_key": "book_id"
-                },
-                "authortype": {
-                    "prefix": null,
-                    "type": "authortype",
-                    "to_table": "authortype",
-                    "to_db": "aaaDurctest",
-                    "local_key": "authortype_id"
-                }
-            }
-        },
-        "authortype": {
-            "table_name": "authortype",
-            "db": "aaaDurctest",
-            "column_data": [
-                {
-                    "column_name": "id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "authortypedesc",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "created_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "updated_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                }
-            ],
-            "has_many": {
-                "author_book": {
-                    "prefix": null,
-                    "type": "author_book",
-                    "from_table": "author_book",
-                    "from_db": "aaaDurctest",
-                    "from_column": "authortype_id"
-                }
-            }
-        },
-        "book": {
-            "table_name": "book",
-            "db": "aaaDurctest",
-            "column_data": [
-                {
-                    "column_name": "id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "title",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "release_date",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "created_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "updated_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                }
-            ],
-            "has_many": {
-                "author_book": {
-                    "prefix": null,
-                    "type": "author_book",
-                    "from_table": "author_book",
-                    "from_db": "aaaDurctest",
-                    "from_column": "book_id"
-                }
-            }
-        },
-        "comment": {
-            "table_name": "comment",
-            "db": "aaaDurctest",
-            "column_data": [
-                {
-                    "column_name": "id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "comment_text",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "post_id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": true,
-                    "foreign_db": "aaaDurctest",
-                    "foreign_table": "post"
-                },
-                {
-                    "column_name": "created_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "updated_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                }
-            ],
-            "belongs_to": {
-                "post": {
-                    "prefix": null,
-                    "type": "post",
-                    "to_table": "post",
-                    "to_db": "aaaDurctest",
-                    "local_key": "post_id"
-                }
-            }
-        },
-        "donation": {
-            "table_name": "donation",
-            "db": "aaaDurctest",
-            "column_data": [
-                {
-                    "column_name": "id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "amount",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "nonprofitcorp_id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": true,
-                    "foreign_db": "irs",
-                    "foreign_table": "nonprofitcorp"
-                },
-                {
-                    "column_name": "created_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "updated_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "deleted_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                }
-            ],
-            "belongs_to": {
-                "nonprofitcorp": {
-                    "prefix": null,
-                    "type": "nonprofitcorp",
-                    "to_table": "nonprofitcorp",
-                    "to_db": "irs",
-                    "local_key": "nonprofitcorp_id"
-                }
-            }
-        },
-        "foreignkeytestgizmo": {
-            "table_name": "foreignkeytestgizmo",
-            "db": "aaaDurctest",
-            "column_data": [
-                {
-                    "column_name": "id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "gizmoname",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "created_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "updated_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "deleted_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                }
-            ]
-        },
-        "foreignkeytestthingy": {
-            "table_name": "foreignkeytestthingy",
-            "db": "aaaDurctest",
-            "column_data": [
-                {
-                    "column_name": "id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "thingyname",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "gizmopickupaskey",
-                    "data_type": "int",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "aaaDurctest",
-                    "foreign_table": "foreignkeytestgizmo"
-                },
-                {
-                    "column_name": "created_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "updated_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "deleted_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                }
-            ]
-        },
-        "funnything": {
-            "table_name": "funnything",
-            "db": "aaaDurctest",
-            "column_data": [
-                {
-                    "column_name": "id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "thisint",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "thisfloat",
-                    "data_type": "float",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "thisdecimal",
-                    "data_type": "decimal",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "thisvarchar",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "thisdate",
-                    "data_type": "date",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "thisdatetime",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "thistimestamp",
-                    "data_type": "timestamp",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "thischar",
-                    "data_type": "char",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "thistext",
-                    "data_type": "text",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "thisblob",
-                    "data_type": "blob",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "thistinyint",
-                    "data_type": "tinyint",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "thistinytext",
-                    "data_type": "tinytext",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                }
-            ]
-        },
-        "post": {
-            "table_name": "post",
-            "db": "aaaDurctest",
-            "column_data": [
-                {
-                    "column_name": "id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "title",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "content",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "created_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "updated_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                }
-            ],
-            "has_many": {
-                "comment": {
-                    "prefix": null,
-                    "type": "comment",
-                    "from_table": "comment",
-                    "from_db": "aaaDurctest",
-                    "from_column": "post_id"
-                },
-                "vote": {
-                    "prefix": null,
-                    "type": "vote",
-                    "from_table": "vote",
-                    "from_db": "aaaDurctest",
-                    "from_column": "post_id"
-                }
-            }
-        },
-        "sibling": {
-            "table_name": "sibling",
-            "db": "aaaDurctest",
-            "column_data": [
-                {
-                    "column_name": "id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "siblingname",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "step_sibling_id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": true,
-                    "foreign_db": "aaaDurctest",
-                    "foreign_table": "sibling"
-                },
-                {
-                    "column_name": "sibling_id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": true,
-                    "foreign_db": "aaaDurctest",
-                    "foreign_table": "sibling"
-                },
-                {
-                    "column_name": "created_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "updated_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                }
-            ],
-            "has_many": {
-                "step_sibling": {
-                    "prefix": "step",
-                    "type": "sibling",
-                    "from_table": "sibling",
-                    "from_db": "aaaDurctest",
-                    "from_column": "step_sibling_id"
-                },
-                "sibling": {
-                    "prefix": null,
-                    "type": "sibling",
-                    "from_table": "sibling",
-                    "from_db": "aaaDurctest",
-                    "from_column": "sibling_id"
-                }
-            },
-            "belongs_to": {
-                "step_sibling": {
-                    "prefix": "step",
-                    "type": "sibling",
-                    "to_table": "sibling",
-                    "to_db": "aaaDurctest",
-                    "local_key": "step_sibling_id"
-                },
-                "sibling": {
-                    "prefix": null,
-                    "type": "sibling",
-                    "to_table": "sibling",
-                    "to_db": "aaaDurctest",
-                    "local_key": "sibling_id"
-                }
-            }
-        },
-        "vote": {
-            "table_name": "vote",
-            "db": "aaaDurctest",
-            "column_data": [
-                {
-                    "column_name": "id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "post_id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": true,
-                    "foreign_db": "aaaDurctest",
-                    "foreign_table": "post"
-                },
-                {
-                    "column_name": "votenum",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "updated_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "created_at",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                }
-            ],
-            "belongs_to": {
-                "post": {
-                    "prefix": null,
-                    "type": "post",
-                    "to_table": "post",
-                    "to_db": "aaaDurctest",
-                    "local_key": "post_id"
-                }
-            }
-        }
-    },
-    "irs": {
-        "nonprofitcorp": {
-            "table_name": "nonprofitcorp",
-            "db": "irs",
-            "column_data": [
-                {
-                    "column_name": "id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "EIN",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "TAXPAYER_NAME",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                }
-            ],
-            "has_many": {
-                "donation": {
-                    "prefix": null,
-                    "type": "donation",
-                    "from_table": "donation",
-                    "from_db": "aaaDurctest",
-                    "from_column": "nonprofitcorp_id"
-                }
-            }
-        }
-    },
-    "northwind_data": {
-        "inventorytransaction": {
-            "table_name": "inventoryTransaction",
-            "db": "northwind_data",
-            "column_data": [
-                {
-                    "column_name": "id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "transactionType",
-                    "data_type": "tinyint",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_model",
-                    "foreign_table": "inventoryTransactionType"
-                },
-                {
-                    "column_name": "transactionCreatedDate",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "transactionModifiedDate",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "product_id",
-                    "data_type": "int",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_model",
-                    "foreign_table": "product"
-                },
-                {
-                    "column_name": "quantity",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "purchaseOrder_id",
-                    "data_type": "int",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_data",
-                    "foreign_table": "purchaseOrder"
-                },
-                {
-                    "column_name": "customerOrder_id",
-                    "data_type": "int",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_data",
-                    "foreign_table": "order"
-                },
-                {
-                    "column_name": "comments",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                }
-            ],
-            "belongs_to": {
-                "product": {
-                    "prefix": null,
-                    "type": "product",
-                    "to_table": "product",
-                    "to_db": "northwind_model",
-                    "local_key": "product_id"
-                },
-                "purchaseorder": {
-                    "prefix": null,
-                    "type": "purchaseorder",
-                    "to_table": "purchaseOrder",
-                    "to_db": "northwind_data",
-                    "local_key": "purchaseOrder_id"
-                }
-            }
-        },
-        "invoice": {
-            "table_name": "invoice",
-            "db": "northwind_data",
-            "column_data": [
-                {
-                    "column_name": "id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "order_id",
-                    "data_type": "int",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_data",
-                    "foreign_table": "order"
-                },
-                {
-                    "column_name": "invoiceDate",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "dueDate",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "tax",
-                    "data_type": "decimal",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "shipping",
-                    "data_type": "decimal",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "amountDue",
-                    "data_type": "decimal",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                }
-            ],
-            "belongs_to": {
-                "order": {
-                    "prefix": null,
-                    "type": "order",
-                    "to_table": "order",
-                    "to_db": "northwind_data",
-                    "local_key": "order_id"
-                }
-            }
-        },
-        "order": {
-            "table_name": "order",
-            "db": "northwind_data",
-            "column_data": [
-                {
-                    "column_name": "id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "employee_id",
-                    "data_type": "int",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_model",
-                    "foreign_table": "employee"
-                },
-                {
-                    "column_name": "customer_id",
-                    "data_type": "int",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_model",
-                    "foreign_table": "customer"
-                },
-                {
-                    "column_name": "orderDate",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "shippedDate",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "shipper_id",
-                    "data_type": "int",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_model",
-                    "foreign_table": "shipper"
-                },
-                {
-                    "column_name": "shipName",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "shipAddress",
-                    "data_type": "longtext",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "shipCity",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "shipStateProvince",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "shipZipPostalCode",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "shipCountryRegion",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "shippingFee",
-                    "data_type": "decimal",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "taxes",
-                    "data_type": "decimal",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "paymentType",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "paidDate",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "notes",
-                    "data_type": "longtext",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "taxRate",
-                    "data_type": "double",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "taxStatus_id",
-                    "data_type": "tinyint",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_model",
-                    "foreign_table": "orderTaxStatus"
-                },
-                {
-                    "column_name": "status_id",
-                    "data_type": "tinyint",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_model",
-                    "foreign_table": "orderStatus"
-                }
-            ],
-            "has_many": {
-                "invoice": {
-                    "prefix": null,
-                    "type": "invoice",
-                    "from_table": "invoice",
-                    "from_db": "northwind_data",
-                    "from_column": "order_id"
-                },
-                "orderdetail": {
-                    "prefix": null,
-                    "type": "orderdetail",
-                    "from_table": "orderDetail",
-                    "from_db": "northwind_data",
-                    "from_column": "order_id"
-                }
-            },
-            "belongs_to": {
-                "employee": {
-                    "prefix": null,
-                    "type": "employee",
-                    "to_table": "employee",
-                    "to_db": "northwind_model",
-                    "local_key": "employee_id"
-                },
-                "customer": {
-                    "prefix": null,
-                    "type": "customer",
-                    "to_table": "customer",
-                    "to_db": "northwind_model",
-                    "local_key": "customer_id"
-                },
-                "shipper": {
-                    "prefix": null,
-                    "type": "shipper",
-                    "to_table": "shipper",
-                    "to_db": "northwind_model",
-                    "local_key": "shipper_id"
-                }
-            }
-        },
-        "orderdetail": {
-            "table_name": "orderDetail",
-            "db": "northwind_data",
-            "column_data": [
-                {
-                    "column_name": "id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "order_id",
-                    "data_type": "int",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_data",
-                    "foreign_table": "order"
-                },
-                {
-                    "column_name": "product_id",
-                    "data_type": "int",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_model",
-                    "foreign_table": "product"
-                },
-                {
-                    "column_name": "quantity",
-                    "data_type": "decimal",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "unitPrice",
-                    "data_type": "decimal",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "discount",
-                    "data_type": "double",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "status_id",
-                    "data_type": "int",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_model",
-                    "foreign_table": "orderDetailStatus"
-                },
-                {
-                    "column_name": "dateAllocated",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "PurchaseOrder_id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_data",
-                    "foreign_table": "purchaseOrder"
-                },
-                {
-                    "column_name": "inventory_id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                }
-            ],
-            "belongs_to": {
-                "order": {
-                    "prefix": null,
-                    "type": "order",
-                    "to_table": "order",
-                    "to_db": "northwind_data",
-                    "local_key": "order_id"
-                },
-                "product": {
-                    "prefix": null,
-                    "type": "product",
-                    "to_table": "product",
-                    "to_db": "northwind_model",
-                    "local_key": "product_id"
-                },
-                "purchaseorder": {
-                    "prefix": null,
-                    "type": "purchaseorder",
-                    "to_table": "purchaseOrder",
-                    "to_db": "northwind_data",
-                    "local_key": "PurchaseOrder_id"
-                }
-            }
-        },
-        "purchaseorder": {
-            "table_name": "purchaseOrder",
-            "db": "northwind_data",
-            "column_data": [
-                {
-                    "column_name": "id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "supplier_id",
-                    "data_type": "int",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_model",
-                    "foreign_table": "supplier"
-                },
-                {
-                    "column_name": "createdBy_employee_id",
-                    "data_type": "int",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_model",
-                    "foreign_table": "employee"
-                },
-                {
-                    "column_name": "submittedDate",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "creationDate",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "status_id",
-                    "data_type": "int",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_model",
-                    "foreign_table": "purchaseOrderStatus"
-                },
-                {
-                    "column_name": "expectedDate",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "shippingFee",
-                    "data_type": "decimal",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "taxes",
-                    "data_type": "decimal",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "paymentDate",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "paymentAmount",
-                    "data_type": "decimal",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "paymentMethod",
-                    "data_type": "varchar",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "notes",
-                    "data_type": "longtext",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "approvedBy_employee_id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_model",
-                    "foreign_table": "employee"
-                },
-                {
-                    "column_name": "approvedDate",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "submittedBy_employee_id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_model",
-                    "foreign_table": "employee"
-                }
-            ],
-            "has_many": {
-                "inventorytransaction": {
-                    "prefix": null,
-                    "type": "inventorytransaction",
-                    "from_table": "inventoryTransaction",
-                    "from_db": "northwind_data",
-                    "from_column": "purchaseOrder_id"
-                },
-                "orderdetail": {
-                    "prefix": null,
-                    "type": "orderdetail",
-                    "from_table": "orderDetail",
-                    "from_db": "northwind_data",
-                    "from_column": "PurchaseOrder_id"
-                },
-                "purchaseorderdetail": {
-                    "prefix": null,
-                    "type": "purchaseorderdetail",
-                    "from_table": "purchaseOrderDetail",
-                    "from_db": "northwind_data",
-                    "from_column": "purchaseOrder_id"
-                }
-            },
-            "belongs_to": {
-                "supplier": {
-                    "prefix": null,
-                    "type": "supplier",
-                    "to_table": "supplier",
-                    "to_db": "northwind_model",
-                    "local_key": "supplier_id"
-                },
-                "createdBy_employee": {
-                    "prefix": "createdBy",
-                    "type": "employee",
-                    "to_table": "employee",
-                    "to_db": "northwind_model",
-                    "local_key": "createdBy_employee_id"
-                },
-                "approvedBy_employee": {
-                    "prefix": "approvedBy",
-                    "type": "employee",
-                    "to_table": "employee",
-                    "to_db": "northwind_model",
-                    "local_key": "approvedBy_employee_id"
-                },
-                "submittedBy_employee": {
-                    "prefix": "submittedBy",
-                    "type": "employee",
-                    "to_table": "employee",
-                    "to_db": "northwind_model",
-                    "local_key": "submittedBy_employee_id"
-                }
-            }
-        },
-        "purchaseorderdetail": {
-            "table_name": "purchaseOrderDetail",
-            "db": "northwind_data",
-            "column_data": [
-                {
-                    "column_name": "id",
-                    "data_type": "int",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "purchaseOrder_id",
-                    "data_type": "int",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_data",
-                    "foreign_table": "purchaseOrder"
-                },
-                {
-                    "column_name": "product_id",
-                    "data_type": "int",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_model",
-                    "foreign_table": "product"
-                },
-                {
-                    "column_name": "quantity",
-                    "data_type": "decimal",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "unitCost",
-                    "data_type": "decimal",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "dateReceived",
-                    "data_type": "datetime",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "postedToInventory",
-                    "data_type": "tinyint",
-                    "is_foreign_key": false,
-                    "is_linked_key": false,
-                    "foreign_db": null,
-                    "foreign_table": null
-                },
-                {
-                    "column_name": "inventory_id",
-                    "data_type": "int",
-                    "is_foreign_key": true,
-                    "is_linked_key": true,
-                    "foreign_db": "northwind_data",
-                    "foreign_table": "inventoryTransaction"
-                }
-            ],
-            "belongs_to": {
-                "purchaseorder": {
-                    "prefix": null,
-                    "type": "purchaseorder",
-                    "to_table": "purchaseOrder",
-                    "to_db": "northwind_data",
-                    "local_key": "purchaseOrder_id"
-                },
-                "product": {
-                    "prefix": null,
-                    "type": "product",
-                    "to_table": "product",
-                    "to_db": "northwind_model",
-                    "local_key": "product_id"
-                }
-            }
-        }
-    },
     "northwind_model": {
         "appstring": {
             "table_name": "appstring",
@@ -1561,20 +7,27 @@
                 {
                     "column_name": "id",
                     "data_type": "int",
+                    "is_primary_key": true,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 },
                 {
                     "column_name": "stringData",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": "placeholder"
                 }
-            ]
+            ],
+            "create_table_sql": "CREATE TABLE `northwind_model`.`appstring` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `stringData` varchar(255) NOT NULL DEFAULT 'placeholder',\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB  DEFAULT CHARSET=utf8"
         },
         "customer": {
             "table_name": "customer",
@@ -1583,189 +36,247 @@
                 {
                     "column_name": "id",
                     "data_type": "int",
+                    "is_primary_key": true,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 },
                 {
                     "column_name": "companyName",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "lastName",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "firstName",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "emailAddress",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "jobTitle",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "businessPhone",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "homePhone",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "mobilePhone",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "faxNumber",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "address",
                     "data_type": "longtext",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "city",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "stateProvince",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "zipPostalCode",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "countryRegion",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "webPage",
                     "data_type": "longtext",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "notes",
                     "data_type": "longtext",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "attachments",
                     "data_type": "longblob",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "random_date",
                     "data_type": "datetime",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 },
                 {
                     "column_name": "created_at",
                     "data_type": "datetime",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 },
                 {
                     "column_name": "updated_at",
                     "data_type": "datetime",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 },
                 {
                     "column_name": "deleted_at",
                     "data_type": "datetime",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 }
             ],
-            "has_many": {
-                "order": {
-                    "prefix": null,
-                    "type": "order",
-                    "from_table": "order",
-                    "from_db": "northwind_data",
-                    "from_column": "customer_id"
-                }
-            }
+            "create_table_sql": "CREATE TABLE `northwind_model`.`customer` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `companyName` varchar(50) DEFAULT NULL,\n  `lastName` varchar(50) DEFAULT NULL,\n  `firstName` varchar(50) DEFAULT NULL,\n  `emailAddress` varchar(50) DEFAULT NULL,\n  `jobTitle` varchar(50) DEFAULT NULL,\n  `businessPhone` varchar(25) DEFAULT NULL,\n  `homePhone` varchar(25) DEFAULT NULL,\n  `mobilePhone` varchar(25) DEFAULT NULL,\n  `faxNumber` varchar(25) DEFAULT NULL,\n  `address` longtext,\n  `city` varchar(50) DEFAULT NULL,\n  `stateProvince` varchar(50) DEFAULT NULL,\n  `zipPostalCode` varchar(15) DEFAULT NULL,\n  `countryRegion` varchar(50) DEFAULT NULL,\n  `webPage` longtext,\n  `notes` longtext,\n  `attachments` longblob,\n  `random_date` datetime NOT NULL,\n  `created_at` datetime NOT NULL,\n  `updated_at` datetime NOT NULL,\n  `deleted_at` datetime NOT NULL,\n  PRIMARY KEY (`id`),\n  KEY `city` (`city`),\n  KEY `company` (`companyName`),\n  KEY `firstName` (`firstName`),\n  KEY `lastName` (`lastName`),\n  KEY `zipPostalCode` (`zipPostalCode`),\n  KEY `stateProvince` (`stateProvince`)\n) ENGINE=InnoDB  DEFAULT CHARSET=utf8"
         },
         "employee": {
             "table_name": "employee",
@@ -1774,177 +285,203 @@
                 {
                     "column_name": "id",
                     "data_type": "int",
+                    "is_primary_key": true,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 },
                 {
                     "column_name": "company",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "lastName",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "firstName",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "emailAddress",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "jobTitle",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "businessPhone",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "homePhone",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "mobilePhone",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "faxNumber",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "address",
                     "data_type": "longtext",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "city",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "stateProvince",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "zipPostalCode",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "countryRegion",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "webPage",
                     "data_type": "longtext",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "notes",
                     "data_type": "longtext",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "attachments",
                     "data_type": "longblob",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 }
             ],
-            "has_many": {
-                "order": {
-                    "prefix": null,
-                    "type": "order",
-                    "from_table": "order",
-                    "from_db": "northwind_data",
-                    "from_column": "employee_id"
-                },
-                "createdBy_purchaseorder": {
-                    "prefix": "createdBy",
-                    "type": "purchaseorder",
-                    "from_table": "purchaseOrder",
-                    "from_db": "northwind_data",
-                    "from_column": "createdBy_employee_id"
-                },
-                "approvedBy_purchaseorder": {
-                    "prefix": "approvedBy",
-                    "type": "purchaseorder",
-                    "from_table": "purchaseOrder",
-                    "from_db": "northwind_data",
-                    "from_column": "approvedBy_employee_id"
-                },
-                "submittedBy_purchaseorder": {
-                    "prefix": "submittedBy",
-                    "type": "purchaseorder",
-                    "from_table": "purchaseOrder",
-                    "from_db": "northwind_data",
-                    "from_column": "submittedBy_employee_id"
-                },
+            "has_one": {
                 "employeeprivilege": {
                     "prefix": null,
                     "type": "employeeprivilege",
@@ -1952,7 +489,8 @@
                     "from_db": "northwind_model",
                     "from_column": "employee_id"
                 }
-            }
+            },
+            "create_table_sql": "CREATE TABLE `northwind_model`.`employee` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `company` varchar(50) DEFAULT NULL,\n  `lastName` varchar(50) DEFAULT NULL,\n  `firstName` varchar(50) DEFAULT NULL,\n  `emailAddress` varchar(50) DEFAULT NULL,\n  `jobTitle` varchar(50) DEFAULT NULL,\n  `businessPhone` varchar(25) DEFAULT NULL,\n  `homePhone` varchar(25) DEFAULT NULL,\n  `mobilePhone` varchar(25) DEFAULT NULL,\n  `faxNumber` varchar(25) DEFAULT NULL,\n  `address` longtext,\n  `city` varchar(50) DEFAULT NULL,\n  `stateProvince` varchar(50) DEFAULT NULL,\n  `zipPostalCode` varchar(15) DEFAULT NULL,\n  `countryRegion` varchar(50) DEFAULT NULL,\n  `webPage` longtext,\n  `notes` longtext,\n  `attachments` longblob,\n  PRIMARY KEY (`id`),\n  KEY `city` (`city`),\n  KEY `company` (`company`),\n  KEY `firstName` (`firstName`),\n  KEY `lastName` (`lastName`),\n  KEY `zipPostalCode` (`zipPostalCode`),\n  KEY `stateProvince` (`stateProvince`)\n) ENGINE=InnoDB  DEFAULT CHARSET=utf8"
         },
         "employeeprivilege": {
             "table_name": "employeePrivilege",
@@ -1961,18 +499,24 @@
                 {
                     "column_name": "employee_id",
                     "data_type": "int",
+                    "is_primary_key": true,
                     "is_foreign_key": true,
                     "is_linked_key": true,
                     "foreign_db": "northwind_model",
-                    "foreign_table": "employee"
+                    "foreign_table": "employee",
+                    "is_nullable": false,
+                    "default_value": null
                 },
                 {
                     "column_name": "privilege_id",
                     "data_type": "int",
+                    "is_primary_key": true,
                     "is_foreign_key": true,
                     "is_linked_key": true,
                     "foreign_db": "northwind_model",
-                    "foreign_table": "privilege"
+                    "foreign_table": "privilege",
+                    "is_nullable": false,
+                    "default_value": null
                 }
             ],
             "belongs_to": {
@@ -1990,7 +534,8 @@
                     "to_db": "northwind_model",
                     "local_key": "privilege_id"
                 }
-            }
+            },
+            "create_table_sql": "CREATE TABLE `northwind_model`.`employeePrivilege` (\n  `employee_id` int(11) NOT NULL,\n  `privilege_id` int(11) NOT NULL,\n  PRIMARY KEY (`employee_id`,`privilege_id`),\n  KEY `employee_id` (`employee_id`),\n  KEY `privilege_id` (`privilege_id`),\n  CONSTRAINT `fkEmployeePrivilegeEmployees1` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,\n  CONSTRAINT `fkEmployeePrivilegePrivilege1` FOREIGN KEY (`privilege_id`) REFERENCES `privilege` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION\n) ENGINE=InnoDB DEFAULT CHARSET=utf8"
         },
         "inventorytransactiontype": {
             "table_name": "inventoryTransactionType",
@@ -1999,86 +544,114 @@
                 {
                     "column_name": "id",
                     "data_type": "tinyint",
+                    "is_primary_key": true,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 },
                 {
                     "column_name": "typeName",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 }
-            ]
+            ],
+            "create_table_sql": "CREATE TABLE `northwind_model`.`inventoryTransactionType` (\n  `id` tinyint(4) NOT NULL,\n  `typeName` varchar(50) NOT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8"
         },
-        "orderdetailstatus": {
-            "table_name": "orderDetailStatus",
+        "orderdetailstat": {
+            "table_name": "orderDetailStat",
             "db": "northwind_model",
             "column_data": [
                 {
                     "column_name": "id",
                     "data_type": "int",
+                    "is_primary_key": true,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 },
                 {
                     "column_name": "statusName",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 }
-            ]
+            ],
+            "create_table_sql": "CREATE TABLE `northwind_model`.`orderDetailStat` (\n  `id` int(11) NOT NULL,\n  `statusName` varchar(50) NOT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8"
         },
-        "orderstatus": {
-            "table_name": "orderStatus",
+        "orderstat": {
+            "table_name": "orderStat",
             "db": "northwind_model",
             "column_data": [
                 {
                     "column_name": "id",
                     "data_type": "tinyint",
+                    "is_primary_key": true,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 },
                 {
                     "column_name": "statusName",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 }
-            ]
+            ],
+            "create_table_sql": "CREATE TABLE `northwind_model`.`orderStat` (\n  `id` tinyint(4) NOT NULL,\n  `statusName` varchar(50) NOT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8"
         },
-        "ordertaxstatus": {
-            "table_name": "orderTaxStatus",
+        "ordertaxstat": {
+            "table_name": "orderTaxStat",
             "db": "northwind_model",
             "column_data": [
                 {
                     "column_name": "id",
                     "data_type": "tinyint",
+                    "is_primary_key": true,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 },
                 {
-                    "column_name": "taxStatusName",
+                    "column_name": "taxStatName",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 }
-            ]
+            ],
+            "create_table_sql": "CREATE TABLE `northwind_model`.`orderTaxStat` (\n  `id` tinyint(4) NOT NULL,\n  `taxStatName` varchar(50) NOT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8"
         },
         "privilege": {
             "table_name": "privilege",
@@ -2087,21 +660,27 @@
                 {
                     "column_name": "id",
                     "data_type": "int",
+                    "is_primary_key": true,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 },
                 {
                     "column_name": "privilegeName",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 }
             ],
-            "has_many": {
+            "has_one": {
                 "employeeprivilege": {
                     "prefix": null,
                     "type": "employeeprivilege",
@@ -2109,7 +688,8 @@
                     "from_db": "northwind_model",
                     "from_column": "privilege_id"
                 }
-            }
+            },
+            "create_table_sql": "CREATE TABLE `northwind_model`.`privilege` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `privilegeName` varchar(50) DEFAULT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB  DEFAULT CHARSET=utf8"
         },
         "product": {
             "table_name": "product",
@@ -2118,161 +698,188 @@
                 {
                     "column_name": "supplier_ids",
                     "data_type": "longtext",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "id",
                     "data_type": "int",
+                    "is_primary_key": true,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 },
                 {
                     "column_name": "productCode",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "productName",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "description",
                     "data_type": "longtext",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "standardCost",
                     "data_type": "decimal",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": "0.0000"
                 },
                 {
                     "column_name": "listPrice",
                     "data_type": "decimal",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": "0.0000"
                 },
                 {
                     "column_name": "reorderLevel",
                     "data_type": "int",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "targetLevel",
                     "data_type": "int",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "quantityPerUnit",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "discontinued",
                     "data_type": "tinyint",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": "0"
                 },
                 {
                     "column_name": "minimumReorderQuantity",
                     "data_type": "int",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "category",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "attachments",
                     "data_type": "longblob",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 }
             ],
-            "has_many": {
-                "inventorytransaction": {
-                    "prefix": null,
-                    "type": "inventorytransaction",
-                    "from_table": "inventoryTransaction",
-                    "from_db": "northwind_data",
-                    "from_column": "product_id"
-                },
-                "orderdetail": {
-                    "prefix": null,
-                    "type": "orderdetail",
-                    "from_table": "orderDetail",
-                    "from_db": "northwind_data",
-                    "from_column": "product_id"
-                },
-                "purchaseorderdetail": {
-                    "prefix": null,
-                    "type": "purchaseorderdetail",
-                    "from_table": "purchaseOrderDetail",
-                    "from_db": "northwind_data",
-                    "from_column": "product_id"
-                }
-            }
+            "create_table_sql": "CREATE TABLE `northwind_model`.`product` (\n  `supplier_ids` longtext,\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `productCode` varchar(25) DEFAULT NULL,\n  `productName` varchar(50) DEFAULT NULL,\n  `description` longtext,\n  `standardCost` decimal(19,4) DEFAULT '0.0000',\n  `listPrice` decimal(19,4) NOT NULL DEFAULT '0.0000',\n  `reorderLevel` int(11) DEFAULT NULL,\n  `targetLevel` int(11) DEFAULT NULL,\n  `quantityPerUnit` varchar(50) DEFAULT NULL,\n  `discontinued` tinyint(1) NOT NULL DEFAULT '0',\n  `minimumReorderQuantity` int(11) DEFAULT NULL,\n  `category` varchar(50) DEFAULT NULL,\n  `attachments` longblob,\n  PRIMARY KEY (`id`),\n  KEY `productCode` (`productCode`)\n) ENGINE=InnoDB  DEFAULT CHARSET=utf8"
         },
-        "purchaseorderstatus": {
-            "table_name": "purchaseOrderStatus",
+        "purchaseorderstat": {
+            "table_name": "purchaseOrderStat",
             "db": "northwind_model",
             "column_data": [
                 {
                     "column_name": "id",
                     "data_type": "int",
+                    "is_primary_key": true,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 },
                 {
                     "column_name": "status",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 }
-            ]
+            ],
+            "create_table_sql": "CREATE TABLE `northwind_model`.`purchaseOrderStat` (\n  `id` int(11) NOT NULL,\n  `status` varchar(50) DEFAULT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8"
         },
         "salesreport": {
             "table_name": "salesReport",
@@ -2281,44 +888,60 @@
                 {
                     "column_name": "groupBy",
                     "data_type": "varchar",
+                    "is_primary_key": true,
                     "is_foreign_key": true,
                     "is_linked_key": true,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 },
                 {
                     "column_name": "display",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "title",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "filterRowSource",
                     "data_type": "longtext",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "default",
                     "data_type": "tinyint",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": "0"
                 }
-            ]
+            ],
+            "create_table_sql": "CREATE TABLE `northwind_model`.`salesReport` (\n  `groupBy` varchar(50) NOT NULL,\n  `display` varchar(50) DEFAULT NULL,\n  `title` varchar(50) DEFAULT NULL,\n  `filterRowSource` longtext,\n  `default` tinyint(1) NOT NULL DEFAULT '0',\n  PRIMARY KEY (`groupBy`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8"
         },
         "shipper": {
             "table_name": "shipper",
@@ -2327,157 +950,203 @@
                 {
                     "column_name": "id",
                     "data_type": "int",
+                    "is_primary_key": true,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 },
                 {
                     "column_name": "company",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "lastName",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "firstName",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "emailAddress",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "jobTitle",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "businessPhone",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "homePhone",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "mobilePhone",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "faxNumber",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "address",
                     "data_type": "longtext",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "city",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "stateProvince",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "zipPostalCode",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "countryRegion",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "webPage",
                     "data_type": "longtext",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "notes",
                     "data_type": "longtext",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "attachments",
                     "data_type": "longblob",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 }
             ],
-            "has_many": {
-                "order": {
-                    "prefix": null,
-                    "type": "order",
-                    "from_table": "order",
-                    "from_db": "northwind_data",
-                    "from_column": "shipper_id"
-                }
-            }
+            "create_table_sql": "CREATE TABLE `northwind_model`.`shipper` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `company` varchar(50) DEFAULT NULL,\n  `lastName` varchar(50) DEFAULT NULL,\n  `firstName` varchar(50) DEFAULT NULL,\n  `emailAddress` varchar(50) DEFAULT NULL,\n  `jobTitle` varchar(50) DEFAULT NULL,\n  `businessPhone` varchar(25) DEFAULT NULL,\n  `homePhone` varchar(25) DEFAULT NULL,\n  `mobilePhone` varchar(25) DEFAULT NULL,\n  `faxNumber` varchar(25) DEFAULT NULL,\n  `address` longtext,\n  `city` varchar(50) DEFAULT NULL,\n  `stateProvince` varchar(50) DEFAULT NULL,\n  `zipPostalCode` varchar(15) DEFAULT NULL,\n  `countryRegion` varchar(50) DEFAULT NULL,\n  `webPage` longtext,\n  `notes` longtext,\n  `attachments` longblob,\n  PRIMARY KEY (`id`),\n  KEY `city` (`city`),\n  KEY `company` (`company`),\n  KEY `firstName` (`firstName`),\n  KEY `lastName` (`lastName`),\n  KEY `zipPostalCode` (`zipPostalCode`),\n  KEY `stateProvince` (`stateProvince`)\n) ENGINE=InnoDB  DEFAULT CHARSET=utf8"
         },
         "supplier": {
             "table_name": "supplier",
@@ -2486,157 +1155,203 @@
                 {
                     "column_name": "id",
                     "data_type": "int",
+                    "is_primary_key": true,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": false,
+                    "default_value": null
                 },
                 {
                     "column_name": "company",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "lastName",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "firstName",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "emailAddress",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "jobTitle",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "businessPhone",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "homePhone",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "mobilePhone",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "faxNumber",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "address",
                     "data_type": "longtext",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "city",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "stateProvince",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "zipPostalCode",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "countryRegion",
                     "data_type": "varchar",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "webPage",
                     "data_type": "longtext",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "notes",
                     "data_type": "longtext",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 },
                 {
                     "column_name": "attachments",
                     "data_type": "longblob",
+                    "is_primary_key": false,
                     "is_foreign_key": false,
                     "is_linked_key": false,
                     "foreign_db": null,
-                    "foreign_table": null
+                    "foreign_table": null,
+                    "is_nullable": true,
+                    "default_value": null
                 }
             ],
-            "has_many": {
-                "purchaseorder": {
-                    "prefix": null,
-                    "type": "purchaseorder",
-                    "from_table": "purchaseOrder",
-                    "from_db": "northwind_data",
-                    "from_column": "supplier_id"
-                }
-            }
+            "create_table_sql": "CREATE TABLE `northwind_model`.`supplier` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `company` varchar(50) DEFAULT NULL,\n  `lastName` varchar(50) DEFAULT NULL,\n  `firstName` varchar(50) DEFAULT NULL,\n  `emailAddress` varchar(50) DEFAULT NULL,\n  `jobTitle` varchar(50) DEFAULT NULL,\n  `businessPhone` varchar(25) DEFAULT NULL,\n  `homePhone` varchar(25) DEFAULT NULL,\n  `mobilePhone` varchar(25) DEFAULT NULL,\n  `faxNumber` varchar(25) DEFAULT NULL,\n  `address` longtext,\n  `city` varchar(50) DEFAULT NULL,\n  `stateProvince` varchar(50) DEFAULT NULL,\n  `zipPostalCode` varchar(15) DEFAULT NULL,\n  `countryRegion` varchar(50) DEFAULT NULL,\n  `webPage` longtext,\n  `notes` longtext,\n  `attachments` longblob,\n  PRIMARY KEY (`id`),\n  KEY `city` (`city`),\n  KEY `company` (`company`),\n  KEY `firstName` (`firstName`),\n  KEY `lastName` (`lastName`),\n  KEY `zipPostalCode` (`zipPostalCode`),\n  KEY `stateProvince` (`stateProvince`)\n) ENGINE=InnoDB  DEFAULT CHARSET=utf8"
         }
     }
 }

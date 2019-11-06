@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Generated from DURC/src/Generators/MustacheMenuGenerator.php  -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -10,10 +11,13 @@
     <title>DURC Dashboard</title>
 
     <!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-
+<link rel="stylesheet" href="/css/anytime.5.2.0.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/simplemde.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.39.0/codemirror.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.39.0/theme/lesser-dark.css">
 
 <style>
 body {
@@ -54,15 +58,17 @@ h1 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+  .AnyTime-pkr { z-index: 9999 }
 </style>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-
+<script src="/js/anytime.5.2.0.js"></script>
+<script src="/js/simplemde.min.js"></script>
+<script src="/js/form.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.39.0/codemirror.js"></script>
   </head>
   <body>
     <header>
@@ -75,7 +81,7 @@ h1 {
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/DURC/">DURC <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="DURC/">DURC <span class="sr-only">(current)</span></a>
             </li>
           </ul>
         </div>
@@ -87,82 +93,6 @@ h1 {
         <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
           <ul class="nav nav-pills flex-column">
 
-
-            <li class='nav-item'>
-              <a class='nav-link' href='/DURC/author/'>author</a>
-            </li>
-
-            <li class='nav-item'>
-              <a class='nav-link' href='/DURC/author_book/'>author_book</a>
-            </li>
-
-            <li class='nav-item'>
-              <a class='nav-link' href='/DURC/authortype/'>authortype</a>
-            </li>
-
-            <li class='nav-item'>
-              <a class='nav-link' href='/DURC/book/'>book</a>
-            </li>
-
-            <li class='nav-item'>
-              <a class='nav-link' href='/DURC/comment/'>comment</a>
-            </li>
-
-            <li class='nav-item'>
-              <a class='nav-link' href='/DURC/donation/'>donation</a>
-            </li>
-
-            <li class='nav-item'>
-              <a class='nav-link' href='/DURC/foreignkeytestgizmo/'>foreignkeytestgizmo</a>
-            </li>
-
-            <li class='nav-item'>
-              <a class='nav-link' href='/DURC/foreignkeytestthingy/'>foreignkeytestthingy</a>
-            </li>
-
-            <li class='nav-item'>
-              <a class='nav-link' href='/DURC/funnything/'>funnything</a>
-            </li>
-
-            <li class='nav-item'>
-              <a class='nav-link' href='/DURC/post/'>post</a>
-            </li>
-
-            <li class='nav-item'>
-              <a class='nav-link' href='/DURC/sibling/'>sibling</a>
-            </li>
-
-            <li class='nav-item'>
-              <a class='nav-link' href='/DURC/vote/'>vote</a>
-            </li>
-
-            <li class='nav-item'>
-              <a class='nav-link' href='/DURC/nonprofitcorp/'>nonprofitcorp</a>
-            </li>
-
-            <li class='nav-item'>
-              <a class='nav-link' href='/DURC/inventorytransaction/'>inventorytransaction</a>
-            </li>
-
-            <li class='nav-item'>
-              <a class='nav-link' href='/DURC/invoice/'>invoice</a>
-            </li>
-
-            <li class='nav-item'>
-              <a class='nav-link' href='/DURC/order/'>order</a>
-            </li>
-
-            <li class='nav-item'>
-              <a class='nav-link' href='/DURC/orderdetail/'>orderdetail</a>
-            </li>
-
-            <li class='nav-item'>
-              <a class='nav-link' href='/DURC/purchaseorder/'>purchaseorder</a>
-            </li>
-
-            <li class='nav-item'>
-              <a class='nav-link' href='/DURC/purchaseorderdetail/'>purchaseorderdetail</a>
-            </li>
 
             <li class='nav-item'>
               <a class='nav-link' href='/DURC/appstring/'>appstring</a>
@@ -185,15 +115,15 @@ h1 {
             </li>
 
             <li class='nav-item'>
-              <a class='nav-link' href='/DURC/orderdetailstatus/'>orderdetailstatus</a>
+              <a class='nav-link' href='/DURC/orderdetailstat/'>orderdetailstat</a>
             </li>
 
             <li class='nav-item'>
-              <a class='nav-link' href='/DURC/orderstatus/'>orderstatus</a>
+              <a class='nav-link' href='/DURC/orderstat/'>orderstat</a>
             </li>
 
             <li class='nav-item'>
-              <a class='nav-link' href='/DURC/ordertaxstatus/'>ordertaxstatus</a>
+              <a class='nav-link' href='/DURC/ordertaxstat/'>ordertaxstat</a>
             </li>
 
             <li class='nav-item'>
@@ -205,7 +135,7 @@ h1 {
             </li>
 
             <li class='nav-item'>
-              <a class='nav-link' href='/DURC/purchaseorderstatus/'>purchaseorderstatus</a>
+              <a class='nav-link' href='/DURC/purchaseorderstat/'>purchaseorderstat</a>
             </li>
 
             <li class='nav-item'>

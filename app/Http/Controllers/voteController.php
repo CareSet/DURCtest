@@ -1,13 +1,15 @@
 <?php
-
+/*
+Note: because this file was signed, everything originally placed before the name space line has been replaced... with this comment ;)
+FILE_SIG=cf152894c78a888cbd805591a766d367
+*/
 namespace App\Http\Controllers;
 
 use App\vote;
-use App\DURC\Controllers\DURC_voteController;
+use App\DURC\Controllers\voteController as DURCParentController;
 use Illuminate\Http\Request;
 
-//DURC Generated At: Monday 1st of January 2018 04:58:04 PM
-class voteController extends DURC_voteController
+class voteController extends DURCParentController
 {
     /**
      * Display a listing of the resource.
