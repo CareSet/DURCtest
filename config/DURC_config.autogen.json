@@ -13,7 +13,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": true
                 },
                 {
                     "column_name": "stringData",
@@ -24,10 +25,11 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": "placeholder"
+                    "default_value": null,
+                    "is_auto_increment": false
                 }
             ],
-            "create_table_sql": "CREATE TABLE `northwind_model`.`appstring` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `stringData` varchar(255) NOT NULL DEFAULT 'placeholder',\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB  DEFAULT CHARSET=utf8"
+            "create_table_sql": "CREATE TABLE `northwind_model`.`appstring` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `stringData` varchar(255) NOT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB  DEFAULT CHARSET=utf8"
         },
         "customer": {
             "table_name": "customer",
@@ -42,7 +44,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": true
                 },
                 {
                     "column_name": "companyName",
@@ -53,7 +56,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "lastName",
@@ -64,7 +68,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "firstName",
@@ -75,7 +80,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "emailAddress",
@@ -86,7 +92,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "jobTitle",
@@ -97,7 +104,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "businessPhone",
@@ -108,7 +116,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "homePhone",
@@ -119,7 +128,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "mobilePhone",
@@ -130,7 +140,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "faxNumber",
@@ -141,7 +152,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "address",
@@ -152,7 +164,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "city",
@@ -163,7 +176,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "stateProvince",
@@ -174,7 +188,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "zipPostalCode",
@@ -185,7 +200,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "countryRegion",
@@ -196,7 +212,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "webPage",
@@ -207,7 +224,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "notes",
@@ -218,7 +236,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "attachments",
@@ -229,7 +248,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "random_date",
@@ -240,7 +260,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "created_at",
@@ -251,7 +272,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "updated_at",
@@ -262,7 +284,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "deleted_at",
@@ -273,7 +296,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 }
             ],
             "create_table_sql": "CREATE TABLE `northwind_model`.`customer` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `companyName` varchar(50) DEFAULT NULL,\n  `lastName` varchar(50) DEFAULT NULL,\n  `firstName` varchar(50) DEFAULT NULL,\n  `emailAddress` varchar(50) DEFAULT NULL,\n  `jobTitle` varchar(50) DEFAULT NULL,\n  `businessPhone` varchar(25) DEFAULT NULL,\n  `homePhone` varchar(25) DEFAULT NULL,\n  `mobilePhone` varchar(25) DEFAULT NULL,\n  `faxNumber` varchar(25) DEFAULT NULL,\n  `address` longtext,\n  `city` varchar(50) DEFAULT NULL,\n  `stateProvince` varchar(50) DEFAULT NULL,\n  `zipPostalCode` varchar(15) DEFAULT NULL,\n  `countryRegion` varchar(50) DEFAULT NULL,\n  `webPage` longtext,\n  `notes` longtext,\n  `attachments` longblob,\n  `random_date` datetime NOT NULL,\n  `created_at` datetime NOT NULL,\n  `updated_at` datetime NOT NULL,\n  `deleted_at` datetime NOT NULL,\n  PRIMARY KEY (`id`),\n  KEY `city` (`city`),\n  KEY `company` (`companyName`),\n  KEY `firstName` (`firstName`),\n  KEY `lastName` (`lastName`),\n  KEY `zipPostalCode` (`zipPostalCode`),\n  KEY `stateProvince` (`stateProvince`)\n) ENGINE=InnoDB  DEFAULT CHARSET=utf8"
@@ -291,7 +315,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": true
                 },
                 {
                     "column_name": "company",
@@ -302,7 +327,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "lastName",
@@ -313,7 +339,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "firstName",
@@ -324,7 +351,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "emailAddress",
@@ -335,7 +363,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "jobTitle",
@@ -346,7 +375,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "businessPhone",
@@ -357,7 +387,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "homePhone",
@@ -368,7 +399,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "mobilePhone",
@@ -379,7 +411,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "faxNumber",
@@ -390,7 +423,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "address",
@@ -401,7 +435,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "city",
@@ -412,7 +447,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "stateProvince",
@@ -423,7 +459,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "zipPostalCode",
@@ -434,7 +471,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "countryRegion",
@@ -445,7 +483,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "webPage",
@@ -456,7 +495,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "notes",
@@ -467,7 +507,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "attachments",
@@ -478,7 +519,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 }
             ],
             "has_one": {
@@ -505,7 +547,8 @@
                     "foreign_db": "northwind_model",
                     "foreign_table": "employee",
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "privilege_id",
@@ -516,7 +559,8 @@
                     "foreign_db": "northwind_model",
                     "foreign_table": "privilege",
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 }
             ],
             "belongs_to": {
@@ -550,7 +594,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "typeName",
@@ -561,7 +606,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 }
             ],
             "create_table_sql": "CREATE TABLE `northwind_model`.`inventoryTransactionType` (\n  `id` tinyint(4) NOT NULL,\n  `typeName` varchar(50) NOT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8"
@@ -579,7 +625,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "statusName",
@@ -590,7 +637,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 }
             ],
             "create_table_sql": "CREATE TABLE `northwind_model`.`orderDetailStat` (\n  `id` int(11) NOT NULL,\n  `statusName` varchar(50) NOT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8"
@@ -608,7 +656,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "statusName",
@@ -619,7 +668,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 }
             ],
             "create_table_sql": "CREATE TABLE `northwind_model`.`orderStat` (\n  `id` tinyint(4) NOT NULL,\n  `statusName` varchar(50) NOT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8"
@@ -637,7 +687,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "taxStatName",
@@ -648,7 +699,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 }
             ],
             "create_table_sql": "CREATE TABLE `northwind_model`.`orderTaxStat` (\n  `id` tinyint(4) NOT NULL,\n  `taxStatName` varchar(50) NOT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8"
@@ -666,7 +718,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": true
                 },
                 {
                     "column_name": "privilegeName",
@@ -677,7 +730,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 }
             ],
             "has_one": {
@@ -704,7 +758,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "id",
@@ -715,7 +770,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": true
                 },
                 {
                     "column_name": "productCode",
@@ -726,7 +782,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "productName",
@@ -737,7 +794,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "description",
@@ -748,7 +806,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "standardCost",
@@ -759,7 +818,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": "0.0000"
+                    "default_value": "0.0000",
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "listPrice",
@@ -770,7 +830,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": "0.0000"
+                    "default_value": "0.0000",
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "reorderLevel",
@@ -781,7 +842,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "targetLevel",
@@ -792,7 +854,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "quantityPerUnit",
@@ -803,7 +866,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "discontinued",
@@ -814,7 +878,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": "0"
+                    "default_value": "0",
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "minimumReorderQuantity",
@@ -825,7 +890,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "category",
@@ -836,7 +902,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "attachments",
@@ -847,7 +914,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 }
             ],
             "create_table_sql": "CREATE TABLE `northwind_model`.`product` (\n  `supplier_ids` longtext,\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `productCode` varchar(25) DEFAULT NULL,\n  `productName` varchar(50) DEFAULT NULL,\n  `description` longtext,\n  `standardCost` decimal(19,4) DEFAULT '0.0000',\n  `listPrice` decimal(19,4) NOT NULL DEFAULT '0.0000',\n  `reorderLevel` int(11) DEFAULT NULL,\n  `targetLevel` int(11) DEFAULT NULL,\n  `quantityPerUnit` varchar(50) DEFAULT NULL,\n  `discontinued` tinyint(1) NOT NULL DEFAULT '0',\n  `minimumReorderQuantity` int(11) DEFAULT NULL,\n  `category` varchar(50) DEFAULT NULL,\n  `attachments` longblob,\n  PRIMARY KEY (`id`),\n  KEY `productCode` (`productCode`)\n) ENGINE=InnoDB  DEFAULT CHARSET=utf8"
@@ -865,7 +933,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "status",
@@ -876,7 +945,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 }
             ],
             "create_table_sql": "CREATE TABLE `northwind_model`.`purchaseOrderStat` (\n  `id` int(11) NOT NULL,\n  `status` varchar(50) DEFAULT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8"
@@ -894,7 +964,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "display",
@@ -905,7 +976,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "title",
@@ -916,7 +988,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "filterRowSource",
@@ -927,7 +1000,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "default",
@@ -938,7 +1012,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": "0"
+                    "default_value": "0",
+                    "is_auto_increment": false
                 }
             ],
             "create_table_sql": "CREATE TABLE `northwind_model`.`salesReport` (\n  `groupBy` varchar(50) NOT NULL,\n  `display` varchar(50) DEFAULT NULL,\n  `title` varchar(50) DEFAULT NULL,\n  `filterRowSource` longtext,\n  `default` tinyint(1) NOT NULL DEFAULT '0',\n  PRIMARY KEY (`groupBy`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8"
@@ -956,7 +1031,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": true
                 },
                 {
                     "column_name": "company",
@@ -967,7 +1043,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "lastName",
@@ -978,7 +1055,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "firstName",
@@ -989,7 +1067,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "emailAddress",
@@ -1000,7 +1079,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "jobTitle",
@@ -1011,7 +1091,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "businessPhone",
@@ -1022,7 +1103,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "homePhone",
@@ -1033,7 +1115,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "mobilePhone",
@@ -1044,7 +1127,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "faxNumber",
@@ -1055,7 +1139,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "address",
@@ -1066,7 +1151,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "city",
@@ -1077,7 +1163,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "stateProvince",
@@ -1088,7 +1175,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "zipPostalCode",
@@ -1099,7 +1187,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "countryRegion",
@@ -1110,7 +1199,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "webPage",
@@ -1121,7 +1211,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "notes",
@@ -1132,7 +1223,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "attachments",
@@ -1143,7 +1235,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 }
             ],
             "create_table_sql": "CREATE TABLE `northwind_model`.`shipper` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `company` varchar(50) DEFAULT NULL,\n  `lastName` varchar(50) DEFAULT NULL,\n  `firstName` varchar(50) DEFAULT NULL,\n  `emailAddress` varchar(50) DEFAULT NULL,\n  `jobTitle` varchar(50) DEFAULT NULL,\n  `businessPhone` varchar(25) DEFAULT NULL,\n  `homePhone` varchar(25) DEFAULT NULL,\n  `mobilePhone` varchar(25) DEFAULT NULL,\n  `faxNumber` varchar(25) DEFAULT NULL,\n  `address` longtext,\n  `city` varchar(50) DEFAULT NULL,\n  `stateProvince` varchar(50) DEFAULT NULL,\n  `zipPostalCode` varchar(15) DEFAULT NULL,\n  `countryRegion` varchar(50) DEFAULT NULL,\n  `webPage` longtext,\n  `notes` longtext,\n  `attachments` longblob,\n  PRIMARY KEY (`id`),\n  KEY `city` (`city`),\n  KEY `company` (`company`),\n  KEY `firstName` (`firstName`),\n  KEY `lastName` (`lastName`),\n  KEY `zipPostalCode` (`zipPostalCode`),\n  KEY `stateProvince` (`stateProvince`)\n) ENGINE=InnoDB  DEFAULT CHARSET=utf8"
@@ -1161,7 +1254,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": false,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": true
                 },
                 {
                     "column_name": "company",
@@ -1172,7 +1266,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "lastName",
@@ -1183,7 +1278,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "firstName",
@@ -1194,7 +1290,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "emailAddress",
@@ -1205,7 +1302,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "jobTitle",
@@ -1216,7 +1314,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "businessPhone",
@@ -1227,7 +1326,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "homePhone",
@@ -1238,7 +1338,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "mobilePhone",
@@ -1249,7 +1350,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "faxNumber",
@@ -1260,7 +1362,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "address",
@@ -1271,7 +1374,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "city",
@@ -1282,7 +1386,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "stateProvince",
@@ -1293,7 +1398,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "zipPostalCode",
@@ -1304,7 +1410,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "countryRegion",
@@ -1315,7 +1422,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "webPage",
@@ -1326,7 +1434,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "notes",
@@ -1337,7 +1446,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 },
                 {
                     "column_name": "attachments",
@@ -1348,7 +1458,8 @@
                     "foreign_db": null,
                     "foreign_table": null,
                     "is_nullable": true,
-                    "default_value": null
+                    "default_value": null,
+                    "is_auto_increment": false
                 }
             ],
             "create_table_sql": "CREATE TABLE `northwind_model`.`supplier` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `company` varchar(50) DEFAULT NULL,\n  `lastName` varchar(50) DEFAULT NULL,\n  `firstName` varchar(50) DEFAULT NULL,\n  `emailAddress` varchar(50) DEFAULT NULL,\n  `jobTitle` varchar(50) DEFAULT NULL,\n  `businessPhone` varchar(25) DEFAULT NULL,\n  `homePhone` varchar(25) DEFAULT NULL,\n  `mobilePhone` varchar(25) DEFAULT NULL,\n  `faxNumber` varchar(25) DEFAULT NULL,\n  `address` longtext,\n  `city` varchar(50) DEFAULT NULL,\n  `stateProvince` varchar(50) DEFAULT NULL,\n  `zipPostalCode` varchar(15) DEFAULT NULL,\n  `countryRegion` varchar(50) DEFAULT NULL,\n  `webPage` longtext,\n  `notes` longtext,\n  `attachments` longblob,\n  PRIMARY KEY (`id`),\n  KEY `city` (`city`),\n  KEY `company` (`company`),\n  KEY `firstName` (`firstName`),\n  KEY `lastName` (`lastName`),\n  KEY `zipPostalCode` (`zipPostalCode`),\n  KEY `stateProvince` (`stateProvince`)\n) ENGINE=InnoDB  DEFAULT CHARSET=utf8"

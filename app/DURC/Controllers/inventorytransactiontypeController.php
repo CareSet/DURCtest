@@ -216,9 +216,15 @@ class inventorytransactiontypeController extends DURCController
 
 	//the games we play to easily auto-generate code..
 	$tmp_inventorytransactiontype = $myNewinventorytransactiontype;
-			$tmp_inventorytransactiontype->id = DURC::formatForStorage( 'id', 'tinyint', $request->id ); 
+	if (!empty($request->id) || // If a value is passed, always use the value
+    ($tmp_inventorytransactiontype->isFieldNullable('id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->id))) {
+		$tmp_inventorytransactiontype->id = DURC::formatForStorage( 'id', 'tinyint', $request->id ); 
+}if (!empty($request->typeName) || // If a value is passed, always use the value
+    ($tmp_inventorytransactiontype->isFieldNullable('typeName') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->typeName))) {
 		$tmp_inventorytransactiontype->typeName = DURC::formatForStorage( 'typeName', 'varchar', $request->typeName ); 
-		$tmp_inventorytransactiontype->save();
+}		$tmp_inventorytransactiontype->save();
 
 
 	$new_id = $myNewinventorytransactiontype->id;
@@ -346,9 +352,15 @@ class inventorytransactiontypeController extends DURCController
     public function update(Request $request, inventorytransactiontype $inventorytransactiontype){
 
 	$tmp_inventorytransactiontype = $inventorytransactiontype;
-			$tmp_inventorytransactiontype->id = DURC::formatForStorage( 'id', 'tinyint', $request->id ); 
+	if (!empty($request->id) || // If a value is passed, always use the value
+    ($tmp_inventorytransactiontype->isFieldNullable('id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->id))) {
+		$tmp_inventorytransactiontype->id = DURC::formatForStorage( 'id', 'tinyint', $request->id ); 
+}if (!empty($request->typeName) || // If a value is passed, always use the value
+    ($tmp_inventorytransactiontype->isFieldNullable('typeName') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->typeName))) {
 		$tmp_inventorytransactiontype->typeName = DURC::formatForStorage( 'typeName', 'varchar', $request->typeName ); 
-		$tmp_inventorytransactiontype->save();
+}		$tmp_inventorytransactiontype->save();
 
 
 	$id = $inventorytransactiontype->id;

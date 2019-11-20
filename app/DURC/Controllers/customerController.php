@@ -219,27 +219,87 @@ class customerController extends DURCController
 
 	//the games we play to easily auto-generate code..
 	$tmp_customer = $myNewcustomer;
-			$tmp_customer->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
+	if (!empty($request->id) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->id))) {
+		$tmp_customer->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
+}if (!empty($request->companyName) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('companyName') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->companyName))) {
 		$tmp_customer->companyName = DURC::formatForStorage( 'companyName', 'varchar', $request->companyName ); 
+}if (!empty($request->lastName) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('lastName') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->lastName))) {
 		$tmp_customer->lastName = DURC::formatForStorage( 'lastName', 'varchar', $request->lastName ); 
+}if (!empty($request->firstName) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('firstName') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->firstName))) {
 		$tmp_customer->firstName = DURC::formatForStorage( 'firstName', 'varchar', $request->firstName ); 
+}if (!empty($request->emailAddress) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('emailAddress') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->emailAddress))) {
 		$tmp_customer->emailAddress = DURC::formatForStorage( 'emailAddress', 'varchar', $request->emailAddress ); 
+}if (!empty($request->jobTitle) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('jobTitle') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->jobTitle))) {
 		$tmp_customer->jobTitle = DURC::formatForStorage( 'jobTitle', 'varchar', $request->jobTitle ); 
+}if (!empty($request->businessPhone) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('businessPhone') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->businessPhone))) {
 		$tmp_customer->businessPhone = DURC::formatForStorage( 'businessPhone', 'varchar', $request->businessPhone ); 
+}if (!empty($request->homePhone) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('homePhone') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->homePhone))) {
 		$tmp_customer->homePhone = DURC::formatForStorage( 'homePhone', 'varchar', $request->homePhone ); 
+}if (!empty($request->mobilePhone) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('mobilePhone') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->mobilePhone))) {
 		$tmp_customer->mobilePhone = DURC::formatForStorage( 'mobilePhone', 'varchar', $request->mobilePhone ); 
+}if (!empty($request->faxNumber) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('faxNumber') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->faxNumber))) {
 		$tmp_customer->faxNumber = DURC::formatForStorage( 'faxNumber', 'varchar', $request->faxNumber ); 
+}if (!empty($request->address) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('address') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->address))) {
 		$tmp_customer->address = DURC::formatForStorage( 'address', 'longtext', $request->address ); 
+}if (!empty($request->city) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('city') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->city))) {
 		$tmp_customer->city = DURC::formatForStorage( 'city', 'varchar', $request->city ); 
+}if (!empty($request->stateProvince) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('stateProvince') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->stateProvince))) {
 		$tmp_customer->stateProvince = DURC::formatForStorage( 'stateProvince', 'varchar', $request->stateProvince ); 
+}if (!empty($request->zipPostalCode) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('zipPostalCode') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->zipPostalCode))) {
 		$tmp_customer->zipPostalCode = DURC::formatForStorage( 'zipPostalCode', 'varchar', $request->zipPostalCode ); 
+}if (!empty($request->countryRegion) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('countryRegion') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->countryRegion))) {
 		$tmp_customer->countryRegion = DURC::formatForStorage( 'countryRegion', 'varchar', $request->countryRegion ); 
+}if (!empty($request->webPage) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('webPage') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->webPage))) {
 		$tmp_customer->webPage = DURC::formatForStorage( 'webPage', 'longtext', $request->webPage ); 
+}if (!empty($request->notes) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('notes') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->notes))) {
 		$tmp_customer->notes = DURC::formatForStorage( 'notes', 'longtext', $request->notes ); 
+}if (!empty($request->attachments) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('attachments') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->attachments))) {
 		$tmp_customer->attachments = DURC::formatForStorage( 'attachments', 'longblob', $request->attachments ); 
+}if (!empty($request->random_date) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('random_date') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->random_date))) {
 		$tmp_customer->random_date = DURC::formatForStorage( 'random_date', 'datetime', $request->random_date ); 
+}if (!empty($request->deleted_at) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('deleted_at') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->deleted_at))) {
 		$tmp_customer->deleted_at = DURC::formatForStorage( 'deleted_at', 'datetime', $request->deleted_at ); 
-		$tmp_customer->save();
+}		$tmp_customer->save();
 
 
 	$new_id = $myNewcustomer->id;
@@ -367,27 +427,87 @@ class customerController extends DURCController
     public function update(Request $request, customer $customer){
 
 	$tmp_customer = $customer;
-			$tmp_customer->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
+	if (!empty($request->id) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->id))) {
+		$tmp_customer->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
+}if (!empty($request->companyName) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('companyName') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->companyName))) {
 		$tmp_customer->companyName = DURC::formatForStorage( 'companyName', 'varchar', $request->companyName ); 
+}if (!empty($request->lastName) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('lastName') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->lastName))) {
 		$tmp_customer->lastName = DURC::formatForStorage( 'lastName', 'varchar', $request->lastName ); 
+}if (!empty($request->firstName) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('firstName') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->firstName))) {
 		$tmp_customer->firstName = DURC::formatForStorage( 'firstName', 'varchar', $request->firstName ); 
+}if (!empty($request->emailAddress) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('emailAddress') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->emailAddress))) {
 		$tmp_customer->emailAddress = DURC::formatForStorage( 'emailAddress', 'varchar', $request->emailAddress ); 
+}if (!empty($request->jobTitle) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('jobTitle') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->jobTitle))) {
 		$tmp_customer->jobTitle = DURC::formatForStorage( 'jobTitle', 'varchar', $request->jobTitle ); 
+}if (!empty($request->businessPhone) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('businessPhone') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->businessPhone))) {
 		$tmp_customer->businessPhone = DURC::formatForStorage( 'businessPhone', 'varchar', $request->businessPhone ); 
+}if (!empty($request->homePhone) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('homePhone') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->homePhone))) {
 		$tmp_customer->homePhone = DURC::formatForStorage( 'homePhone', 'varchar', $request->homePhone ); 
+}if (!empty($request->mobilePhone) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('mobilePhone') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->mobilePhone))) {
 		$tmp_customer->mobilePhone = DURC::formatForStorage( 'mobilePhone', 'varchar', $request->mobilePhone ); 
+}if (!empty($request->faxNumber) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('faxNumber') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->faxNumber))) {
 		$tmp_customer->faxNumber = DURC::formatForStorage( 'faxNumber', 'varchar', $request->faxNumber ); 
+}if (!empty($request->address) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('address') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->address))) {
 		$tmp_customer->address = DURC::formatForStorage( 'address', 'longtext', $request->address ); 
+}if (!empty($request->city) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('city') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->city))) {
 		$tmp_customer->city = DURC::formatForStorage( 'city', 'varchar', $request->city ); 
+}if (!empty($request->stateProvince) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('stateProvince') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->stateProvince))) {
 		$tmp_customer->stateProvince = DURC::formatForStorage( 'stateProvince', 'varchar', $request->stateProvince ); 
+}if (!empty($request->zipPostalCode) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('zipPostalCode') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->zipPostalCode))) {
 		$tmp_customer->zipPostalCode = DURC::formatForStorage( 'zipPostalCode', 'varchar', $request->zipPostalCode ); 
+}if (!empty($request->countryRegion) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('countryRegion') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->countryRegion))) {
 		$tmp_customer->countryRegion = DURC::formatForStorage( 'countryRegion', 'varchar', $request->countryRegion ); 
+}if (!empty($request->webPage) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('webPage') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->webPage))) {
 		$tmp_customer->webPage = DURC::formatForStorage( 'webPage', 'longtext', $request->webPage ); 
+}if (!empty($request->notes) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('notes') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->notes))) {
 		$tmp_customer->notes = DURC::formatForStorage( 'notes', 'longtext', $request->notes ); 
+}if (!empty($request->attachments) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('attachments') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->attachments))) {
 		$tmp_customer->attachments = DURC::formatForStorage( 'attachments', 'longblob', $request->attachments ); 
+}if (!empty($request->random_date) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('random_date') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->random_date))) {
 		$tmp_customer->random_date = DURC::formatForStorage( 'random_date', 'datetime', $request->random_date ); 
+}if (!empty($request->deleted_at) || // If a value is passed, always use the value
+    ($tmp_customer->isFieldNullable('deleted_at') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->deleted_at))) {
 		$tmp_customer->deleted_at = DURC::formatForStorage( 'deleted_at', 'datetime', $request->deleted_at ); 
-		$tmp_customer->save();
+}		$tmp_customer->save();
 
 
 	$id = $customer->id;

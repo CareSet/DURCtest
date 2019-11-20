@@ -216,9 +216,15 @@ class purchaseorderstatController extends DURCController
 
 	//the games we play to easily auto-generate code..
 	$tmp_purchaseorderstat = $myNewpurchaseorderstat;
-			$tmp_purchaseorderstat->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
+	if (!empty($request->id) || // If a value is passed, always use the value
+    ($tmp_purchaseorderstat->isFieldNullable('id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->id))) {
+		$tmp_purchaseorderstat->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
+}if (!empty($request->status) || // If a value is passed, always use the value
+    ($tmp_purchaseorderstat->isFieldNullable('status') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->status))) {
 		$tmp_purchaseorderstat->status = DURC::formatForStorage( 'status', 'varchar', $request->status ); 
-		$tmp_purchaseorderstat->save();
+}		$tmp_purchaseorderstat->save();
 
 
 	$new_id = $myNewpurchaseorderstat->id;
@@ -346,9 +352,15 @@ class purchaseorderstatController extends DURCController
     public function update(Request $request, purchaseorderstat $purchaseorderstat){
 
 	$tmp_purchaseorderstat = $purchaseorderstat;
-			$tmp_purchaseorderstat->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
+	if (!empty($request->id) || // If a value is passed, always use the value
+    ($tmp_purchaseorderstat->isFieldNullable('id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->id))) {
+		$tmp_purchaseorderstat->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
+}if (!empty($request->status) || // If a value is passed, always use the value
+    ($tmp_purchaseorderstat->isFieldNullable('status') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->status))) {
 		$tmp_purchaseorderstat->status = DURC::formatForStorage( 'status', 'varchar', $request->status ); 
-		$tmp_purchaseorderstat->save();
+}		$tmp_purchaseorderstat->save();
 
 
 	$id = $purchaseorderstat->id;

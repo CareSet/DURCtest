@@ -216,9 +216,15 @@ class ordertaxstatController extends DURCController
 
 	//the games we play to easily auto-generate code..
 	$tmp_ordertaxstat = $myNewordertaxstat;
-			$tmp_ordertaxstat->id = DURC::formatForStorage( 'id', 'tinyint', $request->id ); 
+	if (!empty($request->id) || // If a value is passed, always use the value
+    ($tmp_ordertaxstat->isFieldNullable('id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->id))) {
+		$tmp_ordertaxstat->id = DURC::formatForStorage( 'id', 'tinyint', $request->id ); 
+}if (!empty($request->taxStatName) || // If a value is passed, always use the value
+    ($tmp_ordertaxstat->isFieldNullable('taxStatName') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->taxStatName))) {
 		$tmp_ordertaxstat->taxStatName = DURC::formatForStorage( 'taxStatName', 'varchar', $request->taxStatName ); 
-		$tmp_ordertaxstat->save();
+}		$tmp_ordertaxstat->save();
 
 
 	$new_id = $myNewordertaxstat->id;
@@ -346,9 +352,15 @@ class ordertaxstatController extends DURCController
     public function update(Request $request, ordertaxstat $ordertaxstat){
 
 	$tmp_ordertaxstat = $ordertaxstat;
-			$tmp_ordertaxstat->id = DURC::formatForStorage( 'id', 'tinyint', $request->id ); 
+	if (!empty($request->id) || // If a value is passed, always use the value
+    ($tmp_ordertaxstat->isFieldNullable('id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->id))) {
+		$tmp_ordertaxstat->id = DURC::formatForStorage( 'id', 'tinyint', $request->id ); 
+}if (!empty($request->taxStatName) || // If a value is passed, always use the value
+    ($tmp_ordertaxstat->isFieldNullable('taxStatName') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->taxStatName))) {
 		$tmp_ordertaxstat->taxStatName = DURC::formatForStorage( 'taxStatName', 'varchar', $request->taxStatName ); 
-		$tmp_ordertaxstat->save();
+}		$tmp_ordertaxstat->save();
 
 
 	$id = $ordertaxstat->id;

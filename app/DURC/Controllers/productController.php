@@ -216,21 +216,63 @@ class productController extends DURCController
 
 	//the games we play to easily auto-generate code..
 	$tmp_product = $myNewproduct;
-			$tmp_product->supplier_ids = DURC::formatForStorage( 'supplier_ids', 'longtext', $request->supplier_ids ); 
+	if (!empty($request->supplier_ids) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('supplier_ids') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->supplier_ids))) {
+		$tmp_product->supplier_ids = DURC::formatForStorage( 'supplier_ids', 'longtext', $request->supplier_ids ); 
+}if (!empty($request->id) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->id))) {
 		$tmp_product->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
+}if (!empty($request->productCode) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('productCode') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->productCode))) {
 		$tmp_product->productCode = DURC::formatForStorage( 'productCode', 'varchar', $request->productCode ); 
+}if (!empty($request->productName) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('productName') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->productName))) {
 		$tmp_product->productName = DURC::formatForStorage( 'productName', 'varchar', $request->productName ); 
+}if (!empty($request->description) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('description') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->description))) {
 		$tmp_product->description = DURC::formatForStorage( 'description', 'longtext', $request->description ); 
+}if (!empty($request->standardCost) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('standardCost') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->standardCost))) {
 		$tmp_product->standardCost = DURC::formatForStorage( 'standardCost', 'decimal', $request->standardCost ); 
+}if (!empty($request->listPrice) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('listPrice') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->listPrice))) {
 		$tmp_product->listPrice = DURC::formatForStorage( 'listPrice', 'decimal', $request->listPrice ); 
+}if (!empty($request->reorderLevel) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('reorderLevel') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->reorderLevel))) {
 		$tmp_product->reorderLevel = DURC::formatForStorage( 'reorderLevel', 'int', $request->reorderLevel ); 
+}if (!empty($request->targetLevel) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('targetLevel') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->targetLevel))) {
 		$tmp_product->targetLevel = DURC::formatForStorage( 'targetLevel', 'int', $request->targetLevel ); 
+}if (!empty($request->quantityPerUnit) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('quantityPerUnit') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->quantityPerUnit))) {
 		$tmp_product->quantityPerUnit = DURC::formatForStorage( 'quantityPerUnit', 'varchar', $request->quantityPerUnit ); 
+}if (!empty($request->discontinued) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('discontinued') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->discontinued))) {
 		$tmp_product->discontinued = DURC::formatForStorage( 'discontinued', 'tinyint', $request->discontinued ); 
+}if (!empty($request->minimumReorderQuantity) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('minimumReorderQuantity') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->minimumReorderQuantity))) {
 		$tmp_product->minimumReorderQuantity = DURC::formatForStorage( 'minimumReorderQuantity', 'int', $request->minimumReorderQuantity ); 
+}if (!empty($request->category) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('category') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->category))) {
 		$tmp_product->category = DURC::formatForStorage( 'category', 'varchar', $request->category ); 
+}if (!empty($request->attachments) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('attachments') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->attachments))) {
 		$tmp_product->attachments = DURC::formatForStorage( 'attachments', 'longblob', $request->attachments ); 
-		$tmp_product->save();
+}		$tmp_product->save();
 
 
 	$new_id = $myNewproduct->id;
@@ -358,21 +400,63 @@ class productController extends DURCController
     public function update(Request $request, product $product){
 
 	$tmp_product = $product;
-			$tmp_product->supplier_ids = DURC::formatForStorage( 'supplier_ids', 'longtext', $request->supplier_ids ); 
+	if (!empty($request->supplier_ids) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('supplier_ids') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->supplier_ids))) {
+		$tmp_product->supplier_ids = DURC::formatForStorage( 'supplier_ids', 'longtext', $request->supplier_ids ); 
+}if (!empty($request->id) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->id))) {
 		$tmp_product->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
+}if (!empty($request->productCode) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('productCode') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->productCode))) {
 		$tmp_product->productCode = DURC::formatForStorage( 'productCode', 'varchar', $request->productCode ); 
+}if (!empty($request->productName) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('productName') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->productName))) {
 		$tmp_product->productName = DURC::formatForStorage( 'productName', 'varchar', $request->productName ); 
+}if (!empty($request->description) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('description') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->description))) {
 		$tmp_product->description = DURC::formatForStorage( 'description', 'longtext', $request->description ); 
+}if (!empty($request->standardCost) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('standardCost') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->standardCost))) {
 		$tmp_product->standardCost = DURC::formatForStorage( 'standardCost', 'decimal', $request->standardCost ); 
+}if (!empty($request->listPrice) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('listPrice') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->listPrice))) {
 		$tmp_product->listPrice = DURC::formatForStorage( 'listPrice', 'decimal', $request->listPrice ); 
+}if (!empty($request->reorderLevel) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('reorderLevel') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->reorderLevel))) {
 		$tmp_product->reorderLevel = DURC::formatForStorage( 'reorderLevel', 'int', $request->reorderLevel ); 
+}if (!empty($request->targetLevel) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('targetLevel') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->targetLevel))) {
 		$tmp_product->targetLevel = DURC::formatForStorage( 'targetLevel', 'int', $request->targetLevel ); 
+}if (!empty($request->quantityPerUnit) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('quantityPerUnit') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->quantityPerUnit))) {
 		$tmp_product->quantityPerUnit = DURC::formatForStorage( 'quantityPerUnit', 'varchar', $request->quantityPerUnit ); 
+}if (!empty($request->discontinued) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('discontinued') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->discontinued))) {
 		$tmp_product->discontinued = DURC::formatForStorage( 'discontinued', 'tinyint', $request->discontinued ); 
+}if (!empty($request->minimumReorderQuantity) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('minimumReorderQuantity') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->minimumReorderQuantity))) {
 		$tmp_product->minimumReorderQuantity = DURC::formatForStorage( 'minimumReorderQuantity', 'int', $request->minimumReorderQuantity ); 
+}if (!empty($request->category) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('category') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->category))) {
 		$tmp_product->category = DURC::formatForStorage( 'category', 'varchar', $request->category ); 
+}if (!empty($request->attachments) || // If a value is passed, always use the value
+    ($tmp_product->isFieldNullable('attachments') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->attachments))) {
 		$tmp_product->attachments = DURC::formatForStorage( 'attachments', 'longblob', $request->attachments ); 
-		$tmp_product->save();
+}		$tmp_product->save();
 
 
 	$id = $product->id;

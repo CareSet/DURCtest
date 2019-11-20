@@ -216,9 +216,15 @@ class orderstatController extends DURCController
 
 	//the games we play to easily auto-generate code..
 	$tmp_orderstat = $myNeworderstat;
-			$tmp_orderstat->id = DURC::formatForStorage( 'id', 'tinyint', $request->id ); 
+	if (!empty($request->id) || // If a value is passed, always use the value
+    ($tmp_orderstat->isFieldNullable('id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->id))) {
+		$tmp_orderstat->id = DURC::formatForStorage( 'id', 'tinyint', $request->id ); 
+}if (!empty($request->statusName) || // If a value is passed, always use the value
+    ($tmp_orderstat->isFieldNullable('statusName') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->statusName))) {
 		$tmp_orderstat->statusName = DURC::formatForStorage( 'statusName', 'varchar', $request->statusName ); 
-		$tmp_orderstat->save();
+}		$tmp_orderstat->save();
 
 
 	$new_id = $myNeworderstat->id;
@@ -346,9 +352,15 @@ class orderstatController extends DURCController
     public function update(Request $request, orderstat $orderstat){
 
 	$tmp_orderstat = $orderstat;
-			$tmp_orderstat->id = DURC::formatForStorage( 'id', 'tinyint', $request->id ); 
+	if (!empty($request->id) || // If a value is passed, always use the value
+    ($tmp_orderstat->isFieldNullable('id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->id))) {
+		$tmp_orderstat->id = DURC::formatForStorage( 'id', 'tinyint', $request->id ); 
+}if (!empty($request->statusName) || // If a value is passed, always use the value
+    ($tmp_orderstat->isFieldNullable('statusName') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->statusName))) {
 		$tmp_orderstat->statusName = DURC::formatForStorage( 'statusName', 'varchar', $request->statusName ); 
-		$tmp_orderstat->save();
+}		$tmp_orderstat->save();
 
 
 	$id = $orderstat->id;

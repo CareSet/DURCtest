@@ -218,9 +218,15 @@ class employeeprivilegeController extends DURCController
 
 	//the games we play to easily auto-generate code..
 	$tmp_employeeprivilege = $myNewemployeeprivilege;
-			$tmp_employeeprivilege->employee_id = DURC::formatForStorage( 'employee_id', 'int', $request->employee_id ); 
+	if (!empty($request->employee_id) || // If a value is passed, always use the value
+    ($tmp_employeeprivilege->isFieldNullable('employee_id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->employee_id))) {
+		$tmp_employeeprivilege->employee_id = DURC::formatForStorage( 'employee_id', 'int', $request->employee_id ); 
+}if (!empty($request->privilege_id) || // If a value is passed, always use the value
+    ($tmp_employeeprivilege->isFieldNullable('privilege_id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->privilege_id))) {
 		$tmp_employeeprivilege->privilege_id = DURC::formatForStorage( 'privilege_id', 'int', $request->privilege_id ); 
-		$tmp_employeeprivilege->save();
+}		$tmp_employeeprivilege->save();
 
 
 	$new_id = $myNewemployeeprivilege->id;
@@ -348,9 +354,15 @@ class employeeprivilegeController extends DURCController
     public function update(Request $request, employeeprivilege $employeeprivilege){
 
 	$tmp_employeeprivilege = $employeeprivilege;
-			$tmp_employeeprivilege->employee_id = DURC::formatForStorage( 'employee_id', 'int', $request->employee_id ); 
+	if (!empty($request->employee_id) || // If a value is passed, always use the value
+    ($tmp_employeeprivilege->isFieldNullable('employee_id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->employee_id))) {
+		$tmp_employeeprivilege->employee_id = DURC::formatForStorage( 'employee_id', 'int', $request->employee_id ); 
+}if (!empty($request->privilege_id) || // If a value is passed, always use the value
+    ($tmp_employeeprivilege->isFieldNullable('privilege_id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->privilege_id))) {
 		$tmp_employeeprivilege->privilege_id = DURC::formatForStorage( 'privilege_id', 'int', $request->privilege_id ); 
-		$tmp_employeeprivilege->save();
+}		$tmp_employeeprivilege->save();
 
 
 	$id = $employeeprivilege->id;

@@ -216,12 +216,27 @@ class salesreportController extends DURCController
 
 	//the games we play to easily auto-generate code..
 	$tmp_salesreport = $myNewsalesreport;
-			$tmp_salesreport->groupBy = DURC::formatForStorage( 'groupBy', 'varchar', $request->groupBy ); 
+	if (!empty($request->groupBy) || // If a value is passed, always use the value
+    ($tmp_salesreport->isFieldNullable('groupBy') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->groupBy))) {
+		$tmp_salesreport->groupBy = DURC::formatForStorage( 'groupBy', 'varchar', $request->groupBy ); 
+}if (!empty($request->display) || // If a value is passed, always use the value
+    ($tmp_salesreport->isFieldNullable('display') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->display))) {
 		$tmp_salesreport->display = DURC::formatForStorage( 'display', 'varchar', $request->display ); 
+}if (!empty($request->title) || // If a value is passed, always use the value
+    ($tmp_salesreport->isFieldNullable('title') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->title))) {
 		$tmp_salesreport->title = DURC::formatForStorage( 'title', 'varchar', $request->title ); 
+}if (!empty($request->filterRowSource) || // If a value is passed, always use the value
+    ($tmp_salesreport->isFieldNullable('filterRowSource') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->filterRowSource))) {
 		$tmp_salesreport->filterRowSource = DURC::formatForStorage( 'filterRowSource', 'longtext', $request->filterRowSource ); 
+}if (!empty($request->default) || // If a value is passed, always use the value
+    ($tmp_salesreport->isFieldNullable('default') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->default))) {
 		$tmp_salesreport->default = DURC::formatForStorage( 'default', 'tinyint', $request->default ); 
-		$tmp_salesreport->save();
+}		$tmp_salesreport->save();
 
 
 	$new_id = $myNewsalesreport->id;
@@ -349,12 +364,27 @@ class salesreportController extends DURCController
     public function update(Request $request, salesreport $salesreport){
 
 	$tmp_salesreport = $salesreport;
-			$tmp_salesreport->groupBy = DURC::formatForStorage( 'groupBy', 'varchar', $request->groupBy ); 
+	if (!empty($request->groupBy) || // If a value is passed, always use the value
+    ($tmp_salesreport->isFieldNullable('groupBy') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->groupBy))) {
+		$tmp_salesreport->groupBy = DURC::formatForStorage( 'groupBy', 'varchar', $request->groupBy ); 
+}if (!empty($request->display) || // If a value is passed, always use the value
+    ($tmp_salesreport->isFieldNullable('display') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->display))) {
 		$tmp_salesreport->display = DURC::formatForStorage( 'display', 'varchar', $request->display ); 
+}if (!empty($request->title) || // If a value is passed, always use the value
+    ($tmp_salesreport->isFieldNullable('title') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->title))) {
 		$tmp_salesreport->title = DURC::formatForStorage( 'title', 'varchar', $request->title ); 
+}if (!empty($request->filterRowSource) || // If a value is passed, always use the value
+    ($tmp_salesreport->isFieldNullable('filterRowSource') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->filterRowSource))) {
 		$tmp_salesreport->filterRowSource = DURC::formatForStorage( 'filterRowSource', 'longtext', $request->filterRowSource ); 
+}if (!empty($request->default) || // If a value is passed, always use the value
+    ($tmp_salesreport->isFieldNullable('default') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->default))) {
 		$tmp_salesreport->default = DURC::formatForStorage( 'default', 'tinyint', $request->default ); 
-		$tmp_salesreport->save();
+}		$tmp_salesreport->save();
 
 
 	$id = $salesreport->id;

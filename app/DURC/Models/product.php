@@ -56,17 +56,17 @@ class product extends DURCModel{
 			]; //end field_type_map
 		
     // Indicate which fields are nullable for the UI to be able to validate required form elements
-    static $non_nullable_fields = [
+    protected $non_nullable_fields = [
 		'id',
 		'listPrice',
 		'discontinued',
 			]; // End of nullable fields
 
-    // List the default values for each field (if any) indicated by the DB schema, to be used as placeholder on form elements
-    static $default_values = [
+    // Use Eloquent attributes array to specify the default values for each field (if any) indicated by the DB schema, to be used as placeholder on form elements
+    protected $attributes = [
 		'standardCost' => '0.0000',
 		'listPrice' => '0.0000',
-			]; // End of default values
+			]; // End of attributes
         
 		//everything is fillable by default
 		protected $guarded = [];

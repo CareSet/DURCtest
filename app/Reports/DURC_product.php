@@ -1,7 +1,7 @@
 <?php
 /*
 Note: because this file was signed, everything originally placed before the name space line has been replaced... with this comment ;)
-FILE_SIG=0f0ef146915df3917ce64df8fb76f47b
+FILE_SIG=f64da5d7117ba8849d29355d6a751766
 */
 namespace App\Reports;
 use CareSet\Zermelo\Reports\Tabular\AbstractTabularReport;
@@ -190,6 +190,7 @@ array (
     'foreign_table' => NULL,
     'is_nullable' => true,
     'default_value' => NULL,
+    'is_auto_increment' => false,
   ),
   1 => 
   array (
@@ -202,6 +203,7 @@ array (
     'foreign_table' => NULL,
     'is_nullable' => false,
     'default_value' => NULL,
+    'is_auto_increment' => true,
   ),
   2 => 
   array (
@@ -214,6 +216,7 @@ array (
     'foreign_table' => NULL,
     'is_nullable' => true,
     'default_value' => NULL,
+    'is_auto_increment' => false,
   ),
   3 => 
   array (
@@ -226,6 +229,7 @@ array (
     'foreign_table' => NULL,
     'is_nullable' => true,
     'default_value' => NULL,
+    'is_auto_increment' => false,
   ),
   4 => 
   array (
@@ -238,6 +242,7 @@ array (
     'foreign_table' => NULL,
     'is_nullable' => true,
     'default_value' => NULL,
+    'is_auto_increment' => false,
   ),
   5 => 
   array (
@@ -250,6 +255,7 @@ array (
     'foreign_table' => NULL,
     'is_nullable' => true,
     'default_value' => '0.0000',
+    'is_auto_increment' => false,
   ),
   6 => 
   array (
@@ -262,6 +268,7 @@ array (
     'foreign_table' => NULL,
     'is_nullable' => false,
     'default_value' => '0.0000',
+    'is_auto_increment' => false,
   ),
   7 => 
   array (
@@ -274,6 +281,7 @@ array (
     'foreign_table' => NULL,
     'is_nullable' => true,
     'default_value' => NULL,
+    'is_auto_increment' => false,
   ),
   8 => 
   array (
@@ -286,6 +294,7 @@ array (
     'foreign_table' => NULL,
     'is_nullable' => true,
     'default_value' => NULL,
+    'is_auto_increment' => false,
   ),
   9 => 
   array (
@@ -298,6 +307,7 @@ array (
     'foreign_table' => NULL,
     'is_nullable' => true,
     'default_value' => NULL,
+    'is_auto_increment' => false,
   ),
   10 => 
   array (
@@ -310,6 +320,7 @@ array (
     'foreign_table' => NULL,
     'is_nullable' => false,
     'default_value' => '0',
+    'is_auto_increment' => false,
   ),
   11 => 
   array (
@@ -322,6 +333,7 @@ array (
     'foreign_table' => NULL,
     'is_nullable' => true,
     'default_value' => NULL,
+    'is_auto_increment' => false,
   ),
   12 => 
   array (
@@ -334,6 +346,7 @@ array (
     'foreign_table' => NULL,
     'is_nullable' => true,
     'default_value' => NULL,
+    'is_auto_increment' => false,
   ),
   13 => 
   array (
@@ -346,6 +359,7 @@ array (
     'foreign_table' => NULL,
     'is_nullable' => true,
     'default_value' => NULL,
+    'is_auto_increment' => false,
   ),
 )
 //has_many

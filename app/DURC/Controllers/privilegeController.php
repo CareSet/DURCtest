@@ -216,9 +216,15 @@ class privilegeController extends DURCController
 
 	//the games we play to easily auto-generate code..
 	$tmp_privilege = $myNewprivilege;
-			$tmp_privilege->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
+	if (!empty($request->id) || // If a value is passed, always use the value
+    ($tmp_privilege->isFieldNullable('id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->id))) {
+		$tmp_privilege->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
+}if (!empty($request->privilegeName) || // If a value is passed, always use the value
+    ($tmp_privilege->isFieldNullable('privilegeName') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->privilegeName))) {
 		$tmp_privilege->privilegeName = DURC::formatForStorage( 'privilegeName', 'varchar', $request->privilegeName ); 
-		$tmp_privilege->save();
+}		$tmp_privilege->save();
 
 
 	$new_id = $myNewprivilege->id;
@@ -346,9 +352,15 @@ class privilegeController extends DURCController
     public function update(Request $request, privilege $privilege){
 
 	$tmp_privilege = $privilege;
-			$tmp_privilege->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
+	if (!empty($request->id) || // If a value is passed, always use the value
+    ($tmp_privilege->isFieldNullable('id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->id))) {
+		$tmp_privilege->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
+}if (!empty($request->privilegeName) || // If a value is passed, always use the value
+    ($tmp_privilege->isFieldNullable('privilegeName') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->privilegeName))) {
 		$tmp_privilege->privilegeName = DURC::formatForStorage( 'privilegeName', 'varchar', $request->privilegeName ); 
-		$tmp_privilege->save();
+}		$tmp_privilege->save();
 
 
 	$id = $privilege->id;

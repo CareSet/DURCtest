@@ -216,16 +216,15 @@ class appstringController extends DURCController
 
 	//the games we play to easily auto-generate code..
 	$tmp_appstring = $myNewappstring;
-			$tmp_appstring->id = DURC::formatForStorage( 'id', 'int', $request->id );
-
-        $stringData = $request->stringData;
-		if (empty($stringData) &&
-            appstring::isFieldNullable('stringData') === false &&
-            appstring::getDefaultValueForField('stringData') !== null) {
-            $stringData = appstring::getDefaultValueForField('stringData');
-        }
-		$tmp_appstring->stringData = DURC::formatForStorage( 'stringData', 'varchar', $stringData );
-		$tmp_appstring->save();
+	if (!empty($request->id) || // If a value is passed, always use the value
+    ($tmp_appstring->isFieldNullable('id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->id))) {
+		$tmp_appstring->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
+}if (!empty($request->stringData) || // If a value is passed, always use the value
+    ($tmp_appstring->isFieldNullable('stringData') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->stringData))) {
+		$tmp_appstring->stringData = DURC::formatForStorage( 'stringData', 'varchar', $request->stringData ); 
+}		$tmp_appstring->save();
 
 
 	$new_id = $myNewappstring->id;
@@ -353,9 +352,15 @@ class appstringController extends DURCController
     public function update(Request $request, appstring $appstring){
 
 	$tmp_appstring = $appstring;
-			$tmp_appstring->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
+	if (!empty($request->id) || // If a value is passed, always use the value
+    ($tmp_appstring->isFieldNullable('id') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->id))) {
+		$tmp_appstring->id = DURC::formatForStorage( 'id', 'int', $request->id ); 
+}if (!empty($request->stringData) || // If a value is passed, always use the value
+    ($tmp_appstring->isFieldNullable('stringData') && // OR, if the IS nullable, if an empty string is entered, use empty string when saving whether there is default or not
+        empty($request->stringData))) {
 		$tmp_appstring->stringData = DURC::formatForStorage( 'stringData', 'varchar', $request->stringData ); 
-		$tmp_appstring->save();
+}		$tmp_appstring->save();
 
 
 	$id = $appstring->id;
